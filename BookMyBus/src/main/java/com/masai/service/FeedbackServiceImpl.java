@@ -1,6 +1,7 @@
 package com.masai.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,31 +14,30 @@ import com.masai.repository.FeedbackRepository;
 
 @Service
 public class FeedbackServiceImpl implements FeedbackService {
-	@Autowired
-	private FeedbackRepository feedbackRepository;
 
-	@Override
-	public List<Feedback> getAllFeedbacks() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Autowired
+    private FeedbackRepository feedbackRepository;
 
-	@Override
-	public Feedback getFeedbackById(Integer feedbackId) throws ResourceNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public List<Feedback> getAllFeedbacks() {
+        return feedbackRepository.findAll();
+    }
 
-	@Override
-	public Feedback saveFeedback(Feedback feedback) throws ValidationException, SomethingWentWrongException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public Feedback getFeedbackById(Integer feedbackId) throws ResourceNotFoundException {
+        Optional<Feedback> optionalFeedback = feedbackRepository.findById(feedbackId);
+        return optionalFeedback.orElseThrow(() -> new ResourceNotFoundException("Feedback not found with ID: " + feedbackId));
+    }
 
-	@Override
-	public void deleteFeedback(Integer feedbackId) throws ResourceNotFoundException, SomethingWentWrongException {
-		// TODO Auto-generated method stub
+    @Override
+    public Feedback saveFeedback(Feedback feedback) throws ValidationException, SomethingWentWrongException {
+        return feedbackRepository.save(feedback);
+    }
 
-	}
-
+    @Override
+    public void deleteFeedback(Integer feedbackId) throws ResourceNotFoundException, SomethingWentWrongException {
+        Feedback feedback = getFeedbackById(feedbackId);
+        feedbackRepository.delete(feedback);
+    }
 }
+

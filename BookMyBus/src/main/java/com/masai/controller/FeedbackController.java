@@ -18,6 +18,8 @@ import com.masai.exception.ValidationException;
 import com.masai.model.Feedback;
 import com.masai.service.FeedbackService;
 
+import jakarta.validation.Valid;
+
 @RestController
 public class FeedbackController {
 	@Autowired
@@ -30,20 +32,20 @@ public class FeedbackController {
 	}
 
 	@GetMapping("/api/feedbacks/{id}")
-	public ResponseEntity<Feedback> getFeedbackById(@PathVariable Integer id) throws ResourceNotFoundException {
+	public ResponseEntity<Feedback> getFeedbackById(@Valid @PathVariable Integer id) throws ResourceNotFoundException {
 		Feedback feedback = feedbackService.getFeedbackById(id);
 		return new ResponseEntity<>(feedback, HttpStatus.OK);
 	}
 
 	@PostMapping("/api/feedbacks")
-	public ResponseEntity<Feedback> createFeedback(@RequestBody Feedback feedback)
+	public ResponseEntity<Feedback> createFeedback(@Valid @RequestBody Feedback feedback)
 			throws ValidationException, SomethingWentWrongException {
 		Feedback createdFeedback = feedbackService.saveFeedback(feedback);
 		return new ResponseEntity<>(createdFeedback, HttpStatus.CREATED);
 	}
 
 	@DeleteMapping("/api/feedbacks/{id}")
-	public ResponseEntity<String> deleteFeedback(@PathVariable Integer id)
+	public ResponseEntity<String> deleteFeedback(@Valid @PathVariable Integer id)
 			throws ResourceNotFoundException, SomethingWentWrongException {
 		feedbackService.deleteFeedback(id);
 		return new ResponseEntity<>("Deleted", HttpStatus.NO_CONTENT);

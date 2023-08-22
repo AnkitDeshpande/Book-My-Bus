@@ -13,6 +13,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PastOrPresent;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -41,6 +42,7 @@ public class Feedback {
 	@Max(value = 10, message = "Overall rating should be between 1 and 10")
 	private Integer overallRating;
 
+	@NotBlank
 	private String comments;
 
 	@JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)

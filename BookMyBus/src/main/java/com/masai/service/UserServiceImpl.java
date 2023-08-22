@@ -1,6 +1,7 @@
 package com.masai.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,26 +20,24 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> getAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		return userRepository.findAll();
 	}
 
 	@Override
 	public User getUserById(Integer userId) throws ResourceNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<User> optionalUser = userRepository.findById(userId);
+		return optionalUser.orElseThrow(() -> new ResourceNotFoundException("User not found with ID: " + userId));
 	}
 
 	@Override
 	public User saveUser(User user) throws ValidationException, SomethingWentWrongException {
-		// TODO Auto-generated method stub
-		return null;
+		return userRepository.save(user);
 	}
 
 	@Override
 	public void deleteUser(Integer userId) throws ResourceNotFoundException, SomethingWentWrongException {
-		// TODO Auto-generated method stub
-
+		User user = getUserById(userId);
+		userRepository.delete(user);
 	}
 
 }

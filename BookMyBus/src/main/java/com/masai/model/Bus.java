@@ -2,6 +2,8 @@ package com.masai.model;
 
 import java.time.LocalTime;
 
+import org.hibernate.validator.constraints.URL;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,6 +29,9 @@ public class Bus {
 
 	@NotBlank(message = "Bus name is mandatory")
 	private String busName;
+	
+	@URL(message = "Image URL should be in a valid format")
+    private String image;
 
 	@NotBlank(message = "Driver name is mandatory")
 	private String driverName;
@@ -58,6 +63,7 @@ public class Bus {
 	private Route route;
 
 	public Bus(@NotBlank(message = "Bus name is mandatory") String busName,
+			@URL(message = "Image URL should be in a valid format") String image,
 			@NotBlank(message = "Driver name is mandatory") String driverName,
 			@NotBlank(message = "Bus type is mandatory") String busType,
 			@NotBlank(message = "Route from is mandatory") String routeFrom,
@@ -65,9 +71,11 @@ public class Bus {
 			@NotNull(message = "Arrival time is mandatory") LocalTime arrivalTime,
 			@NotNull(message = "Departure time is mandatory") LocalTime departureTime,
 			@Min(value = 1, message = "Seats should be at least 1") Integer seats,
-			@Min(value = 0, message = "Available seats cannot be negative") Integer availableSeats, Route route) {
+			@Min(value = 0, message = "Available seats cannot be negative") Integer availableSeats, boolean deleted,
+			Route route) {
 		super();
 		this.busName = busName;
+		this.image = image;
 		this.driverName = driverName;
 		this.busType = busType;
 		this.routeFrom = routeFrom;
@@ -76,6 +84,9 @@ public class Bus {
 		this.departureTime = departureTime;
 		this.seats = seats;
 		this.availableSeats = availableSeats;
+		this.deleted = deleted;
 		this.route = route;
 	}
+
+	
 }
