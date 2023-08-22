@@ -6,6 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.masai.model.Route;
 import com.masai.service.RouteService;
+
+import jakarta.validation.Valid;
+
 import com.masai.exception.ResourceNotFoundException;
 import com.masai.exception.SomethingWentWrongException;
 import com.masai.exception.ValidationException;
@@ -24,20 +27,20 @@ public class RouteController {
 	}
 
 	@GetMapping("/api/routes/{id}")
-	public ResponseEntity<Route> getRouteById(@PathVariable Integer id) throws ResourceNotFoundException {
+	public ResponseEntity<Route> getRouteById(@Valid @PathVariable Integer id) throws ResourceNotFoundException {
 		Route route = routeService.getRouteById(id);
 		return new ResponseEntity<>(route, HttpStatus.OK);
 	}
 
 	@PostMapping("/api/routes")
-	public ResponseEntity<Route> createRoute(@RequestBody Route route)
+	public ResponseEntity<Route> createRoute(@Valid @RequestBody Route route)
 			throws ValidationException, SomethingWentWrongException {
 		Route createdRoute = routeService.saveRoute(route);
 		return new ResponseEntity<>(createdRoute, HttpStatus.CREATED);
 	}
 
 	@DeleteMapping("/api/routes/{id}")
-	public ResponseEntity<String> deleteRoute(@PathVariable Integer id)
+	public ResponseEntity<String> deleteRoute(@Valid @PathVariable Integer id)
 			throws ResourceNotFoundException, SomethingWentWrongException {
 		routeService.deleteRoute(id);
 		return new ResponseEntity<>("Deleted", HttpStatus.NO_CONTENT);

@@ -6,6 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.masai.model.Reservation;
 import com.masai.service.ReservationService;
+
+import jakarta.validation.Valid;
+
 import com.masai.exception.ResourceNotFoundException;
 import com.masai.exception.SomethingWentWrongException;
 import com.masai.exception.ValidationException;
@@ -23,20 +26,20 @@ public class ReservationController {
 	}
 
 	@GetMapping("/api/reservations/{id}")
-	public ResponseEntity<Reservation> getReservationById(@PathVariable Integer id) throws ResourceNotFoundException {
+	public ResponseEntity<Reservation> getReservationById(@Valid @PathVariable Integer id) throws ResourceNotFoundException {
 		Reservation reservation = reservationService.getReservationById(id);
 		return new ResponseEntity<>(reservation, HttpStatus.OK);
 	}
 
 	@PostMapping("/api/reservations")
-	public ResponseEntity<Reservation> createReservation(@RequestBody Reservation reservation)
+	public ResponseEntity<Reservation> createReservation(@Valid @RequestBody Reservation reservation)
 			throws ValidationException, SomethingWentWrongException {
 		Reservation createdReservation = reservationService.saveReservation(reservation);
 		return new ResponseEntity<>(createdReservation, HttpStatus.CREATED);
 	}
 
 	@DeleteMapping("/api/reservations/{id}")
-	public ResponseEntity<String> deleteReservation(@PathVariable Integer id)
+	public ResponseEntity<String> deleteReservation(@Valid @PathVariable Integer id)
 			throws ResourceNotFoundException, SomethingWentWrongException {
 		reservationService.deleteReservation(id);
 		return new ResponseEntity<>("Deleted.", HttpStatus.NO_CONTENT);

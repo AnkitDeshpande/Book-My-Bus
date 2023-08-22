@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,6 +32,7 @@ public class User {
 	private Integer userLoginId;
 
 	@NotBlank(message = "Username is mandatory")
+	@Column(unique = true)
 	private String userName;
 
 	@Size(min = 6, max = 10, message = "Password length must be between 6 and 10 characters")
@@ -49,7 +51,7 @@ public class User {
 	@JsonIgnore
 	@OneToMany(mappedBy = "user")
 	private List<Reservation> reservations = new ArrayList<Reservation>();
-	
+
 	@JsonIgnore
 	@OneToMany(mappedBy = "user")
 	private List<Feedback> feedbacks = new ArrayList<Feedback>();

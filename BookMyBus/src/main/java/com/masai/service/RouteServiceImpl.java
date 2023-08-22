@@ -1,6 +1,7 @@
 package com.masai.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,26 +20,25 @@ public class RouteServiceImpl implements RouteService {
 
 	@Override
 	public List<Route> getAllRoutes() {
-		// TODO Auto-generated method stub
-		return null;
+		return routeRepository.findAll();
 	}
 
 	@Override
 	public Route getRouteById(Integer routeId) throws ResourceNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<Route> optionalRoute = routeRepository.findById(routeId);
+		return optionalRoute.orElseThrow(() -> new ResourceNotFoundException("Route not found with ID: " + routeId));
 	}
 
 	@Override
 	public Route saveRoute(Route route) throws ValidationException, SomethingWentWrongException {
-		// TODO Auto-generated method stub
-		return null;
+
+		return routeRepository.save(route);
 	}
 
 	@Override
 	public void deleteRoute(Integer routeId) throws ResourceNotFoundException, SomethingWentWrongException {
-		// TODO Auto-generated method stub
-
+		Route route = getRouteById(routeId);
+		routeRepository.delete(route);
 	}
 
 }

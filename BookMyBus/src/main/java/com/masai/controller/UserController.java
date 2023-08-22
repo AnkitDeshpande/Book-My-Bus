@@ -18,6 +18,8 @@ import com.masai.exception.ValidationException;
 import com.masai.model.User;
 import com.masai.service.UserService;
 
+import jakarta.validation.Valid;
+
 @RestController
 public class UserController {
 	@Autowired
@@ -30,19 +32,19 @@ public class UserController {
 	}
 
 	@GetMapping("/api/users/{id}")
-	public ResponseEntity<User> getUserById(@PathVariable Integer id) throws ResourceNotFoundException {
+	public ResponseEntity<User> getUserById(@Valid @PathVariable Integer id) throws ResourceNotFoundException {
 		User user = userService.getUserById(id);
 		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
 
 	@PostMapping("/api/users")
-    public ResponseEntity<User> createUser(@RequestBody User user) throws ValidationException, SomethingWentWrongException {
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user) throws ValidationException, SomethingWentWrongException {
         User createdUser = userService.saveUser(user);
         return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
     }
 
 	@DeleteMapping("/api/users/{id}")
-	public ResponseEntity<String> deleteUser(@PathVariable Integer id)
+	public ResponseEntity<String> deleteUser(@Valid @PathVariable Integer id)
 			throws ResourceNotFoundException, SomethingWentWrongException {
 		userService.deleteUser(id);
 		return new ResponseEntity<>("Deleted.", HttpStatus.NO_CONTENT);

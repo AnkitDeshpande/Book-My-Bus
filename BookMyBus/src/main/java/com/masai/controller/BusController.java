@@ -6,6 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.masai.model.Bus;
 import com.masai.service.BusService;
+
+import jakarta.validation.Valid;
+
 import com.masai.exception.ResourceNotFoundException;
 import com.masai.exception.SomethingWentWrongException;
 import com.masai.exception.ValidationException;
@@ -24,19 +27,19 @@ public class BusController {
 	}
 
 	@GetMapping("/api/buses/{id}")
-	public ResponseEntity<Bus> getBusById(@PathVariable Integer id) throws ResourceNotFoundException {
+	public ResponseEntity<Bus> getBusById(@Valid @PathVariable Integer id) throws ResourceNotFoundException {
 		Bus bus = busService.getBusById(id);
 		return new ResponseEntity<>(bus, HttpStatus.OK);
 	}
 
 	@PostMapping("/api/buses")
-	public ResponseEntity<Bus> createBus(@RequestBody Bus bus) throws ValidationException, SomethingWentWrongException {
+	public ResponseEntity<Bus> createBus(@Valid @RequestBody Bus bus) throws ValidationException, SomethingWentWrongException {
 		Bus createdBus = busService.saveBus(bus);
 		return new ResponseEntity<>(createdBus, HttpStatus.CREATED);
 	}
 
 	@DeleteMapping("/api/buses/{id}")
-	public ResponseEntity<String> deleteBus(@PathVariable Integer id)
+	public ResponseEntity<String> deleteBus(@Valid @PathVariable Integer id)
 			throws ResourceNotFoundException, SomethingWentWrongException {
 		busService.deleteBus(id);
 		return new ResponseEntity<>("Deleted",HttpStatus.NO_CONTENT);
