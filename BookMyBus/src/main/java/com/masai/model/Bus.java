@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -29,9 +30,9 @@ public class Bus {
 
 	@NotBlank(message = "Bus name is mandatory")
 	private String busName;
-	
+
 	@URL(message = "Image URL should be in a valid format")
-    private String image;
+	private String image;
 
 	@NotBlank(message = "Driver name is mandatory")
 	private String driverName;
@@ -60,6 +61,7 @@ public class Bus {
 	private boolean deleted = false;
 
 	@ManyToOne
+	@JoinColumn(name = "route_id")
 	private Route route;
 
 	public Bus(@NotBlank(message = "Bus name is mandatory") String busName,
@@ -88,5 +90,11 @@ public class Bus {
 		this.route = route;
 	}
 
-	
 }
+
+
+/*
+ * { "busName": "GreenLine Express", "driverName": "Michael Smith", "busType":
+ * "Sleeper", "routeFrom": "New York", "routeTo": "Los Angeles", "arrivalTime":
+ * "09:00:00", "departureTime": "18:00:00", "seats": 50, "availableSeats": 50 }
+ */

@@ -29,8 +29,10 @@ public class Reservation {
 	@NotBlank(message = "Reservation status is mandatory")
 	private String reservationStatus;
 
-	@NotBlank(message = "Reservation type is mandatory")
-	private String reservationType;
+	/**
+	 * @NotBlank(message = "Reservation type is mandatory") private String
+	 *                   reservationType;
+	 */
 
 	@FutureOrPresent(message = "Reservation date should not be in the past")
 	@NotNull(message = "Reservation date is mandatory")
@@ -49,21 +51,19 @@ public class Reservation {
 
 	@ManyToOne
 	private Bus bus;
-	
-    @ManyToOne
-    private User user;
+
+	@ManyToOne
+	private User user;
 
 	private boolean deleted = false;
 
 	public Reservation(@NotBlank(message = "Reservation status is mandatory") String reservationStatus,
-	        @NotBlank(message = "Reservation type is mandatory") String reservationType,
-	        @FutureOrPresent(message = "Reservation date should not be in the past") @NotNull(message = "Reservation date is mandatory") LocalDate reservationDate,
-	        @NotNull(message = "Reservation time is mandatory") LocalTime reservationTime,
-	        @NotBlank(message = "Source is mandatory") String source,
-	        @NotBlank(message = "Destination is mandatory") String destination, Bus bus) {
+			@FutureOrPresent(message = "Reservation date should not be in the past") @NotNull(message = "Reservation date is mandatory") LocalDate reservationDate,
+			@NotNull(message = "Reservation time is mandatory") LocalTime reservationTime,
+			@NotBlank(message = "Source is mandatory") String source,
+			@NotBlank(message = "Destination is mandatory") String destination, Bus bus) {
 		super();
 		this.reservationStatus = reservationStatus;
-		this.reservationType = reservationType;
 		this.reservationDate = reservationDate;
 		this.reservationTime = reservationTime;
 		this.source = source;
