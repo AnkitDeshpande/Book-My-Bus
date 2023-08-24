@@ -20,3 +20,40 @@ document.addEventListener('click',(e)=>{
 
 
 
+//rotate inputs
+const rotate_btn = document.querySelector('.rotate-btn')
+const arrivalInput = document.querySelector('.arrival');
+const departureInput = document.querySelector('.departure')
+const date_btn = document.querySelector('.date')
+const TimeInput = document.querySelector('.time');
+const Search_btn = document.querySelector('.search')
+
+rotate_btn.addEventListener('click',()=>{
+  let Avalue = arrivalInput.value
+  arrivalInput.value = departureInput.value
+  departureInput.value = Avalue
+})
+
+Search_btn.addEventListener('click',(e)=>{
+  e.preventDefault()
+  let obj = {
+    arrival : arrivalInput.value,
+    departure : departureInput.value,
+    date : date.value,
+    time : time.value
+  }
+  console.log(obj)
+})
+
+
+
+
+//FAQ's
+
+let faqs = document.querySelectorAll('.faq')
+faqs.forEach(faq => {
+    faq.addEventListener('click',() =>{
+        faq.querySelector('.faq-ans').classList.toggle('faq-ans-active')
+        faq.querySelector('i').classList.toggle('faq-icon-active')
+    })
+})
