@@ -1,0 +1,734 @@
+{
+  "reservation": [
+    {
+      "id": 1,
+      "reservationStatus": "Confirmed",
+      "reservationDate": "2023-08-25",
+      "reservationTime": "14:30:00",
+      "source": "City A",
+      "destination": "City B",
+      "bus": {
+        "id": 101
+      },
+      "user": {
+        "id": 1
+      },
+      "deleted": false
+    },
+    {
+      "id": 2,
+      "reservationStatus": "Pending",
+      "reservationDate": "2023-08-26",
+      "reservationTime": "10:00:00",
+      "source": "City B",
+      "destination": "City C",
+      "bus": {
+        "id": 102
+      },
+      "user": {
+        "id": 2
+      },
+      "deleted": false
+    },
+    {
+      "id": 3,
+      "reservationStatus": "Confirmed",
+      "reservationDate": "2023-08-27",
+      "reservationTime": "15:15:00",
+      "source": "City C",
+      "destination": "City A",
+      "bus": {
+        "id": 101
+      },
+      "user": {
+        "id": 3
+      },
+      "deleted": false
+    },
+    {
+      "id": 4,
+      "reservationStatus": "Cancelled",
+      "reservationDate": "2023-08-28",
+      "reservationTime": "11:30:00",
+      "source": "City D",
+      "destination": "City E",
+      "bus": {
+        "id": 103
+      },
+      "user": {
+        "id": 4
+      },
+      "deleted": false
+    },
+    {
+      "id": 5,
+      "reservationStatus": "Pending",
+      "reservationDate": "2023-08-29",
+      "reservationTime": "09:45:00",
+      "source": "City F",
+      "destination": "City G",
+      "bus": {
+        "id": 104
+      },
+      "user": {
+        "id": 5
+      },
+      "deleted": false
+    },
+    {
+      "id": 6,
+      "reservationStatus": "Confirmed",
+      "reservationDate": "2023-08-30",
+      "reservationTime": "12:00:00",
+      "source": "City H",
+      "destination": "City I",
+      "bus": {
+        "id": 105
+      },
+      "user": {
+        "id": 6
+      },
+      "deleted": false
+    },
+    {
+      "id": 7,
+      "reservationStatus": "Confirmed",
+      "reservationDate": "2023-09-01",
+      "reservationTime": "17:30:00",
+      "source": "City J",
+      "destination": "City K",
+      "bus": {
+        "id": 106
+      },
+      "user": {
+        "id": 7
+      },
+      "deleted": false
+    },
+    {
+      "id": 8,
+      "reservationStatus": "Pending",
+      "reservationDate": "2023-09-02",
+      "reservationTime": "08:15:00",
+      "source": "City L",
+      "destination": "City M",
+      "bus": {
+        "id": 107
+      },
+      "user": {
+        "id": 8
+      },
+      "deleted": false
+    },
+    {
+      "id": 9,
+      "reservationStatus": "Confirmed",
+      "reservationDate": "2023-09-03",
+      "reservationTime": "14:00:00",
+      "source": "City N",
+      "destination": "City O",
+      "bus": {
+        "id": 108
+      },
+      "user": {
+        "id": 9
+      },
+      "deleted": false
+    },
+    {
+      "id": 10,
+      "reservationStatus": "Confirmed",
+      "reservationDate": "2023-09-04",
+      "reservationTime": "16:45:00",
+      "source": "City P",
+      "destination": "City Q",
+      "bus": {
+        "id": 109
+      },
+      "user": {
+        "id": 10
+      },
+      "deleted": false
+    }
+  ],
+
+  
+  "buses": [
+    {
+      "id": 1,
+      "busName": "GreenLine Express",
+      "image": "https://example.com/images/greenline.jpg",
+      "driverName": "Michael Smith",
+      "busType": "Sleeper",
+      "routeFrom": "New York",
+      "routeTo": "Los Angeles",
+      "arrivalTime": "09:00:00",
+      "departureTime": "18:00:00",
+      "seats": 50,
+      "availableSeats": 50,
+      "deleted": false,
+      "route": {
+        "id": 101
+      }
+    },
+    {
+      "id": 2,
+      "busName": "BlueSky Travels",
+      "image": "https://example.com/images/bluesky.jpg",
+      "driverName": "Emily Johnson",
+      "busType": "Semi-Sleeper",
+      "routeFrom": "Chicago",
+      "routeTo": "San Francisco",
+      "arrivalTime": "08:30:00",
+      "departureTime": "17:30:00",
+      "seats": 40,
+      "availableSeats": 40,
+      "deleted": false,
+      "route": {
+        "id": 102
+      }
+    },
+    {
+      "id": 3,
+      "busName": "RedRoadways",
+      "image": "https://example.com/images/redroadways.jpg",
+      "driverName": "David Williams",
+      "busType": "AC",
+      "routeFrom": "Miami",
+      "routeTo": "Orlando",
+      "arrivalTime": "10:30:00",
+      "departureTime": "19:30:00",
+      "seats": 45,
+      "availableSeats": 42,
+      "deleted": false,
+      "route": {
+        "id": 103
+      }
+    },
+    {
+      "id": 4,
+      "busName": "Skyline Travels",
+      "image": "https://example.com/images/skyline.jpg",
+      "driverName": "Sarah Brown",
+      "busType": "Semi-Sleeper",
+      "routeFrom": "Seattle",
+      "routeTo": "Portland",
+      "arrivalTime": "07:45:00",
+      "departureTime": "16:45:00",
+      "seats": 35,
+      "availableSeats": 33,
+      "deleted": false,
+      "route": {
+        "id": 104
+      }
+    },
+    {
+      "id": 5,
+      "busName": "GoldenRoutes",
+      "image": "https://example.com/images/goldenroutes.jpg",
+      "driverName": "John Davis",
+      "busType": "AC",
+      "routeFrom": "Denver",
+      "routeTo": "Phoenix",
+      "arrivalTime": "11:15:00",
+      "departureTime": "20:15:00",
+      "seats": 48,
+      "availableSeats": 45,
+      "deleted": false,
+      "route": {
+        "id": 105
+      }
+    },
+    {
+      "id": 6,
+      "busName": "Ocean Travels",
+      "image": "https://example.com/images/ocean.jpg",
+      "driverName": "Laura Wilson",
+      "busType": "Sleeper",
+      "routeFrom": "Miami",
+      "routeTo": "Key West",
+      "arrivalTime": "15:45:00",
+      "departureTime": "23:45:00",
+      "seats": 55,
+      "availableSeats": 52,
+      "deleted": false,
+      "route": {
+        "id": 106
+      }
+    },
+    {
+      "id": 7,
+      "busName": "City Express",
+      "image": "https://example.com/images/cityexpress.jpg",
+      "driverName": "James Johnson",
+      "busType": "Sleeper",
+      "routeFrom": "Los Angeles",
+      "routeTo": "Las Vegas",
+      "arrivalTime": "12:30:00",
+      "departureTime": "21:30:00",
+      "seats": 40,
+      "availableSeats": 38,
+      "deleted": false,
+      "route": {
+        "id": 107
+      }
+    },
+    {
+      "id": 8,
+      "busName": "Rainbow Travels",
+      "image": "https://example.com/images/rainbow.jpg",
+      "driverName": "Robert Johnson",
+      "busType": "AC",
+      "routeFrom": "Houston",
+      "routeTo": "Dallas",
+      "arrivalTime": "09:15:00",
+      "departureTime": "18:15:00",
+      "seats": 42,
+      "availableSeats": 40,
+      "deleted": false,
+      "route": {
+        "id": 108
+      }
+    },
+    {
+      "id": 9,
+      "busName": "Sunset Transport",
+      "image": "https://example.com/images/sunset.jpg",
+      "driverName": "Jennifer Brown",
+      "busType": "Semi-Sleeper",
+      "routeFrom": "San Diego",
+      "routeTo": "San Francisco",
+      "arrivalTime": "13:00:00",
+      "departureTime": "22:00:00",
+      "seats": 35,
+      "availableSeats": 33,
+      "deleted": false,
+      "route": {
+        "id": 109
+      }
+    },
+    {
+      "id": 10,
+      "busName": "Mountain Express",
+      "image": "https://example.com/images/mountain.jpg",
+      "driverName": "Andrew Smith",
+      "busType": "Sleeper",
+      "routeFrom": "Denver",
+      "routeTo": "Aspen",
+      "arrivalTime": "14:30:00",
+      "departureTime": "23:30:00",
+      "seats": 30,
+      "availableSeats": 28,
+      "deleted": false,
+      "route": {
+        "id": 110
+      }
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "userName": "john_doe",
+      "password": "password123",
+      "name": "John Doe",
+      "contact": "9876543210",
+      "email": "john@example.com",
+      "role": "customer",
+      "deleted": false,
+      "reservations": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        }
+      ],
+      "feedbacks": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "userName": "jane_smith",
+      "password": "secure456",
+      "name": "Jane Smith",
+      "contact": "8765432109",
+      "email": "jane@example.com",
+      "role": "customer",
+      "deleted": false,
+      "reservations": [],
+      "feedbacks": [
+        {
+          "id": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "userName": "alex_walker",
+      "password": "alexpass",
+      "name": "Alex Walker",
+      "contact": "7654321098",
+      "email": "alex@example.com",
+      "role": "customer",
+      "deleted": false,
+      "reservations": [
+        {
+          "id": 3
+        }
+      ],
+      "feedbacks": [
+        {
+          "id": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "userName": "emily_jones",
+      "password": "emilypass",
+      "name": "Emily Jones",
+      "contact": "6543210987",
+      "email": "emily@example.com",
+      "role": "customer",
+      "deleted": false,
+      "reservations": [],
+      "feedbacks": []
+    },
+    {
+      "id": 5,
+      "userName": "michael_brown",
+      "password": "michaelpass",
+      "name": "Michael Brown",
+      "contact": "5432109876",
+      "email": "michael@example.com",
+      "role": "customer",
+      "deleted": false,
+      "reservations": [
+        {
+          "id": 4
+        },
+        {
+          "id": 5
+        }
+      ],
+      "feedbacks": []
+    },
+    {
+      "id": 6,
+      "userName": "sarah_clark",
+      "password": "sarahpass",
+      "name": "Sarah Clark",
+      "contact": "4321098765",
+      "email": "sarah@example.com",
+      "role": "customer",
+      "deleted": false,
+      "reservations": [],
+      "feedbacks": [
+        {
+          "id": 5
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "userName": "david_miller",
+      "password": "davidpass",
+      "name": "David Miller",
+      "contact": "3210987654",
+      "email": "david@example.com",
+      "role": "customer",
+      "deleted": false,
+      "reservations": [],
+      "feedbacks": []
+    },
+    {
+      "id": 8,
+      "userName": "linda_wilson",
+      "password": "lindapass",
+      "name": "Linda Wilson",
+      "contact": "2109876543",
+      "email": "linda@example.com",
+      "role": "customer",
+      "deleted": false,
+      "reservations": [
+        {
+          "id": 6
+        }
+      ],
+      "feedbacks": []
+    },
+    {
+      "id": 9,
+      "userName": "peter_morgan",
+      "password": "peterpass",
+      "name": "Peter Morgan",
+      "contact": "1098765432",
+      "email": "peter@example.com",
+      "role": "customer",
+      "deleted": false,
+      "reservations": [],
+      "feedbacks": []
+    },
+    {
+      "id": 10,
+      "userName": "laura_jackson",
+      "password": "laurapass",
+      "name": "Laura Jackson",
+      "contact": "9876543211",
+      "email": "laura@example.com",
+      "role": "customer",
+      "deleted": false,
+      "reservations": [
+        {
+          "id": 7
+        },
+        {
+          "id": 8
+        }
+      ],
+      "feedbacks": [
+        {
+          "id": 6
+        }
+      ]
+    }
+  ],
+  "route": [
+    {
+      "id": 101,
+      "routeFrom": "New York",
+      "routeTo": "Los Angeles",
+      "distance": 2800,
+      "deleted": false
+    },
+    {
+      "id": 102,
+      "routeFrom": "Chicago",
+      "routeTo": "San Francisco",
+      "distance": 2100,
+      "deleted": false
+    },
+    {
+      "id": 103,
+      "routeFrom": "Miami",
+      "routeTo": "Orlando",
+      "distance": 230,
+      "deleted": false
+    },
+    {
+      "id": 104,
+      "routeFrom": "Seattle",
+      "routeTo": "Portland",
+      "distance": 175,
+      "deleted": false
+    },
+    {
+      "id": 105,
+      "routeFrom": "Denver",
+      "routeTo": "Phoenix",
+      "distance": 600,
+      "deleted": false
+    },
+    {
+      "id": 106,
+      "routeFrom": "Miami",
+      "routeTo": "Key West",
+      "distance": 150,
+      "deleted": false
+    },
+    {
+      "id": 107,
+      "routeFrom": "Los Angeles",
+      "routeTo": "Las Vegas",
+      "distance": 270,
+      "deleted": false
+    },
+    {
+      "id": 108,
+      "routeFrom": "Houston",
+      "routeTo": "Dallas",
+      "distance": 240,
+      "deleted": false
+    },
+    {
+      "id": 109,
+      "routeFrom": "San Diego",
+      "routeTo": "San Francisco",
+      "distance": 500,
+      "deleted": false
+    },
+    {
+      "id": 110,
+      "routeFrom": "Denver",
+      "routeTo": "Aspen",
+      "distance": 150,
+      "deleted": false
+    },
+    {
+      "routeFrom": "Indore",
+      "routeTo": "Dewas",
+      "distance": 50,
+      "deleted": false,
+      "id": 111
+    }
+   
+  ],
+  "feedback": [
+    {
+      "id": 1,
+      "driverRating": 8,
+      "serviceRating": 9,
+      "overallRating": 9,
+      "comments": "Great experience overall.",
+      "feedbackDate": "2023-08-25",
+      "user": {
+        "id": 1
+      },
+      "bus": {
+        "id": 101
+      },
+      "deleted": false
+    },
+    {
+      "id": 2,
+      "driverRating": 7,
+      "serviceRating": 8,
+      "overallRating": 7,
+      "comments": "Could improve cleanliness.",
+      "feedbackDate": "2023-08-26",
+      "user": {
+        "id": 2
+      },
+      "bus": {
+        "id": 102
+      },
+      "deleted": false
+    },
+    {
+      "id": 3,
+      "driverRating": 9,
+      "serviceRating": 9,
+      "overallRating": 9,
+      "comments": "Excellent service and punctuality.",
+      "feedbackDate": "2023-08-27",
+      "user": {
+        "id": 3
+      },
+      "bus": {
+        "id": 101
+      },
+      "deleted": false
+    },
+    {
+      "id": 4,
+      "driverRating": 6,
+      "serviceRating": 5,
+      "overallRating": 5,
+      "comments": "Disappointed with delays.",
+      "feedbackDate": "2023-08-28",
+      "user": {
+        "id": 4
+      },
+      "bus": {
+        "id": 103
+      },
+      "deleted": false
+    },
+    {
+      "id": 5,
+      "driverRating": 8,
+      "serviceRating": 8,
+      "overallRating": 8,
+      "comments": "Good experience overall.",
+      "feedbackDate": "2023-08-29",
+      "user": {
+        "id": 5
+      },
+      "bus": {
+        "id": 104
+      },
+      "deleted": false
+    },
+    {
+      "id": 6,
+      "driverRating": 9,
+      "serviceRating": 9,
+      "overallRating": 9,
+      "comments": "Very comfortable journey.",
+      "feedbackDate": "2023-08-30",
+      "user": {
+        "id": 6
+      },
+      "bus": {
+        "id": 105
+      },
+      "deleted": false
+    },
+    {
+      "id": 7,
+      "driverRating": 7,
+      "serviceRating": 8,
+      "overallRating": 7,
+      "comments": "Could be more punctual.",
+      "feedbackDate": "2023-09-01",
+      "user": {
+        "id": 7
+      },
+      "bus": {
+        "id": 106
+      },
+      "deleted": false
+    },
+    {
+      "id": 8,
+      "driverRating": 8,
+      "serviceRating": 9,
+      "overallRating": 8,
+      "comments": "Good service overall.",
+      "feedbackDate": "2023-09-02",
+      "user": {
+        "id": 8
+      },
+      "bus": {
+        "id": 107
+      },
+      "deleted": false
+    },
+    {
+      "id": 9,
+      "driverRating": 7,
+      "serviceRating": 6,
+      "overallRating": 6,
+      "comments": "Could improve cleanliness.",
+      "feedbackDate": "2023-09-03",
+      "user": {
+        "id": 9
+      },
+      "bus": {
+        "id": 108
+      },
+      "deleted": false
+    },
+    {
+      "id": 10,
+      "driverRating": 9,
+      "serviceRating": 9,
+      "overallRating": 9,
+      "comments": "Very satisfied with the journey.",
+      "feedbackDate": "2023-09-04",
+      "user": {
+        "id": 10
+      },
+      "bus": {
+        "id": 109
+      },
+      "deleted": false
+    }
+  ]
+}
