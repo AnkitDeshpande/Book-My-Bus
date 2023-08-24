@@ -1,17 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300&family=Rubik:wght@300;400;500;600&family=Source+Code+Pro:wght@300&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Montserrat";
+    
 }
 li {
     list-style: none;
 }
-:root {
-    --maincolor : rgb(246, 245, 245);
-    --text-color: #E51B21;
+a {
+    color: black;
+    text-decoration: none;
+}
+:root{
+    --hue-color: 252;
+     --color-primary: hsl(var(--hue-color),75%,60%);
+     --color-white: hsl(0,0%,100%);
+     --color-light: hsl(252,5%,94%);
+     --color-black: hsl(252,5%,15%);
+     --color-dark: hsl(252,5%,40%);
+ 
+     --border-radious1: 1.2rem;
+     --border-radious2: 0.8rem;
+     --border-radious3: 0.5rem;
+ 
+     --transition: .4s ease all;
+ }
+ html{
+    scroll-behavior: smooth;
+}
+figure {
+    margin: 0 5px;
 }
 nav {
-    background: var(--maincolor);
+    background: white;
     width: 100%;
     height: 80px;
     
@@ -21,6 +44,7 @@ nav {
     position: fixed;
     margin:auto;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    z-index: 1000;
 }
 
 nav .logo {
@@ -65,24 +89,388 @@ nav .details .div2 ul li:last-child {
 
 #search .content {
     width: 100%;
-    height: 700px;
-    background: url("https://s3.rdbuz.com/web/images/homeV2/HomeBannerImg.svg");
+    height: 80vh;
+    background-image: url(/Frontend/Images/HomeBannerImg.jpg);
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 40px;
+}
+#search .content form {
+    /* border: 1px solid red; */
+    border-radius: 10px;
+    background-color: white;
+    width: 30vw;
+    padding: 20px;
+}
+#search .content form .location,
+#search .content form .lable,
+#search .content form .submit button {
+    display: flex;
+    align-items: center;
+}
+#search .content form .rotate-btn {
+    border: 1px solid rgb(242, 242, 242);
+    width: 30px;
+    height: 30px;
+    /* align-self: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    position: relative;
+    top: 50px;
+    transform: rotate(-90deg);
+    left: 46.5%;
+    background-color: white;
+    cursor: pointer;
+}
+#search .content form .rotate-btn figure {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#search .content form  input{
+    height: 50px;
+    padding: 10px 10px 10px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 49%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin: 13px 0;
+    font-size: 18px;
+}
+#search .content form .submit button {
+    border-radius: 8px;
+    border: none;
+    padding: 0 15px;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+    color: white;
+    background-color: #E41C22;
+    margin: 10px 0;
+}
+#search .content form .submit button figure{
+    padding: 5px 0 5px 5px;
+    cursor: pointer;
 }
 
 
 
 
 
+/* Partners*/
+
+
+#partner {
+    position: relative;
+    top: 50px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+}
+#partner >div{
+    padding: 0 10rem;
+}
+#partner .parlogo,
+#partner .details{
+    padding-top: 5rem;
+}
+#partner .parlogo .logos{
+    display: flex;
+    width: 100%;
+    height: 130px;
+    justify-content: center;
+}
+#partner .parlogo .logos div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    cursor: pointer;
+}
+#partner .parlogo .logos div:hover div {
+    border: none;
+    width: 50%;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #E5E5E5;
+}
+#partner .parlogo .logos div img {
+    width: 100%;
+    height: 100%;
+    margin: 0 8px;
+    padding: 0 20px;
+}
+
+#partner .details div {
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 5px;
+}
 
 
 
 
+/* FAQ's */
+#FAQs {
+    position: relative;
+    top: 100px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    background-color: #E5E5E5;
+}
+#FAQs >div{
+    padding: 2rem 10rem;
+}
+#FAQs >div h2 {
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+#FAQs >div p {
+    margin: 10px 0 10px 10px;
+    padding: 3rem 0;
+    text-transform: capitalize;
+}
+.container {
+    max-width: 1620px;
+    width: 75%;
+    margin: 0 auto;
+}
+.faq{
+    height: max-content;
+  }
+  .card{
+    background: var(--color-white);
+    padding: 1.5rem;
+    border: 2px solid transparent;
+    border-radius: var(--border-radious1);
+    transition: var(--transition);
+ }
+ .card:hover{
+    background: transparent;
+    border-color: var(--color-white);
+    transform: translateY(-.5rem);
+ }
+  .faqs-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .faq-ask{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .faq-ask i{
+    color: var(--color-dark);
+  }
+  .faq-ans{
+    margin-top: 1.4rem;
+    color: var(--color-dark);
+    font-size: 15px;
+    display: none;
+  }
+  .faq-ans-active{
+    display: block;
+  }
+  .faq-icon-active{
+    display: none !important;
+  }
+ 
+
+
+  /* Footer */
+
+  #footer {
+    position: relative;
+    top: 100px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+}
+#footer >div{
+    padding: 2rem 10rem;
+    text-transform: capitalize;
+}
+#footer >div .data1{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 5px;
+    border-bottom: 1px solid #E5E5E5;
+}
+#footer >div .data1 div > p{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+#footer >div .data1 div ul li {
+    line-height: 2.5;
+}
+#footer >div .data1 div ul li:hover a {
+    text-decoration: underline;
+}
+#footer >div .data2{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 5px;
+    border-bottom: 1px solid #E5E5E5;
+}
+#footer >div .data2 div > p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 15px;
+}
+#footer >div .data2 div > p img {
+    width: 140px;
+}
+#footer >div .data2 div ul li {
+    line-height: 2.5;
+}
+#footer >div .data2 div ul li:hover a {
+    text-decoration: underline;
+}
+
+#footer >div .data3{
+    padding: 25px 0 0 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+#footer >div .data3  i{
+    font-size: 1.2rem;
+    padding: 0 5px;
+    margin: 0 5px;
+    cursor: pointer;
+}
 
 
 
 
-
-
-
-
-
+@media screen and (max-width:1300px) {
+    #partner .details div {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 3px;
+    }
+    #footer >div .data2{
+        display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 4px;
+    }
+    
+    #footer >div .data3{
+        display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 4px;
+    }
+    #footer >div .data1{
+    grid-template-columns: repeat(4,1fr);
+    gap: 4px;
+    }
+}
+@media screen and (max-width:930px) {
+    #search .content form {
+        width: 40vw;
+    }
+    .faqs-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+    nav .details {
+        width: 25%;
+    }
+    #search .content form .rotate-btn {
+        top: 70px;
+        transform: rotate(180deg);
+    }
+    #search .content form  input{
+        width: 100%;
+        margin: 2px;
+    }
+    #partner >div{
+        padding: 0 5rem;
+    }
+    #partner .details div {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 0px;
+    }
+    #partner .parlogo .logos div:nth-child(8),
+    #partner .parlogo .logos div:nth-child(7){
+        display: none;
+    }
+    #FAQs >div{
+        padding: 2rem 5rem;
+    }
+    #footer >div{
+        padding: 2rem 5rem;
+        text-transform: capitalize;
+    }
+    #footer >div .data2{
+        display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3px;
+    }
+    
+    #footer >div .data3{
+        display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3px;
+    }
+    #footer >div .data1{
+    grid-template-columns: repeat(3,1fr);
+    gap: 3px;
+    }
+}
+@media screen and (max-width:590px) {
+    #search .content form {
+        width: 50vw;
+    }
+    nav .details {
+        width: 45%;
+    }
+    #partner >div{
+        padding: 0 0rem;
+    }
+    #partner .details div {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 0px;
+    }
+    #partner .parlogo .logos div:nth-child(8),
+    #partner .parlogo .logos div:nth-child(7){
+        display: none;
+    }
+    #FAQs >div{
+        padding: 1rem 0rem;
+    }
+    #footer >div{
+        padding: 1rem 0rem;
+        text-transform: capitalize;
+    }
+    #footer >div .data2{
+        display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1px;
+    }
+    
+    #footer >div .data3{
+        display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1px;
+    }
+    #footer >div .data1{
+    grid-template-columns: repeat(2,1fr);
+    gap: 1px;
+    }
+}
