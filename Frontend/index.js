@@ -1,3 +1,12 @@
+import navDiv from "./nav.js";
+
+console.log("div");
+
+const navbar = document.querySelector("nav");
+navbar.innerHTML = navDiv;
+
+console.log("navbar",navbar);
+
 const divtoshow = 'nav .details .div2 ul'
 const divpopup = document.querySelector(divtoshow);
 const divTrigger = document.querySelector('.account')
@@ -16,6 +25,7 @@ document.addEventListener('click',(e)=>{
     divpopup.classList.remove('show')
   }
 })
+
 
 
 
@@ -57,3 +67,4 @@ faqs.forEach(faq => {
         faq.querySelector('i').classList.toggle('faq-icon-active')
     })
 })
+
