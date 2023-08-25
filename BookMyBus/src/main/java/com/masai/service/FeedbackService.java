@@ -125,4 +125,14 @@ public interface FeedbackService {
 	 *                                     operation.
 	 */
 	List<Feedback> getFeedbacksBelowRating(Integer rating) throws SomethingWentWrongException;
+	
+	/**
+     * Retrieves paginated feedbacks.
+     *
+     * @param page     The page number (0-based index) to retrieve.
+     * @param pageSize The number of feedbacks per page.
+     * @return List of paginated feedbacks.
+     * @throws SomethingWentWrongException If an unexpected error occurs during the operation.
+     */
+    List<Feedback> getPaginatedFeedbacks(int page, int pageSize) throws SomethingWentWrongException;
 }

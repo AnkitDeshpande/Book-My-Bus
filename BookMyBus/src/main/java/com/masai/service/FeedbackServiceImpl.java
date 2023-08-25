@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.masai.exception.ResourceNotFoundException;
@@ -130,6 +131,15 @@ public class FeedbackServiceImpl implements FeedbackService {
 			createdFeedbacks.add(fd);
 		}
 		return createdFeedbacks;
+	}
+
+	@Override
+	public List<Feedback> getPaginatedFeedbacks(int page, int pageSize) throws SomethingWentWrongException {
+		try {
+			return feedbackRepository.findAll(PageRequest.of(page, pageSize)).getContent();
+		} catch (Exception e) {
+			throw new SomethingWentWrongException("An error occurred while retrieving paginated feedbacks", e);
+		}
 	}
 
 }

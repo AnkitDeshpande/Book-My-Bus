@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.masai.exception.ResourceNotFoundException;
@@ -37,6 +38,19 @@ public class FeedbackController {
 		Feedback feedback = feedbackService.getFeedbackById(id);
 		return new ResponseEntity<>(feedback, HttpStatus.OK);
 	}
+	
+	 @GetMapping("/feedbacks/paginated")
+	    public ResponseEntity<List<Feedback>> getPaginatedFeedbacks(
+	            @RequestParam(defaultValue = "0") int page,
+	            @RequestParam(defaultValue = "10") int pageSize) {
+	        try {
+	            List<Feedback> paginatedFeedbacks = feedbackService.getPaginatedFeedbacks(page, pageSize);
+	            return new ResponseEntity<>(paginatedFeedbacks, HttpStatus.OK);
+	        } catch (SomethingWentWrongException e) {
+	            // Handle the exception and return an error response
+	            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	        }
+	 }
 
 	@PostMapping("/api/feedbacks")
 	public ResponseEntity<Feedback> createFeedback(@Valid @RequestBody FeedbackDTO feedback)
