@@ -355,6 +355,9 @@ nav .details .div2 ul li:last-child {
 
 
 @media screen and (max-width:1300px) {
+    nav .details {
+        width: 20%;
+    }
     #partner .details div {
         padding: 1rem;
         display: grid;
@@ -436,7 +439,7 @@ nav .details .div2 ul li:last-child {
         width: 50vw;
     }
     nav .details {
-        width: 45%;
+        width: 40%;
     }
     #partner >div{
         padding: 0 0rem;

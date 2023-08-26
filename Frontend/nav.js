@@ -1,7 +1,7 @@
 const nav = `
 <div id="nav"></div>
 <div class="logo">
-    <a href="#"><img src="/Images/Logo.png" alt=""></a>
+    <a href="#"><img src="/Frontend/Images/Logo.png" alt=""></a>
 </div>
 <div class="details">
     <div class="div1">
