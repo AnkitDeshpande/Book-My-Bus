@@ -35,13 +35,14 @@ document.addEventListener('click',(e)=>{
 
 
 
-//rotate inputs
+//rotate inputs 
 const rotate_btn = document.querySelector('.rotate-btn')
 const arrivalInput = document.querySelector('.arrival');
 const departureInput = document.querySelector('.departure')
 const date_btn = document.querySelector('.date')
 const TimeInput = document.querySelector('.time');
 const Search_btn = document.querySelector('.search')
+const message = document.querySelector('.meggage')
 
 rotate_btn.addEventListener('click',()=>{
   let Avalue = arrivalInput.value
@@ -51,13 +52,39 @@ rotate_btn.addEventListener('click',()=>{
 
 Search_btn.addEventListener('click',(e)=>{
   e.preventDefault()
+  let d = new Date();
   let obj = {
     arrival : arrivalInput.value,
     departure : departureInput.value,
     date : date.value,
-    time : time.value
+    time : TimeInput.value
   }
-  console.log(obj)
+  let arr = []
+  // let arr = obj.date.split("-").map(Number)
+  // let arr1 = obj.time.split(":").map(Number)
+  if(obj.arrival==''||obj.departure==''||obj.date==''||obj.time==''){
+    message.innerHTML = "Please provide all details"
+  // }else if(d.getDate()>arr[2] || d.getMonth()+1>arr[1] || d.getFullYear()>arr[0]){
+  //   message.innerHTML = "Please provide valid Date details"
+  //   console.log(d.getDate()<=arr[2], d.getMonth()+1<=arr[1] , d.getFullYear()<=arr[0])
+  // }else if(d.getDate()==arr[2]){
+  //   console.log("date same")
+  //   if(d.getHours()>arr1[0]){
+  //     console.log("not correct time")
+  //     message.innerHTML = "Please provide valid Date details"
+  //   }else if(d.getHours()==arr1[0]){
+  //     if(d.getMinutes()>arr1[1]){
+  //       message.innerHTML = "Please provide valid Date details"
+  //     }
+  //   }
+  //   console.log(d.getHours(),arr1[0])
+   }else{
+    message.innerHTML = ''
+    arr.push(obj)
+    localStorage.setItem("details",JSON.stringify(arr))
+    window.open('Details.html')
+  }
+  
 })
 
 
