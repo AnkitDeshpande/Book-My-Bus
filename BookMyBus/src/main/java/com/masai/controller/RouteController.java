@@ -1,7 +1,7 @@
 package com.masai.controller;
 
-import java.util.List;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,13 +13,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.masai.exception.ResourceNotFoundException;
 import com.masai.exception.SomethingWentWrongException;
 import com.masai.exception.ValidationException;
 import com.masai.model.Route;
 import com.masai.service.RouteService;
-
 import jakarta.validation.Valid;
 
 @RestController
@@ -29,13 +27,17 @@ public class RouteController {
 	private RouteService routeService;
 
 	@GetMapping("/api/routes")
-	public ResponseEntity<List<Route>> getAllRoutes(@RequestParam(required=false) Integer page,@RequestParam(required=false) Integer limit) {
+	public ResponseEntity<List<Route>> getAllRoutes(@RequestParam(required=false) Integer page,@RequestParam(required=false) Integer limit,@RequestParam(required=false) String order,@RequestParam(required=false) String sort) {
 		List<Route> routes = routeService.getAllRoutes();
-		if(page==null || limit==null) {
-			return new ResponseEntity<>(routes, HttpStatus.OK);
+		if(page!=null&&limit!=null) {
+			List<Route> paginationAndSort = routeService.paginationAndSort(page, limit);
+			return new ResponseEntity<>(paginationAndSort, HttpStatus.OK);
+		}
+		else if(!sort.isBlank()&&!order.isBlank()) {
+			return new ResponseEntity(routeService.sort(order, sort),HttpStatus.OK);
 		}
 		System.out.println(page+" "+limit);
-		List<Route> paginationAndSort = routeService.paginationAndSort(page, limit);
+		List<Route> getAll = routeService.getAllRoutes();
 		return new ResponseEntity<>(paginationAndSort, HttpStatus.OK);
 	}
 
