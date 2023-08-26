@@ -1,15 +1,21 @@
 package com.masai.model;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.hibernate.validator.constraints.URL;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -57,6 +63,10 @@ public class Bus {
 
 	@Min(value = 0, message = "Available seats cannot be negative")
 	private Integer availableSeats;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "bus", cascade = CascadeType.ALL)
+	private List<Feedback> feedbacks = new ArrayList<Feedback>();
 
 	private boolean deleted = false;
 
@@ -89,7 +99,7 @@ public class Bus {
 		this.deleted = deleted;
 		this.route = route;
 	}
-
+	
 }
 
 

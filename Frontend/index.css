@@ -78,8 +78,8 @@ nav .details .div2 ul li {
     cursor: pointer;
     /* margin: 1px 0; */
 }
-nav .details .div2 ul li:hover{
-    color: var(--text-color);
+nav .details .div2 ul li:hover a{
+    color: #E41C22;
 }
 nav .details .div2 ul li:last-child {
     border: none;

@@ -1,11 +1,16 @@
+import footerDiv from "./footer.js";
 import navDiv from "./nav.js";
 
-console.log("div");
+
+
 
 const navbar = document.querySelector("nav");
-navbar.innerHTML = navDiv;
+const footer = document.querySelector("#footer");
 
-console.log("navbar",navbar);
+navbar.innerHTML = navDiv;
+footer.innerHTML = footerDiv;
+
+// console.log("navbar",navbar);
 
 const divtoshow = 'nav .details .div2 ul'
 const divpopup = document.querySelector(divtoshow);
