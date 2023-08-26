@@ -70,6 +70,7 @@ public class Bus {
 
 	private boolean deleted = false;
 
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "route_id")
 	private Route route;
