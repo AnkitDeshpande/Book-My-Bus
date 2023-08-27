@@ -2,7 +2,6 @@ package com.masai.model;
 
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -38,7 +37,7 @@ public class Route {
 
     private boolean deleted = false;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "route")
+    @OneToMany( mappedBy = "route")
     private List<Bus> busList;
 
 	public Route(@NotBlank(message = "Source is mandatory") String routeFrom,

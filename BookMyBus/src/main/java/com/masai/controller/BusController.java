@@ -33,9 +33,10 @@ public class BusController {
 	private BusService busService;
 
 	@GetMapping("/api/buses")
-	public ResponseEntity<List<Bus>> getAllBuses() {
+	public List<Bus> getAllBuses() {
 		List<Bus> buses = busService.getAllBuses();
-		return new ResponseEntity<>(buses, HttpStatus.OK);
+		
+		return buses;
 	}
 
 	@GetMapping("/api/buses/{id}")
