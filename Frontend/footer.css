@@ -1,11 +1,15 @@
 
   /* Footer */
-
+a{
+    color: black;
+    text-decoration: none;
+}
   #footer {
     position: relative;
-    top: 100px;
+    top: 150px;
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 #footer >div{
     padding: 2rem 10rem;

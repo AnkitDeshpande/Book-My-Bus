@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\ravis\Desktop\Book-My-Bus\BookMyBus"/>
 			<item value="C:\Users\ss\Desktop\Book-My-Bus"/>
 		</list>
 		<list key="projectNameTemplate">

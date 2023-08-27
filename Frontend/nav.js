@@ -3,7 +3,7 @@ const nav = `
 <div class="logo">
     <a href="#"><img src="/Frontend/Images/Logo.png" alt=""></a>
 </div>
-<div class="details">
+<div class="detail">
     <div class="div1">
         <h3><span><i class="fa-solid fa-headphones-simple"></i></span> Help</h3>
     </div>

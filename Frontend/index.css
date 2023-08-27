@@ -53,13 +53,13 @@ nav .logo {
 nav .logo  img {
     height: 100%;
 }
-nav .details {
+nav .detail {
     display: flex;
     width: 15%;
     justify-content: space-between;
     position: relative;
 }
-nav .details .div2 ul{
+nav .detail .div2 ul{
     position: absolute;
     padding-top: 5px;
     border-radius: 7px;
@@ -69,19 +69,19 @@ nav .details .div2 ul{
     background-color: white;
     display: none;
 }
-nav .details .div2:hover ul {
+nav .detail .div2:hover ul {
     display: block;
 }
-nav .details .div2 ul li {
+nav .detail .div2 ul li {
     border-bottom: 1px solid gray;
     padding: 10px 8px;
     cursor: pointer;
     /* margin: 1px 0; */
 }
-nav .details .div2 ul li:hover a{
+nav .detail .div2 ul li:hover a{
     color: #E41C22;
 }
-nav .details .div2 ul li:last-child {
+nav .detail .div2 ul li:last-child {
     border: none;
 }
 
@@ -181,7 +181,7 @@ nav .details .div2 ul li:last-child {
     padding: 0 10rem;
 }
 #partner .parlogo,
-#partner .details{
+#partner .detail{
     padding-top: 5rem;
 }
 #partner .parlogo .logos{
@@ -211,7 +211,7 @@ nav .details .div2 ul li:last-child {
     padding: 0 20px;
 }
 
-#partner .details div {
+#partner .detail div {
     padding: 1.5rem;
     display: grid;
     grid-template-columns: repeat(6,1fr);
@@ -355,10 +355,10 @@ nav .details .div2 ul li:last-child {
 
 
 @media screen and (max-width:1300px) {
-    nav .details {
+    nav .detail {
         width: 20%;
     }
-    #partner .details div {
+    #partner .detail div {
         padding: 1rem;
         display: grid;
         grid-template-columns: repeat(5,1fr);
@@ -387,7 +387,7 @@ nav .details .div2 ul li:last-child {
     .faqs-container{
         grid-template-columns: repeat(1,1fr);
     }
-    nav .details {
+    nav .detail {
         width: 25%;
     }
     #search .content form .rotate-btn {
@@ -401,7 +401,7 @@ nav .details .div2 ul li:last-child {
     #partner >div{
         padding: 0 5rem;
     }
-    #partner .details div {
+    #partner .detail div {
         padding: 1rem;
         display: grid;
         grid-template-columns: repeat(4,1fr);
@@ -438,13 +438,13 @@ nav .details .div2 ul li:last-child {
     #search .content form {
         width: 50vw;
     }
-    nav .details {
+    nav .detail {
         width: 40%;
     }
     #partner >div{
         padding: 0 0rem;
     }
-    #partner .details div {
+    #partner .detail div {
         padding: 1rem;
         display: grid;
         grid-template-columns: repeat(3,1fr);

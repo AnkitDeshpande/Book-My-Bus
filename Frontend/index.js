@@ -10,6 +10,7 @@ const footer = document.querySelector("#footer");
 navbar.innerHTML = navDiv;
 footer.innerHTML = footerDiv;
 
+
 // console.log("navbar",navbar);
 
 const divtoshow = 'nav .details .div2 ul'

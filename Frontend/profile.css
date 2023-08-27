@@ -36,3 +36,17 @@ body {
 	border-radius: 100%;
 	border: 5px solid #fff;
 }
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #E41C22;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #cd1d23;
+    border-color: #E41C22;
+}
+.btn-primary:hover {
+	background-color: #a51318;
+	border-radius: 10px;
+	border-color: #a51318;
+}

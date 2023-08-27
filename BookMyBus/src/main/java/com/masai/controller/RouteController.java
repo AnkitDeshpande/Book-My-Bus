@@ -64,6 +64,7 @@ public class RouteController {
 		routeService.deleteRoute(id);
 		return new ResponseEntity<>("Deleted", HttpStatus.NO_CONTENT);
 	}
+<<<<<<< HEAD
 	
 	@PutMapping("/api/routes/{id}")
 	public ResponseEntity<Route> updateRoute(@Valid @RequestBody Route route)
@@ -73,4 +74,6 @@ public class RouteController {
 	}
 		
 
+=======
+>>>>>>> 7df823493c73fbbf3dd3c4933a6408f7a0b5ad8d
 }

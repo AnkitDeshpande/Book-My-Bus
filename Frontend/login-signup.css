@@ -75,10 +75,11 @@ form.sign-up-form {
     height: 50px;
     background: #f0f0f0;
     margin: 10px 0;
-    border: 2px solid #444;
+    /* border: .5px solid #444; */
     border-radius: 50px;
     display: flex;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .input-field i {
     flex: 1;
