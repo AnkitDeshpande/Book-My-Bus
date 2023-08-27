@@ -53,5 +53,4 @@ public class RouteController {
 		routeService.deleteRoute(id);
 		return new ResponseEntity<>("Deleted", HttpStatus.NO_CONTENT);
 	}
-
 }
