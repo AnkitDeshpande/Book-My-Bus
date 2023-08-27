@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/Frontend/login-signup.css">
+    <title>signin-signup</title>
+</head>
+<body>
+    <div class="container">
+        <div class="signin-signup">
+            <form action="" class="sign-in-form">
+                
+                    <h2 class="title">Sign in</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" id="username">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" id="password">
+                </div>
+                <input type="submit" value="Login" class="btn signinbtn">
+                <p class="social-text">Or Sign in with social platform</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                
+                
+            </form>
+            <form action="" class="sign-up-form" id="sign-up">
+                <h2 class="title">Sign up</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Name" class="firstname">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" class="lastname">
+                </div>
+                <div class="input-field">
+                    <i class="fa fa-phone-volume"></i>
+                    <input type="number" placeholder="Mobile no." class="mobileno">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" placeholder="Email" class="email">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" class="password">
+                </div>
+                <input type="submit" value="Sign up" class="btn signupbtn">
+                <p class="social-text">Or Sign in with social platform</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <!-- <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p> -->
+            </form>
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Already a member</h3>
+                    <p>If you are already a member please login.</p>
+                    <button class="btn" id="sign-in-btn">Sign in</button>
+                </div>
+                <img src="/Online_Shopping_Application_Frontend/img/logo.png" alt="" class="image">
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>New to Us?</h3>
+                    <p>If you are new to us please signup first.</p>
+                    <button class="btn" id="sign-up-btn">Sign up</button>
+                </div>
+                <img src="/Online_Shopping_Application_Frontend/img/logo.png" alt="" class="image">
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/Frontend/login-signup.js"></script>
+</body>
+</html>

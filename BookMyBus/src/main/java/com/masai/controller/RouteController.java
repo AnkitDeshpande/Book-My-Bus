@@ -1,5 +1,6 @@
 package com.masai.controller;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +30,18 @@ public class RouteController {
 	private RouteService routeService;
 
 	@GetMapping("/api/routes")
-	public ResponseEntity<List<Route>> getAllRoutes() {
+	public ResponseEntity<List<Route>> getAllRoutes(@RequestParam(required=false) Integer page,@RequestParam(required=false) Integer limit,@RequestParam(required=false) String order,@RequestParam(required=false) String sort) {
 		List<Route> routes = routeService.getAllRoutes();
-		return new ResponseEntity<>(routes, HttpStatus.OK);
+		if(page!=null&&limit!=null) {
+			List<Route> paginationAndSort = routeService.paginationAndSort(page, limit);
+			return new ResponseEntity<>(paginationAndSort, HttpStatus.OK);
+		}
+		else if(!sort.isBlank()&&!order.isBlank()) {
+			return new ResponseEntity(routeService.sort(order, sort),HttpStatus.OK);
+		}
+		System.out.println(page+" "+limit);
+		List<Route> getAll = routeService.getAllRoutes();
+		return new ResponseEntity<>(paginationAndSort, HttpStatus.OK);
 	}
 
 	@GetMapping("/api/routes/{id}")
@@ -43,6 +53,7 @@ public class RouteController {
 	@PostMapping("/api/routes")
 	public ResponseEntity<Route> createRoute(@Valid @RequestBody Route route)
 			throws ValidationException, SomethingWentWrongException {
+		System.out.println(route);
 		Route createdRoute = routeService.saveRoute(route);
 		return new ResponseEntity<>(createdRoute, HttpStatus.CREATED);
 	}
@@ -53,4 +64,16 @@ public class RouteController {
 		routeService.deleteRoute(id);
 		return new ResponseEntity<>("Deleted", HttpStatus.NO_CONTENT);
 	}
+<<<<<<< HEAD
+	
+	@PutMapping("/api/routes/{id}")
+	public ResponseEntity<Route> updateRoute(@Valid @RequestBody Route route)
+			throws ResourceNotFoundException, SomethingWentWrongException {
+		Route updateRoute = routeService.updateRoute(route);
+		return new ResponseEntity(updateRoute, HttpStatus.ACCEPTED);
+	}
+		
+
+=======
+>>>>>>> 7df823493c73fbbf3dd3c4933a6408f7a0b5ad8d
 }

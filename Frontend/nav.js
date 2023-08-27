@@ -1,9 +1,9 @@
 const nav = `
 <div id="nav"></div>
 <div class="logo">
-    <a href="#"><img src="/Images/Logo.png" alt=""></a>
+    <a href="#"><img src="/Frontend/Images/Logo.png" alt=""></a>
 </div>
-<div class="details">
+<div class="detail">
     <div class="div1">
         <h3><span><i class="fa-solid fa-headphones-simple"></i></span> Help</h3>
     </div>
@@ -11,17 +11,17 @@ const nav = `
         <h3 id="account" class="account"><span><i class="fa-solid fa-user"></i></span> Account</h3>
         <ul class="mini-div">
             <li>
-                Cancel Ticket
+            <a href="#">Cancel Ticket</a>
             </li>
-            <li>Change Travel Date</li>
+            <li><a href="#">Change Travel Date</a></li>
             <li>
-                Show My Ticket
-            </li>
-            <li>
-                Profile
+            <a href="#">Show My Ticket</a>
             </li>
             <li>
-                Login/Sign Up
+            <a href="/Frontend/profile.html">Profile</a>
+            </li>
+            <li>
+            <a href="/Frontend/login_signup.html">Login/Sign Up</a>
             </li>
         </ul>
     </div>
