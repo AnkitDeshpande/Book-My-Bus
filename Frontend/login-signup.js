@@ -91,7 +91,7 @@ function loginUser(e) {
 
     const varification = "";
     // Send the GET request to the /signIn endpoint
-    fetch("http://localhost:8888/signIn", requestOptions)
+    fetch("http://localhost:8080/api/users", requestOptions)
         .then((response) => {
             if (response.ok) {
                 var token = response.headers.get("Authorization");
