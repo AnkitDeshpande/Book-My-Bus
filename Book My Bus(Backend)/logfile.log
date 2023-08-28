@@ -1,0 +1,77 @@
+2023-08-29T00:01:09.127+05:30  INFO 11340 --- [RMI TCP Connection(28)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-08-29T00:01:09.180+05:30  INFO 11340 --- [RMI TCP Connection(28)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-29T00:01:09.180+05:30  INFO 11340 --- [RMI TCP Connection(28)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-29T00:01:09.186+05:30  INFO 11340 --- [RMI TCP Connection(28)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-29T00:01:09.188+05:30  INFO 11340 --- [RMI TCP Connection(28)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2023-08-29T00:01:09.197+05:30  INFO 11340 --- [RMI TCP Connection(28)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2023-08-29T00:01:29.373+05:30  INFO 6688 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20 with PID 6688 (C:\Ankit\honest-wing-5796\BusTicketReservationSystem(Backend)\target\classes started by Dell in C:\Ankit\honest-wing-5796\BusTicketReservationSystem(Backend))
+2023-08-29T00:01:29.375+05:30  INFO 6688 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-08-29T00:01:29.459+05:30  INFO 6688 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-29T00:01:29.460+05:30  INFO 6688 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-29T00:01:30.519+05:30  INFO 6688 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-29T00:01:30.615+05:30  INFO 6688 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 6 JPA repository interfaces.
+2023-08-29T00:01:31.309+05:30  INFO 6688 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2023-08-29T00:01:31.323+05:30  INFO 6688 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-29T00:01:31.324+05:30  INFO 6688 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-08-29T00:01:31.492+05:30  INFO 6688 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-29T00:01:31.494+05:30  INFO 6688 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2032 ms
+2023-08-29T00:01:31.769+05:30  INFO 6688 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-29T00:01:31.899+05:30  INFO 6688 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-08-29T00:01:31.902+05:30  INFO 6688 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-29T00:01:32.125+05:30  INFO 6688 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-29T00:01:32.323+05:30  INFO 6688 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-29T00:01:32.351+05:30  INFO 6688 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-29T00:01:32.852+05:30  INFO 6688 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@76b84d87
+2023-08-29T00:01:32.855+05:30  INFO 6688 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-29T00:01:33.303+05:30  INFO 6688 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-29T00:01:34.260+05:30  INFO 6688 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-29T00:01:34.803+05:30  INFO 6688 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-29T00:01:35.467+05:30  WARN 6688 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-29T00:01:36.236+05:30  INFO 6688 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-29T00:01:36.286+05:30  INFO 6688 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2023-08-29T00:01:36.301+05:30  INFO 6688 --- [restartedMain] .m.BusTicketReservationSystemApplication : Started BusTicketReservationSystemApplication in 7.565 seconds (process running for 9.324)
+2023-08-29T00:02:07.298+05:30  INFO 6688 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-29T00:02:07.299+05:30  INFO 6688 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-29T00:02:07.301+05:30  INFO 6688 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-08-29T00:02:08.310+05:30  WARN 6688 --- [http-nio-8088-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view all user.]
+2023-08-29T00:02:08.310+05:30  WARN 6688 --- [http-nio-8088-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view buses]
+2023-08-29T00:02:08.310+05:30  WARN 6688 --- [http-nio-8088-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view Route]
+2023-08-29T00:02:09.466+05:30  INFO 6688 --- [http-nio-8088-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 975 ms
+2023-08-29T00:02:27.728+05:30  WARN 6688 --- [http-nio-8088-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.masai.model.User> com.masai.controller.UserController.addUserHandler(com.masai.model.User) throws com.masai.exception.UserException: [Field error in object 'user' on field 'contact': rejected value [98304871121]; codes [Pattern.user.contact,Pattern.contact,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.contact,contact]; arguments []; default message [contact],[Ljakarta.validation.constraints.Pattern$Flag;@3b1db490,^[6-9]\d{9}$]; default message [Phone Number should be exactly ten digits]] ]
+2023-08-29T00:02:28.560+05:30  WARN 6688 --- [http-nio-8088-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view buses]
+2023-08-29T00:02:28.566+05:30  WARN 6688 --- [http-nio-8088-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view all user.]
+2023-08-29T00:02:28.585+05:30  WARN 6688 --- [http-nio-8088-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view Route]
+2023-08-29T00:04:05.362+05:30  WARN 6688 --- [http-nio-8088-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to update user]
+2023-08-29T00:04:06.440+05:30  WARN 6688 --- [http-nio-8088-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view buses]
+2023-08-29T00:04:06.470+05:30  WARN 6688 --- [http-nio-8088-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view all user.]
+2023-08-29T00:04:06.476+05:30  WARN 6688 --- [http-nio-8088-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view Route]
+2023-08-29T00:04:37.187+05:30  WARN 6688 --- [http-nio-8088-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to update user]
+2023-08-29T00:04:37.993+05:30  WARN 6688 --- [http-nio-8088-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view buses]
+2023-08-29T00:04:37.997+05:30  WARN 6688 --- [http-nio-8088-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view all user.]
+2023-08-29T00:04:38.016+05:30  WARN 6688 --- [http-nio-8088-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view Route]
+2023-08-29T00:05:32.980+05:30  WARN 6688 --- [http-nio-8088-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin not logged in with this Username.]
+2023-08-29T00:05:43.336+05:30  WARN 6688 --- [http-nio-8088-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.BusException: bus list is empty]
+2023-08-29T00:05:43.358+05:30 ERROR 6688 --- [http-nio-8088-exec-7] c.m.exception.GlobalExceptionHandler     : RouteException Occour!
+2023-08-29T00:05:43.359+05:30  WARN 6688 --- [http-nio-8088-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.RouteException: Route list is empty]
+2023-08-29T00:07:09.409+05:30  WARN 6688 --- [http-nio-8088-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.BusException: bus list is empty]
+2023-08-29T00:07:10.364+05:30  WARN 6688 --- [http-nio-8088-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.BusException: bus list is empty]
+2023-08-29T00:08:04.393+05:30  WARN 6688 --- [http-nio-8088-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalTime` from Object value (token `JsonToken.START_OBJECT`)]
+2023-08-29T00:08:05.407+05:30  WARN 6688 --- [http-nio-8088-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.BusException: bus list is empty]
+2023-08-29T00:08:50.785+05:30  WARN 6688 --- [http-nio-8088-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.BusException: Cannot find route for adding Bus]
+2023-08-29T00:08:51.403+05:30  WARN 6688 --- [http-nio-8088-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.BusException: bus list is empty]
+2023-08-29T00:09:44.853+05:30  WARN 6688 --- [http-nio-8088-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.BusException: Cannot find route for adding Bus]
+2023-08-29T00:09:45.795+05:30  WARN 6688 --- [http-nio-8088-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.BusException: bus list is empty]
+2023-08-29T00:10:01.449+05:30  WARN 6688 --- [http-nio-8088-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.BusException: Cannot find route for adding Bus]
+2023-08-29T00:10:01.919+05:30  WARN 6688 --- [http-nio-8088-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.BusException: bus list is empty]
+2023-08-29T00:10:31.704+05:30  WARN 6688 --- [http-nio-8088-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalTime` from Object value (token `JsonToken.START_OBJECT`)]
+2023-08-29T00:10:32.311+05:30  WARN 6688 --- [http-nio-8088-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.BusException: bus list is empty]
+2023-08-29T00:10:57.123+05:30  WARN 6688 --- [http-nio-8088-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.BusException: Cannot find route for adding Bus]
+2023-08-29T00:10:57.775+05:30  WARN 6688 --- [http-nio-8088-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.BusException: bus list is empty]
+2023-08-29T00:17:33.419+05:30  WARN 6688 --- [http-nio-8088-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view buses]
+2023-08-29T00:18:04.392+05:30  WARN 6688 --- [http-nio-8088-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin not logged in with this Username.]
+2023-08-29T00:50:55.537+05:30  INFO 6688 --- [RMI TCP Connection(53)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-08-29T00:50:55.560+05:30  INFO 6688 --- [RMI TCP Connection(53)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-29T00:50:55.564+05:30  INFO 6688 --- [RMI TCP Connection(53)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-29T00:50:55.581+05:30  INFO 6688 --- [RMI TCP Connection(53)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-29T00:50:55.586+05:30  INFO 6688 --- [RMI TCP Connection(53)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-29T00:50:55.594+05:30  INFO 6688 --- [RMI TCP Connection(53)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
