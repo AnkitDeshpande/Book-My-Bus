@@ -1,19 +1,22 @@
 package com.masai.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.masai.exception.ResourceNotFoundException;
 import com.masai.exception.SomethingWentWrongException;
 import com.masai.exception.ValidationException;
-import com.masai.model.User;
+import com.masai.model.Users;
 
 public interface UserService {
-	List<User> getAllUsers();
+	List<Users> getAllUsers();
 
-	User getUserById(Integer userId) throws ResourceNotFoundException;
+	Optional<Users> findByEmail(String Email)throws ResourceNotFoundException;
 
-	User saveUser(User user) throws ValidationException, SomethingWentWrongException;
+	Users getUserById(Integer userId) throws ResourceNotFoundException;
 
-	void deleteUser(Integer userId) throws ResourceNotFoundException, SomethingWentWrongException;
+	Users saveUser(Users user) throws ValidationException, SomethingWentWrongException;
+
+	Users deleteUser(Integer userId) throws ResourceNotFoundException, SomethingWentWrongException;
 
 }

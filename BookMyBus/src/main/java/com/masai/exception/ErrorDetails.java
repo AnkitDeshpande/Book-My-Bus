@@ -1,8 +1,11 @@
 package com.masai.exception;
 
 
+import lombok.Getter;
+
 import java.time.LocalDate;
 
+@Getter
 public class ErrorDetails {
 	private LocalDate date;
 	private String msg;
@@ -20,27 +23,15 @@ public class ErrorDetails {
 		this.url = url;
 	}
 
-	public LocalDate getDate() {
-		return date;
-	}
-
-	public void setDate(LocalDate date) {
+    public void setDate(LocalDate date) {
 		this.date = date;
 	}
 
-	public String getMsg() {
-		return msg;
-	}
-
-	public void setMsg(String msg) {
+    public void setMsg(String msg) {
 		this.msg = msg;
 	}
 
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
+    public void setUrl(String url) {
 		this.url = url;
 	}
 

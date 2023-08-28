@@ -24,9 +24,20 @@ public class GlobalExceptionHandler {
 	}
 
 	@ExceptionHandler(SomethingWentWrongException.class)
-	public ResponseEntity<ErrorDetails> handleSomethingWentWrongException(SomethingWentWrongException ex,
-			WebRequest req) {
+	public ResponseEntity<ErrorDetails> handleSomethingWentWrongException(SomethingWentWrongException ex,WebRequest req) {
 		ErrorDetails errorDetails = new ErrorDetails(LocalDate.now(), ex.getMessage(), req.getDescription(false));
 		return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
+
+//	@ExceptionHandler(AdminException.class)
+//	public ResponseEntity<ErrorDetails> handleAdminException(AdminException ex,WebRequest req) {
+//		ErrorDetails errorDetails = new ErrorDetails(LocalDate.now(), ex.getMessage(), req.getDescription(false));
+//		return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
+//	}
+//
+//	@ExceptionHandler(UserException.class)
+//	public ResponseEntity<ErrorDetails> handleUserException(UserException ex,WebRequest req) {
+//		ErrorDetails errorDetails = new ErrorDetails(LocalDate.now(), ex.getMessage(), req.getDescription(false));
+//		return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
+//	}
 }

@@ -23,7 +23,7 @@ import lombok.ToString;
 @ToString
 public class Route {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer routeId;
 
     @NotBlank(message = "Source is mandatory")

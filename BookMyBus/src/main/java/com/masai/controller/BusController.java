@@ -65,10 +65,7 @@ public class BusController {
 		return new ResponseEntity<>(bus, HttpStatus.OK);
 	}
 
-	/**
-	 * URL: GET /api/buses/route/{routeId} Example:
-	 * http://localhost:8080/api/buses/route/2
-	 */
+
 	@GetMapping("/api/buses/route/{routeId}")
 	public ResponseEntity<List<Bus>> getBusesByRoute(@Valid @PathVariable Integer routeId) {
 		List<Bus> buses = busService.getBusesByRoute(routeId);
