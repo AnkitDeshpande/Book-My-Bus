@@ -79,7 +79,7 @@ Search_btn.addEventListener('click',(e)=>{
     // message.innerHTML = ''
     arr.push(obj)
     localStorage.setItem("details",JSON.stringify(arr))
-    window.open('Details.html')
+    window.location.href = 'Details.html'
   }
   
 })
