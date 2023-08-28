@@ -44,7 +44,7 @@ cd bus-management-system
 
 2. Configure the MySQL database:
    
-   - Create a new MySQL database named `bookmybus`.
+   - Create a new MySQL database named `masaidb`.
    - Update the database configuration in `src/main/resources/application.properties` with your MySQL connection details.
 
 3. Build the project:
@@ -59,16 +59,16 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-The application should now be running at http://localhost:8080.
+The application should now be running at http://localhost:8088.
 
 ## Usage
 
-- Access the web application by navigating to http://localhost:8080 in your web browser.
+- Access the web application by navigating to http://localhost:8088 in your web browser.
 - Use the provided API endpoints to interact with the system programmatically (refer to API documentation below).
 
 ## API Documentation
 
-API documentation provides detailed information about each API endpoint and how to use them. It can be accessed at `http://localhost:8080/swagger-ui.html` when the application is running.
+API documentation provides detailed information about each API endpoint and how to use them. It can be accessed at `http://localhost:8088/swagger-ui.html` when the application is running.
 
 ## Contributing
 
