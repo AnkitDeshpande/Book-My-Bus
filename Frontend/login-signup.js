@@ -73,51 +73,31 @@ function loginUser(e) {
 
     var email = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-
+    
     console.log(email, password);
     // Make GET request to fetch JWT token
-    var authHeader = "Basic " + btoa(email + ":" + password);
-
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", authHeader);
+    
 
     // Set up the fetch options with the Basic Authentication header
-    var requestOptions = {
+    fetch("http://localhost:8080/api/users", {
         method: "GET",
-        headers: myHeaders,
-        redirect: "follow",
-    };
-
-    const varification = "";
-    // Send the GET request to the /signIn endpoint
-    fetch("http://localhost:8080/api/users", requestOptions)
-        .then((response) => {
-            if (response.ok) {
-                var token = response.headers.get("Authorization");
-                localStorage.setItem("jwtToken", JSON.stringify(token));
-                console.log("Token stored:", token);
-            } else {
-                console.log("Error:", response.status);
-            }
-            return response.json();
-        })
-        .then((result) => {
-            var customerId = result.customerId;
-            var customername = result.name;
-            var cart = result.cart;
-            localStorage.setItem("cart", JSON.stringify(cart));
-            localStorage.setItem("customername", customername);
-            console.log(result);
-            console.log(result.role);
-            if (result.role == "ROLE_USER") {
-                alert("user login successfull");
-                window.location.href = "index.html";
-            } else {
-                alert("admin login successfull");
-                window.location.href = "admin.html";
-            }
-            localStorage.setItem("customerId", customerId);
-        })
-        .catch((error) => console.log("error", error));
+        headers: {
+            "Content-type": "application/json",
+        },
+    })
+        .then((res) => res.json())
+        .then((data) => checklogin(data,email,password))
+        .catch((error) => {
+            console.log(error);
+        });
+}
+function checklogin(data,email,password){
+    data.forEach(element => {
+        // console.log(element.userName,email,password)
+        if(element.userName==email && element.password==password){
+            window.location.href = "index.html"
+        }
+    });
+    
+    
 }

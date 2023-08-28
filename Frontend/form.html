@@ -1,11 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Payment getway form design in Hindi</title>
+    <link rel="stylesheet" type="text/css" href="form.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
+
 <body>
-    
+    <header>
+        <div class="container">
+            <div class="left">
+                <h3>BILLING ADDRESS</h3>
+                <form>
+                    Full name
+                    <input type="text" name="" placeholder="Enter name" class="name">
+                    Email
+                    <input type="text" name="" placeholder="Enter email" class="email">
+
+                    Mobile
+                    <input type="number" name="" placeholder="Enter mobile number" class="mobile">
+
+                    City
+                    <input type="text" name="" placeholder="Enter City" class="city">
+                    <div id="zip">
+                        <label>
+                            State
+                            <select>
+                                <option>Choose State..</option>
+                                <option>Rajasthan</option>
+                                <option>Hariyana</option>
+                                <option>Uttar Pradesh</option>
+                                <option>Madhya Pradesh</option>
+                            </select>
+                        </label>
+                        <label>
+                            Zip code
+                            <input type="number" name="" placeholder="Zip code" class="zip">
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="right">
+                <h3>PAYMENT</h3>
+                <form>
+                    Accepted Card <br>
+                    <img src="Images/card1.png" width="100">
+                    <img src="Images/card2.png" width="50">
+                    <br><br>
+
+                    Credit card number
+                    <input type="text" name="" placeholder="Enter card number" class="card">
+
+                    Exp month
+                    <input type="text" name="" placeholder="Enter Month" class="month">
+                    <div id="zip">
+                        <label>
+                            Exp year
+                            <select>
+                                <option>Choose Year..</option>
+                                <option>2022</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                                <option>2025</option>
+                            </select>
+                        </label>
+                        <label>
+                            CVV
+                            <input type="number" name="" placeholder="CVV" class="cvv">
+                        </label>
+                    </div>
+                </form>
+                <input type="submit" name="" value="Proceed to Checkout" class="submit">
+            </div>
+        </div>
+    </header>
 </body>
+<script>
+    var submit = document.querySelector('.submit')
+    var cvv = document.querySelector('.cvv')
+    var month = document.querySelector('.month')
+    var card = document.querySelector('.card')
+    var zip = document.querySelector('.zip')
+    var city = document.querySelector('.city')
+    var mobile = document.querySelector('.mobile')
+    var email = document.querySelector('.email')
+    var name = document.querySelector('.name')
+    submit.addEventListener('click', () => {
+        if (cvv.value != '' && month.value != '' && card.value != '' && zip.value != '' && city.value != '' && mobile.value != '' && email.value != '' && name.value != '') {
+            Swal.fire(
+                'Good job!',
+                'Ticket booked',
+                'successfull',
+                window.location.href = "index.html"
+            )
+            
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+                footer: '<a href="">Why do I have this issue?</a>'
+            })
+        }
+    })
+</script>
+
 </html>

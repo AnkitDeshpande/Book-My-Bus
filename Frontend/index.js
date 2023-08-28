@@ -40,8 +40,6 @@ document.addEventListener('click',(e)=>{
 const rotate_btn = document.querySelector('.rotate-btn')
 const arrivalInput = document.querySelector('.arrival');
 const departureInput = document.querySelector('.departure')
-const date_btn = document.querySelector('.date')
-const TimeInput = document.querySelector('.time');
 const Search_btn = document.querySelector('.search')
 const message = document.querySelector('.meggage')
 
@@ -57,13 +55,11 @@ Search_btn.addEventListener('click',(e)=>{
   let obj = {
     arrival : arrivalInput.value,
     departure : departureInput.value,
-    date : date.value,
-    time : TimeInput.value
   }
   let arr = []
   // let arr = obj.date.split("-").map(Number)
   // let arr1 = obj.time.split(":").map(Number)
-  if(obj.arrival==''||obj.departure==''||obj.date==''||obj.time==''){
+  if(obj.arrival==''||obj.departure==''){
     message.innerHTML = "Please provide all details"
   // }else if(d.getDate()>arr[2] || d.getMonth()+1>arr[1] || d.getFullYear()>arr[0]){
   //   message.innerHTML = "Please provide valid Date details"
@@ -80,7 +76,7 @@ Search_btn.addEventListener('click',(e)=>{
   //   }
   //   console.log(d.getHours(),arr1[0])
    }else{
-    message.innerHTML = ''
+    // message.innerHTML = ''
     arr.push(obj)
     localStorage.setItem("details",JSON.stringify(arr))
     window.open('Details.html')
