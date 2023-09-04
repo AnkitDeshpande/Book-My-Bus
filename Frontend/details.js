@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // // Clear the saved category from local storage if you have used it for your purpose
         // localStorage.removeItem('selectedCategory');
     } else {
-        fetch('http://localhost:8080/api/buses')
+        fetch('http://localhost:8888/api/buses')
             .then(response => response.json())
             .then(products => products.forEach(element => {
                 console.log(element)
