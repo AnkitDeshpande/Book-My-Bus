@@ -1,0 +1,10 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "editor.codeLensFontFamily": "JetBrains Mono NL",
+    "editor.inlayHints.fontFamily": "JetBrains Mono NL",
+    "scm.inputFontFamily": "JetBrains Mono NL",
+    "debug.console.fontFamily": "JetBrains Mono NL",
+    "markdown.preview.fontFamily": "JetBrains Mono NL",
+    "chat.editor.fontFamily": "JetBrains Mono NL",
+    "rest-client.fontFamily": "JetBrains Mono NL"
+}
