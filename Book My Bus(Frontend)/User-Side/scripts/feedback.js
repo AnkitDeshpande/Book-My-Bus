@@ -11,7 +11,7 @@ function addFeedback() {
     if (uuid == "") {
         openCustomAlert("Please Login First");
     } else {
-        let url = `http://localhost:8088/feedback/add?key=${uuid}`;
+        let url = `http://localhost:8888/feedback/add?key=${uuid}`;
         let driver=document.getElementById("driver").value;
         let service=document.getElementById("service").value;
         let overall=document.getElementById("overall").value;

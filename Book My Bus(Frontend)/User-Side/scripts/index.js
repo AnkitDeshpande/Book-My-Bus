@@ -7,7 +7,7 @@ function openCustomAlert(message) {
     customAlert.style.display = "block";
     setTimeout(() => {
         closeCustomAlert();
-        window.location.href = "../index.html";
+        window.location.href = "http://127.0.0.1:5500/index.html";
     }, 3000);
 }
 
@@ -115,7 +115,7 @@ function logoutUser() {
     if (uuid == "") {
         openCustomAlert("Please Login First");
     } else {
-        let url = `http://localhost:8088/user/logout?key=${uuid}`;
+        let url = `http://localhost:8888/user/logout?key=${uuid}`;
         console.log(uuid);
         fetch(url, {
             method: "POST",

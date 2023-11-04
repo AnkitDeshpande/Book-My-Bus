@@ -9,7 +9,7 @@ if(currUserId == null){
 function cancelTicket(ticketId){
     const userConfirmed = confirm("Are You Sure You Want To Cancel ?");
     if(userConfirmed){
-        const cancelTicketApi = `http://localhost:8088/reservation/delete/${ticketId}?key=${currUserId}`;
+        const cancelTicketApi = `http://localhost:8888/reservation/delete/${ticketId}?key=${currUserId}`;
         fetch(cancelTicketApi, {
             method: 'delete'
         })
@@ -17,7 +17,7 @@ function cancelTicket(ticketId){
             if(response.ok){
                 response.json().then(data => {
                     alert("Reservation Cancelled Successfully...!");
-                    window.location.href = "../index.html";
+                    window.location.href = "http://127.0.0.1:5500/index.html";
                 })
             }else{
                 alert("Dear Customer Please Enter Correct Ticket Id");

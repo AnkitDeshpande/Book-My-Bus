@@ -52,7 +52,7 @@ function createBusDiv(bus, departureDate) {
 
     // Insert your custom content cell
     const customContentCell = document.createElement("td");
-    customContentCell.innerText = "Your Custom Content Here"; // Replace with your content
+    customContentCell.innerText = bus.arrivalTime; // Replace with your content
 
     const bodyCell3 = document.createElement("td");
     bodyCell3.innerText = bus.arrivalTime;
@@ -60,7 +60,6 @@ function createBusDiv(bus, departureDate) {
     bodyRow1.appendChild(bodyCell1);
     bodyRow1.appendChild(bodyCell2);
     bodyRow1.appendChild(customContentCell); // Insert custom content cell
-    bodyRow1.appendChild(bodyCell3);
 
     const bodyRow2 = document.createElement("tr");
 
@@ -97,7 +96,7 @@ function createBusDiv(bus, departureDate) {
 
     bookButton.addEventListener("click", () => {
         const currBus = bus.busId;
-        const bookApi = `http://localhost:8088/reservation/add/${currBus}?key=${currUser}`;
+        const bookApi = `http://localhost:8888/reservation/add/${currBus}?key=${currUser}`;
 
         let bodyToSend = {
             reservationDate: departureDate,
@@ -119,7 +118,7 @@ function createBusDiv(bus, departureDate) {
                     "Ticket Booked Successfully!\nYour Ticket Id is " +
                         data.reservationId
                 );
-                window.location.href = "../index.html";
+                window.location.href = "http://127.0.0.1:5500/index.html";
             })
             .catch((error) => {
                 console.error("Error:", error);
@@ -168,7 +167,7 @@ function displayBus(fromCity, toCity, departureDate) {
         alert("Please Login to Check Available buses...!");
         window.location.href = "./login.html";
     }
-    const fetchBusApi = `http://localhost:8088/Bus/viewAllBus?key=${currUser}`;
+    const fetchBusApi = `http://localhost:8888/Bus/viewAllBus?key=${currUser}`;
     fetch(fetchBusApi)
         .then((response) => response.json())
         .then((data) => {

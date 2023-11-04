@@ -65,7 +65,7 @@ function sign_in() {
 
 
 function loginUser(obj) {
-    let url = "http://localhost:8088/user/login";
+    let url = "http://localhost:8888/user/login";
 
     fetch(url, {
             method: 'POST',
@@ -87,7 +87,7 @@ function loginUser(obj) {
                 localStorage.setItem("uuid", JSON.stringify(data.uuid));
                 localStorage.setItem("username", JSON.stringify(data.type));
                 
-               window.location.href="../index.html";
+               window.location.href="http://127.0.0.1:5500/index.html";
                 //change page location from here after ssucessfull signup
             }
 
@@ -100,7 +100,7 @@ function loginUser(obj) {
 
 function loginAdmin(obj) {
     console.log("Inside admin");
-    let url = "http://localhost:8088/admin/login";
+    let url = "http://localhost:8888/admin/login";
 
     fetch(url, {
             method: 'POST',
