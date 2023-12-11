@@ -1,31 +1,28 @@
-let currUserID = JSON.parse(localStorage.getItem('uuid'));
+let currUserID = JSON.parse(localStorage.getItem("uuid"));
 
-if(currUserID == undefined){
+if (currUserID == undefined) {
     currUserID = null;
 }
 
-localStorage.setItem('uuid', JSON.stringify(currUserID));
+localStorage.setItem("uuid", JSON.stringify(currUserID));
 
 //custome alert
 
-
 function openCustomAlert(message) {
-    const customAlert = document.getElementById('customAlert');
-    const customAlertMessage = document.getElementById('customAlertMessage');
+    const customAlert = document.getElementById("customAlert");
+    const customAlertMessage = document.getElementById("customAlertMessage");
 
     customAlertMessage.textContent = message;
-    customAlert.style.display = 'block';
+    customAlert.style.display = "block";
     setTimeout(() => {
         closeCustomAlert();
-    }, 5000)
+    }, 5000);
 }
 
 function closeCustomAlert() {
-    const customAlert = document.getElementById('customAlert');
-    customAlert.style.display = 'none';
+    const customAlert = document.getElementById("customAlert");
+    customAlert.style.display = "none";
 }
-
-
 
 // Function to show the custom toast notification
 function showToast(message) {
@@ -46,54 +43,53 @@ function sign_in() {
     let password = document.getElementById("password").value;
     let username = document.getElementById("username").value;
 
-    if (password == '' || username == '') {
-        showToast('Please fill all mandatory field !!');
+    if (password == "" || username == "") {
+        showToast("Please fill all mandatory field !!");
         return false;
     }
     if (!document.getElementById("agree").checked) {
-        showToast('Please check Accepting all terms & conditions!!');
+        showToast("Please check Accepting all terms & conditions!!");
         return false;
     }
     let signInObj = {
-        "username": username,
-        "password": password
-    }
-    
-    if (signInObj.username == "admin" && signInObj.password == "admin1234") loginAdmin(signInObj);
+        username: username,
+        password: password,
+    };
+
+    if (signInObj.username == "admin" && signInObj.password == "admin1234")
+        loginAdmin(signInObj);
     else loginUser(signInObj);
 }
-
 
 function loginUser(obj) {
     let url = "http://localhost:8888/user/login";
 
     fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json', // Specify that we're sending JSON data
-            },
-            body: JSON.stringify(obj), // Convert the data to JSON format
-        })
-        .then(response => response.json())
-        .then(data => {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json", // Specify that we're sending JSON data
+        },
+        body: JSON.stringify(obj), // Convert the data to JSON format
+    })
+        .then((response) => response.json())
+        .then((data) => {
             // console.log(data);
-            if (data.userId== null) {
+            if (data.userId == null) {
                 openCustomAlert(data.message);
             } else {
                 showToast("User Login SucessFull!!");
-                
+
                 openCustomAlert("WelCome " + data.type);
-                
+
                 localStorage.setItem("uuid", JSON.stringify(data.uuid));
                 localStorage.setItem("username", JSON.stringify(data.type));
-                
-               window.location.href="http://127.0.0.1:5500/index.html";
+                localStorage.setItem("userId", JSON.stringify(data.userId));
+
+                window.location.href = "http://127.0.0.1:5500/index.html";
                 //change page location from here after ssucessfull signup
             }
-
-
         })
-        .catch(error => {
+        .catch((error) => {
             // console.error('Error posting data:', error);
         });
 }
@@ -103,27 +99,26 @@ function loginAdmin(obj) {
     let url = "http://localhost:8888/admin/login";
 
     fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json', // Specify that we're sending JSON data
-            },
-            body: JSON.stringify(obj) // Convert the data to JSON format
-        })
-        .then(response => response.json())
-        .then(data => {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json", // Specify that we're sending JSON data
+        },
+        body: JSON.stringify(obj), // Convert the data to JSON format
+    })
+        .then((response) => response.json())
+        .then((data) => {
             if (data.userId == null) {
                 openCustomAlert(data.message);
             } else {
-                
                 showToast("Admin Login SucessFull!!");
                 openCustomAlert("WelCome Admin!!");
 
                 localStorage.setItem("uuid", JSON.stringify(data.uuid));
-                
+
                 window.location.href = "../Admin_section/Admin_Home.html";
             }
         })
-        .catch(error => {
-            console.error('Error posting data:', error);
+        .catch((error) => {
+            console.error("Error posting data:", error);
         });
 }

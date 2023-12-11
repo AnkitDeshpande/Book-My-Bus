@@ -3,6 +3,7 @@ let searchTicketForm = document.getElementById("search-ticket-form");
 let fetchedBusContainer = document.getElementById("fetched-bus-container");
 
 const currUser = JSON.parse(localStorage.getItem("uuid"));
+const userId = JSON.parse(localStorage.getItem("userId"));
 let busDetails = [];
 
 function createBusDiv(bus, departureDate) {
@@ -102,6 +103,7 @@ function createBusDiv(bus, departureDate) {
             reservationDate: departureDate,
             source: bus.routeFrom,
             destination: bus.routeTo,
+            user: userId,
         };
 
         fetch(bookApi, {

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Css from FontAwesome for Amenities -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+        <!-- Website External Css Link -->
+        <link
+            rel="stylesheet"
+            href="/Book My Bus(Frontend)/User-Side/styles/index.css" />
+
+        <!-- Css For Footer -->
+        <link
+            rel="stylesheet"
+            href="/Book My Bus(Frontend)/User-Side/styles/headerFooter.css" />
+        <title>Home -Book My Bus</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+                color: #333;
+            }
+            header {
+                background-color: #007bff;
+                color: white;
+                padding: 15px 0;
+                text-align: center;
+            }
+            .container {
+                width: 80%;
+                margin: 0 auto;
+                padding: 20px 0;
+            }
+            h1,
+            h2 {
+                text-align: center;
+            }
+            p {
+                text-align: justify;
+                line-height: 1.6;
+            }
+            footer {
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 10px 0;
+                bottom: 0;
+
+                width: 100%;
+            }
+            footer > p {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- The custom alert dialog -->
+        <div class="custom-alert" id="customAlert">
+            <div class="custom-alert-content">
+                <p id="customAlertMessage"></p>
+                <button onclick="closeCustomAlert()">OK</button>
+            </div>
+        </div>
+
+        <div id="customToastContainer"></div>
+
+        <div class="navbar">
+            <div class="logo">
+                <a href="/index.html"
+                    ><img src="./images/Book_My_Bus_Logo.png" alt="Logo"
+                /></a>
+            </div>
+            <div class="menu" id="menu">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Services</a>
+                        <ul class="dropdown-content dropdown-toggle">
+                            <li>
+                                <a
+                                    href="./Book My Bus(Frontend)/User-Side/bookTicket.html"
+                                    >Book a Ticket</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./Book My Bus(Frontend)/User-Side/bookTicket.html"
+                                    >Find Bus</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./Book My Bus(Frontend)/User-Side/ticketStatus.html"
+                                    >Ticket Status</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./Book My Bus(Frontend)/User-Side/cancelTicket.html"
+                                    >Cancel Ticket</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./Book My Bus(Frontend)/User-Side/feedback.html"
+                                    >Add Feedback</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./Book My Bus(Frontend)/User-Side/about.html"
+                            >About</a
+                        >
+                    </li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li id="profileImg">
+                        <img
+                            src="./Book My Bus(Frontend)/User-Side/images/images.jpeg"
+                            alt="" />
+                    </li>
+                    <li>
+                        <a
+                            href="./Book My Bus(Frontend)/User-Side/login.html"
+                            id="account"
+                            >Account</a
+                        >
+                    </li>
+                    <li id="logout">
+                        <div
+                            href=""
+                            style="
+                                border-radius: 5px;
+                                padding: 4px;
+                                background-color: #0e9e4d;
+                                color: white;
+                                cursor: pointer;
+                            "
+                            onclick="logoutUser()">
+                            Logout
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>About Book My Bus</h2>
+            <p>
+                Book My Bus is a leading online platform for booking bus tickets
+                across various routes and destinations. We offer a user-friendly
+                interface, a wide range of bus operators, and secure payment
+                options to ensure a convenient booking experience for our
+                customers.
+            </p>
+
+            <h2>Services Offered</h2>
+            <ul>
+                <li>Easy bus ticket booking</li>
+                <li>Multiple bus operators and routes</li>
+                <li>Secure payment options</li>
+                <li>24/7 customer support</li>
+                <!-- Add more services here -->
+            </ul>
+
+            <h2>Why Choose Book My Bus?</h2>
+            <p>
+                At Book My Bus, we prioritize customer satisfaction and
+                convenience. Our platform is designed to provide:
+            </p>
+            <ul>
+                <li>Efficient and hassle-free booking process</li>
+                <li>Competitive prices and discounts</li>
+                <li>Reliable and comfortable bus services</li>
+                <!-- Add more reasons here -->
+            </ul>
+
+            <h2>Contact Us</h2>
+            <p>
+                For any inquiries or assistance, feel free to reach out to us:
+            </p>
+            <p>Email: contact@bookmybus.com</p>
+            <p>Phone: 1-800-BOOKBUS</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2023 Book My Bus. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

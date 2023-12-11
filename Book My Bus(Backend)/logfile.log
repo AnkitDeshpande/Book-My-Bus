@@ -885,3 +885,32 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2023-11-04T14:39:59.535+05:30  INFO 7868 --- [RMI TCP Connection(58)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-11-04T14:39:59.555+05:30  INFO 7868 --- [RMI TCP Connection(58)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
 2023-11-04T14:39:59.577+05:30  INFO 7868 --- [RMI TCP Connection(58)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-11-04T18:33:34.530+05:30  INFO 2248 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20.0.1 with PID 2248 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus\Book My Bus(Backend))
+2023-11-04T18:33:34.533+05:30  INFO 2248 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-11-04T18:33:34.632+05:30  INFO 2248 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-04T18:33:34.633+05:30  INFO 2248 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-04T18:33:36.020+05:30  INFO 2248 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-04T18:33:36.141+05:30  INFO 2248 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 6 JPA repository interfaces.
+2023-11-04T18:33:37.010+05:30  INFO 2248 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-11-04T18:33:37.028+05:30  INFO 2248 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-04T18:33:37.028+05:30  INFO 2248 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-11-04T18:33:37.129+05:30  INFO 2248 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-04T18:33:37.130+05:30  INFO 2248 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2495 ms
+2023-11-04T18:33:37.424+05:30  INFO 2248 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-04T18:33:37.516+05:30  INFO 2248 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-11-04T18:33:37.520+05:30  INFO 2248 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-04T18:33:37.764+05:30  INFO 2248 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-04T18:33:38.016+05:30  INFO 2248 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-04T18:33:38.043+05:30  INFO 2248 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-04T18:33:39.130+05:30  INFO 2248 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5e56bc29
+2023-11-04T18:33:39.134+05:30  INFO 2248 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-04T18:33:39.755+05:30  INFO 2248 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-04T18:33:40.962+05:30  INFO 2248 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-04T18:33:41.351+05:30  INFO 2248 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-04T18:33:42.037+05:30  WARN 2248 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-04T18:33:43.126+05:30  INFO 2248 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-11-04T18:33:43.180+05:30  INFO 2248 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2023-11-04T18:33:43.193+05:30  INFO 2248 --- [restartedMain] .m.BusTicketReservationSystemApplication : Started BusTicketReservationSystemApplication in 9.395 seconds (process running for 10.743)
+2023-11-04T18:33:54.817+05:30  INFO 2248 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-04T18:33:54.824+05:30  INFO 2248 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-04T18:33:54.834+05:30  INFO 2248 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -1,141 +1,72 @@
-2023-08-29T00:55:12.979+05:30  INFO 11256 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 17.0.7 with PID 11256 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
-2023-08-29T00:55:13.114+05:30  INFO 11256 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
-2023-08-29T00:55:13.322+05:30  INFO 11256 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-08-29T00:55:13.333+05:30  INFO 11256 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-08-29T00:55:16.311+05:30  INFO 11256 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-08-29T00:55:16.493+05:30  INFO 11256 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 151 ms. Found 6 JPA repository interfaces.
-2023-08-29T00:55:18.224+05:30  INFO 11256 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
-2023-08-29T00:55:18.242+05:30  INFO 11256 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-08-29T00:55:18.247+05:30  INFO 11256 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-08-29T00:55:18.465+05:30  INFO 11256 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-08-29T00:55:18.467+05:30  INFO 11256 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5130 ms
-2023-08-29T00:55:18.791+05:30  INFO 11256 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-08-29T00:55:18.909+05:30  INFO 11256 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.5.Final
-2023-08-29T00:55:18.909+05:30  INFO 11256 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-08-29T00:55:19.242+05:30  INFO 11256 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-08-29T00:55:19.489+05:30  INFO 11256 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-08-29T00:55:19.525+05:30  INFO 11256 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-08-29T00:55:20.047+05:30  INFO 11256 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@163b7a59
-2023-08-29T00:55:20.052+05:30  INFO 11256 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-08-29T00:55:20.784+05:30  INFO 11256 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-08-29T00:55:22.157+05:30  INFO 11256 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-08-29T00:55:22.436+05:30  INFO 11256 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-08-29T00:55:23.608+05:30  WARN 11256 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-08-29T00:55:25.719+05:30  INFO 11256 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-08-29T00:55:25.797+05:30  INFO 11256 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
-2023-08-29T00:55:25.815+05:30  INFO 11256 --- [restartedMain] .m.BusTicketReservationSystemApplication : Started BusTicketReservationSystemApplication in 13.813 seconds (process running for 14.782)
-2023-08-29T00:55:36.563+05:30  INFO 11256 --- [http-nio-8088-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-08-29T00:55:36.564+05:30  INFO 11256 --- [http-nio-8088-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-08-29T00:55:36.567+05:30  INFO 11256 --- [http-nio-8088-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2023-08-29T00:55:37.208+05:30  WARN 11256 --- [http-nio-8088-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin already Logged in with this Username]
-2023-08-29T00:56:07.217+05:30  WARN 11256 --- [http-nio-8088-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin already Logged in with this Username]
-2023-08-29T00:56:15.759+05:30  WARN 11256 --- [http-nio-8088-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin already Logged in with this Username]
-2023-08-29T00:56:42.541+05:30  WARN 11256 --- [http-nio-8088-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin already Logged in with this Username]
-2023-08-29T00:57:20.329+05:30  WARN 11256 --- [http-nio-8088-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view buses]
-2023-08-29T00:57:20.339+05:30  WARN 11256 --- [http-nio-8088-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view all user.]
-2023-08-29T00:57:20.376+05:30  WARN 11256 --- [http-nio-8088-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view Route]
-2023-08-29T00:57:23.532+05:30  WARN 11256 --- [http-nio-8088-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin not logged in with this Username.]
-2023-08-29T00:57:45.417+05:30  WARN 11256 --- [http-nio-8088-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin already Logged in with this Username]
-2023-08-29T00:57:58.855+05:30  WARN 11256 --- [http-nio-8088-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin already Logged in with this Username]
-2023-08-29T00:59:06.094+05:30  WARN 11256 --- [http-nio-8088-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin already Logged in with this Username]
-2023-08-29T01:00:04.239+05:30  INFO 1208 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 17.0.7 with PID 1208 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
-2023-08-29T01:00:04.246+05:30  INFO 1208 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
-2023-08-29T01:00:04.395+05:30  INFO 1208 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-08-29T01:00:04.397+05:30  INFO 1208 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-08-29T01:00:06.311+05:30  INFO 1208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-08-29T01:00:06.497+05:30  INFO 1208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 164 ms. Found 6 JPA repository interfaces.
-2023-08-29T01:00:08.414+05:30  INFO 1208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
-2023-08-29T01:00:08.465+05:30  INFO 1208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-08-29T01:00:08.470+05:30  INFO 1208 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-08-29T01:00:08.708+05:30  INFO 1208 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-08-29T01:00:08.710+05:30  INFO 1208 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4305 ms
-2023-08-29T01:00:09.015+05:30  INFO 1208 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-08-29T01:00:09.128+05:30  INFO 1208 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.5.Final
-2023-08-29T01:00:09.132+05:30  INFO 1208 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-08-29T01:00:09.416+05:30  INFO 1208 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-08-29T01:00:09.665+05:30  INFO 1208 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-08-29T01:00:09.694+05:30  INFO 1208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-08-29T01:00:10.277+05:30  INFO 1208 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2019dd96
-2023-08-29T01:00:10.281+05:30  INFO 1208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-08-29T01:00:11.041+05:30  INFO 1208 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-08-29T01:00:12.517+05:30  INFO 1208 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-08-29T01:00:12.788+05:30  INFO 1208 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-08-29T01:00:13.988+05:30  WARN 1208 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-08-29T01:00:15.533+05:30  INFO 1208 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-08-29T01:00:15.648+05:30  INFO 1208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
-2023-08-29T01:00:15.777+05:30  INFO 1208 --- [restartedMain] .m.BusTicketReservationSystemApplication : Started BusTicketReservationSystemApplication in 12.403 seconds (process running for 13.796)
-2023-08-29T01:00:28.299+05:30  INFO 1208 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-08-29T01:00:28.301+05:30  INFO 1208 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-08-29T01:00:28.307+05:30  INFO 1208 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2023-08-29T01:00:29.245+05:30  WARN 1208 --- [http-nio-8088-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin already Logged in with this Username]
-2023-08-29T01:00:41.164+05:30  WARN 1208 --- [http-nio-8088-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view buses]
-2023-08-29T01:00:41.183+05:30  WARN 1208 --- [http-nio-8088-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view all user.]
-2023-08-29T01:00:41.188+05:30  WARN 1208 --- [http-nio-8088-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view Route]
-2023-08-29T01:00:42.127+05:30  WARN 1208 --- [http-nio-8088-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view buses]
-2023-08-29T01:00:42.163+05:30  WARN 1208 --- [http-nio-8088-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view Route]
-2023-08-29T01:00:42.166+05:30  WARN 1208 --- [http-nio-8088-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to view all user.]
-2023-08-29T01:00:45.866+05:30  WARN 1208 --- [http-nio-8088-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin not logged in with this Username.]
-2023-08-29T01:00:56.946+05:30  WARN 1208 --- [http-nio-8088-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin already Logged in with this Username]
-2023-08-29T01:01:09.294+05:30  WARN 1208 --- [http-nio-8088-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin already Logged in with this Username]
-2023-08-29T01:01:15.990+05:30  WARN 1208 --- [http-nio-8088-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin already Logged in with this Username]
-2023-08-29T01:01:18.268+05:30  WARN 1208 --- [http-nio-8088-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin already Logged in with this Username]
-2023-08-29T01:01:28.230+05:30  WARN 1208 --- [http-nio-8088-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
-2023-08-29T01:01:28.471+05:30  WARN 1208 --- [http-nio-8088-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
-2023-08-29T01:01:29.039+05:30  WARN 1208 --- [http-nio-8088-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
-2023-08-29T01:01:29.049+05:30  WARN 1208 --- [http-nio-8088-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /favicon.ico.]
-2023-08-29T01:03:40.769+05:30  WARN 1208 --- [http-nio-8088-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.LoginException: Admin already Logged in with this Username]
-2023-08-29T01:04:09.753+05:30  INFO 1208 --- [http-nio-8088-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1123 ms
-2023-08-29T01:05:14.923+05:30  WARN 1208 --- [http-nio-8088-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [javax.security.auth.login.LoginException: User already Logged in with this username.]
-2023-08-29T01:05:22.583+05:30  WARN 1208 --- [http-nio-8088-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [javax.security.auth.login.LoginException: User already Logged in with this username.]
-2023-08-29T01:05:31.218+05:30  WARN 1208 --- [http-nio-8088-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [javax.security.auth.login.LoginException: User already Logged in with this username.]
-2023-08-29T01:05:41.450+05:30  WARN 1208 --- [http-nio-8088-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [javax.security.auth.login.LoginException: User already Logged in with this username.]
-2023-11-04T13:46:46.586+05:30  INFO 7220 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 17.0.8.1 with PID 7220 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
-2023-11-04T13:46:46.591+05:30  INFO 7220 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
-2023-11-04T13:46:46.848+05:30  INFO 7220 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-11-04T13:46:46.850+05:30  INFO 7220 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-11-04T13:46:48.877+05:30  INFO 7220 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-11-04T13:46:49.065+05:30  INFO 7220 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 171 ms. Found 6 JPA repository interfaces.
-2023-11-04T13:46:50.420+05:30  INFO 7220 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-11-04T13:46:50.445+05:30  INFO 7220 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-11-04T13:46:50.447+05:30  INFO 7220 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-11-04T13:46:50.633+05:30  INFO 7220 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-11-04T13:46:50.635+05:30  INFO 7220 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3779 ms
-2023-11-04T13:46:50.968+05:30  INFO 7220 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-11-04T13:46:51.112+05:30  INFO 7220 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.5.Final
-2023-11-04T13:46:51.116+05:30  INFO 7220 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-11-04T13:46:51.404+05:30  INFO 7220 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-11-04T13:46:51.687+05:30  INFO 7220 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-11-04T13:46:51.735+05:30  INFO 7220 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-11-04T13:46:52.390+05:30  INFO 7220 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e7c037f
-2023-11-04T13:46:52.395+05:30  INFO 7220 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-11-04T13:46:53.235+05:30  INFO 7220 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-11-04T13:46:54.701+05:30  INFO 7220 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-11-04T13:46:55.164+05:30  WARN 7220 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table user modify column password  varchar(10)" via JDBC [Data truncated for column 'password' at row 1]
+2023-12-12T01:27:19.732+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20.0.1 with PID 7452 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
+2023-12-12T01:27:19.762+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-12-12T01:27:19.943+05:30  INFO 7452 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-12-12T01:27:19.965+05:30  INFO 7452 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-12-12T01:27:23.964+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-12T01:27:24.178+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 189 ms. Found 6 JPA repository interfaces.
+2023-12-12T01:27:26.180+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-12-12T01:27:26.206+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-12T01:27:26.234+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-12-12T01:27:26.463+05:30  INFO 7452 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-12T01:27:26.465+05:30  INFO 7452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6454 ms
+2023-12-12T01:27:27.558+05:30  INFO 7452 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-12T01:27:27.839+05:30  INFO 7452 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-12-12T01:27:27.844+05:30  INFO 7452 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-12-12T01:27:28.171+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T01:27:28.527+05:30  INFO 7452 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-12T01:27:28.570+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-12T01:27:29.477+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@291c41e3
+2023-12-12T01:27:29.481+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-12T01:27:30.294+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T01:27:31.776+05:30  INFO 7452 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12T01:27:32.175+05:30  INFO 7452 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-12T01:27:33.430+05:30  WARN 7452 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-12T01:27:35.774+05:30  INFO 7452 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-12-12T01:27:35.790+05:30  INFO 7452 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-12-12T01:27:36.099+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2023-12-12T01:27:36.193+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Started BusTicketReservationSystemApplication in 17.841 seconds (process running for 20.192)
+2023-12-12T01:27:37.175+05:30  INFO 7452 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-12T01:27:37.178+05:30  INFO 7452 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-12T01:27:37.182+05:30  INFO 7452 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-12-12T01:48:20.786+05:30  INFO 7452 --- [http-nio-8888-exec-2] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1477 ms
+2023-12-12T02:01:34.246+05:30  WARN 7452 --- [http-nio-8888-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.masai.model.User` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (20)]
+2023-12-12T02:08:01.274+05:30  WARN 7452 --- [http-nio-8888-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2023-12-12T02:08:08.471+05:30  WARN 7452 --- [http-nio-8888-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.masai.model.Reservation> com.masai.controller.ReservationController.addNewReservationHandler(java.lang.Integer,com.masai.model.Reservation,java.lang.String) throws com.masai.exception.ReservationException,com.masai.exception.BusException,com.masai.exception.UserException]
+2023-12-12T02:11:04.859+05:30  WARN 7452 --- [http-nio-8888-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [jakarta.servlet.ServletException: Handler dispatch failed: java.lang.Error: Unresolved compilation problem: <EOL>?The method setReservationTime(LocalTime) in the type Reservation is not applicable for the arguments (String)<EOL>]
+2023-12-12T02:15:02.043+05:30  INFO 7452 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-12-12T02:15:02.349+05:30  INFO 7452 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-12T02:15:02.372+05:30  INFO 7452 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-12-12T02:15:02.525+05:30  INFO 7452 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-12T02:15:03.040+05:30  INFO 7452 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-12T02:15:03.159+05:30  INFO 7452 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-12T02:15:04.412+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20.0.1 with PID 7452 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
+2023-12-12T02:15:04.414+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-12-12T02:15:07.602+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-12T02:15:07.960+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 168 ms. Found 6 JPA repository interfaces.
+2023-12-12T02:15:08.811+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-12-12T02:15:08.815+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-12T02:15:08.825+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-12-12T02:15:08.989+05:30  INFO 7452 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-12T02:15:08.991+05:30  INFO 7452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4570 ms
+2023-12-12T02:15:10.257+05:30  INFO 7452 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-12T02:15:10.434+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:15:10.438+05:30  INFO 7452 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-12T02:15:10.440+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-12-12T02:15:10.512+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1e9de39a
+2023-12-12T02:15:10.516+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-12-12T02:15:16.044+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:15:16.500+05:30 ERROR 7452 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+2023-12-12T02:15:16.533+05:30  WARN 7452 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+2023-12-12T02:15:16.544+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-12-12T02:15:16.755+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-12-12T02:15:16.938+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-12T02:15:17.028+05:30  INFO 7452 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
 
-org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table user modify column password  varchar(10)" via JDBC [Data truncated for column 'password' at row 1]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:92) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:574) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:514) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:333) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:84) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:232) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:284) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:292) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:431) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1455) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.10.jar:6.0.10]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.10.jar:6.0.10]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.10.jar:6.0.10]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.10.jar:6.0.10]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.10.jar:6.0.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816) ~[spring-beans-6.0.10.jar:6.0.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.10.jar:6.0.10]
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-12-12T02:15:17.204+05:30 ERROR 7452 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.10.jar:6.0.10]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.10.jar:6.0.10]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.10.jar:6.0.10]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.10.jar:6.0.10]
@@ -152,93 +83,89 @@ org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "a
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.1.jar:3.1.1]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.1.jar:3.1.1]
 	at com.masai.BusTicketReservationSystemApplication.main(BusTicketReservationSystemApplication.java:10) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.1.jar:3.1.1]
-Caused by: java.sql.SQLException: Data truncated for column 'password' at row 1
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar:na]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:78) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	... 43 common frames omitted
-
-2023-11-04T13:46:55.277+05:30  INFO 7220 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-11-04T13:46:56.322+05:30  WARN 7220 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-11-04T13:46:57.465+05:30  INFO 7220 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-11-04T13:46:57.494+05:30  WARN 7220 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
-2023-11-04T13:46:57.499+05:30  INFO 7220 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-11-04T13:46:57.508+05:30  INFO 7220 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-11-04T13:46:57.548+05:30  INFO 7220 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-11-04T13:46:57.554+05:30  INFO 7220 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-11-04T13:46:57.585+05:30  INFO 7220 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2023-11-04T13:46:57.639+05:30 ERROR 7220 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8080 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
-
-2023-11-04T13:48:43.403+05:30  INFO 13364 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 17.0.8.1 with PID 13364 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
-2023-11-04T13:48:43.410+05:30  INFO 13364 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
-2023-11-04T13:48:43.517+05:30  INFO 13364 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-11-04T13:48:43.520+05:30  INFO 13364 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-11-04T13:48:45.560+05:30  INFO 13364 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-11-04T13:48:45.735+05:30  INFO 13364 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 160 ms. Found 6 JPA repository interfaces.
-2023-11-04T13:48:46.999+05:30  INFO 13364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
-2023-11-04T13:48:47.022+05:30  INFO 13364 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-11-04T13:48:47.025+05:30  INFO 13364 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-11-04T13:48:47.179+05:30  INFO 13364 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-11-04T13:48:47.180+05:30  INFO 13364 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3659 ms
-2023-11-04T13:48:47.479+05:30  INFO 13364 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-11-04T13:48:47.600+05:30  INFO 13364 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.5.Final
-2023-11-04T13:48:47.606+05:30  INFO 13364 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-11-04T13:48:47.918+05:30  INFO 13364 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-11-04T13:48:48.231+05:30  INFO 13364 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-11-04T13:48:48.264+05:30  INFO 13364 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-11-04T13:48:48.727+05:30  INFO 13364 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@19c588c8
-2023-11-04T13:48:48.731+05:30  INFO 13364 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-11-04T13:48:49.581+05:30  INFO 13364 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-11-04T13:48:50.779+05:30  INFO 13364 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-11-04T13:48:51.001+05:30  WARN 13364 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table user modify column password  varchar(10)" via JDBC [Data truncated for column 'password' at row 1]
-
-org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table user modify column password  varchar(10)" via JDBC [Data truncated for column 'password' at row 1]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:92) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:574) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:514) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:333) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:84) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:232) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:284) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at java.base/java.util.HashMap.forEach(Unknown Source) ~[na:na]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:292) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.10.jar:6.0.10]
+	... 19 common frames omitted
+Caused by: org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard.instantiate(EntityInstantiatorPojoStandard.java:100) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.lambda$prepareMappingModel$18(AbstractEntityPersister.java:4841) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.util.LazyValue.getValue(LazyValue.java:30) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.engine.internal.UnsavedValueFactory.getUnsavedIdentifierValue(UnsavedValueFactory.java:45) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.BasicEntityIdentifierMappingImpl.<init>(BasicEntityIdentifierMappingImpl.java:119) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.generateIdentifierMapping(AbstractEntityPersister.java:5186) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.lambda$prepareMappingModel$19(AbstractEntityPersister.java:4846) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.processSubPart(MappingModelCreationProcess.java:164) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.prepareMappingModel(AbstractEntityPersister.java:4844) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.prepareMappingModel(AbstractEntityPersister.java:4684) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.execute(MappingModelCreationProcess.java:85) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.process(MappingModelCreationProcess.java:43) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.finishInitialization(MappingMetamodelImpl.java:201) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.initializeMappingModel(SessionFactoryImpl.java:320) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:270) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
 	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:431) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1455) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
 	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.10.jar:6.0.10]
 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.10.jar:6.0.10]
 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.10.jar:6.0.10]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.10.jar:6.0.10]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.10.jar:6.0.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816) ~[spring-beans-6.0.10.jar:6.0.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.10.jar:6.0.10]
+	... 23 common frames omitted
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:79) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484) ~[na:na]
+	at org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard.instantiate(EntityInstantiatorPojoStandard.java:97) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	... 42 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	Syntax error, insert "Identifier (" to complete ConstructorHeaderName
+	Syntax error, insert ")" to complete ConstructorDeclaration
+	Syntax error, insert ";" to complete ConstructorDeclaration
+	Syntax error, insert "Identifier (" to complete ConstructorHeaderName
+	Syntax error, insert ")" to complete ConstructorDeclaration
+	Syntax error, insert ";" to complete ConstructorDeclaration
+	Syntax error, insert "Identifier (" to complete ConstructorHeaderName
+	Syntax error, insert ")" to complete ConstructorDeclaration
+	Syntax error, insert ";" to complete ConstructorDeclaration
+	Syntax error on token "=", Expression expected after this token
+	Syntax error on token "=", Expression expected after this token
+
+	at com.masai.model.Reservation.<init>(Reservation.java:23) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67) ~[na:na]
+	... 45 common frames omitted
+
+2023-12-12T02:15:19.678+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20.0.1 with PID 7452 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
+2023-12-12T02:15:19.699+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-12-12T02:15:21.093+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-12T02:15:21.182+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 6 JPA repository interfaces.
+2023-12-12T02:15:21.890+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-12-12T02:15:22.008+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-12T02:15:22.009+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-12-12T02:15:22.108+05:30  INFO 7452 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-12-12T02:15:22.127+05:30  INFO 7452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2411 ms
+2023-12-12T02:15:22.484+05:30  INFO 7452 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-12T02:15:22.526+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:15:22.526+05:30  INFO 7452 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-12T02:15:22.540+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-12-12T02:15:22.562+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3fd17062
+2023-12-12T02:15:26.644+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-12-12T02:15:26.685+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:15:27.668+05:30 ERROR 7452 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+2023-12-12T02:15:27.707+05:30  WARN 7452 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+2023-12-12T02:15:27.722+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-12-12T02:15:27.957+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-12-12T02:15:28.049+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-12T02:15:28.075+05:30  INFO 7452 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-12-12T02:15:28.084+05:30 ERROR 7452 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.10.jar:6.0.10]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.10.jar:6.0.10]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.10.jar:6.0.10]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.10.jar:6.0.10]
@@ -255,43 +182,672 @@ org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "a
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.1.jar:3.1.1]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.1.jar:3.1.1]
 	at com.masai.BusTicketReservationSystemApplication.main(BusTicketReservationSystemApplication.java:10) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.1.jar:3.1.1]
-Caused by: java.sql.SQLException: Data truncated for column 'password' at row 1
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar:na]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:78) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
-	... 43 common frames omitted
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.10.jar:6.0.10]
+	... 19 common frames omitted
+Caused by: org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard.instantiate(EntityInstantiatorPojoStandard.java:100) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.lambda$prepareMappingModel$18(AbstractEntityPersister.java:4841) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.util.LazyValue.getValue(LazyValue.java:30) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.engine.internal.UnsavedValueFactory.getUnsavedIdentifierValue(UnsavedValueFactory.java:45) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.BasicEntityIdentifierMappingImpl.<init>(BasicEntityIdentifierMappingImpl.java:119) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.generateIdentifierMapping(AbstractEntityPersister.java:5186) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.lambda$prepareMappingModel$19(AbstractEntityPersister.java:4846) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.processSubPart(MappingModelCreationProcess.java:164) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.prepareMappingModel(AbstractEntityPersister.java:4844) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.prepareMappingModel(AbstractEntityPersister.java:4684) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.execute(MappingModelCreationProcess.java:85) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.process(MappingModelCreationProcess.java:43) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.finishInitialization(MappingMetamodelImpl.java:201) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.initializeMappingModel(SessionFactoryImpl.java:320) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:270) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:431) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1455) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.10.jar:6.0.10]
+	... 23 common frames omitted
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:79) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484) ~[na:na]
+	at org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard.instantiate(EntityInstantiatorPojoStandard.java:97) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	... 42 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	Syntax error, insert "Identifier (" to complete ConstructorHeaderName
+	Syntax error, insert ")" to complete ConstructorDeclaration
+	Syntax error, insert ";" to complete ConstructorDeclaration
+	Syntax error, insert "Identifier (" to complete ConstructorHeaderName
+	Syntax error, insert ")" to complete ConstructorDeclaration
+	Syntax error, insert ";" to complete ConstructorDeclaration
+	Syntax error, insert "Identifier (" to complete ConstructorHeaderName
+	Syntax error, insert ")" to complete ConstructorDeclaration
+	Syntax error, insert ";" to complete ConstructorDeclaration
+	localdate cannot be resolved to a variable
+	Syntax error on token "=", Expression expected after this token
 
-2023-11-04T13:48:51.116+05:30  INFO 13364 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-11-04T13:48:52.116+05:30  WARN 13364 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-11-04T13:48:53.435+05:30  INFO 13364 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-11-04T13:48:53.468+05:30  WARN 13364 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
-2023-11-04T13:48:53.474+05:30  INFO 13364 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-11-04T13:48:53.482+05:30  INFO 13364 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-11-04T13:48:53.512+05:30  INFO 13364 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-11-04T13:48:53.518+05:30  INFO 13364 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-11-04T13:48:53.548+05:30  INFO 13364 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+	at com.masai.model.Reservation.<init>(Reservation.java:23) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67) ~[na:na]
+	... 45 common frames omitted
+
+2023-12-12T02:15:30.091+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20.0.1 with PID 7452 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
+2023-12-12T02:15:30.122+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-12-12T02:15:31.506+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-12T02:15:31.621+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 6 JPA repository interfaces.
+2023-12-12T02:15:32.703+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-12-12T02:15:32.791+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-12T02:15:32.985+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-12-12T02:15:33.173+05:30  INFO 7452 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-12-12T02:15:33.175+05:30  INFO 7452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3046 ms
+2023-12-12T02:15:39.603+05:30  INFO 7452 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-12T02:15:39.616+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:15:39.616+05:30  INFO 7452 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-12T02:15:39.619+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2023-12-12T02:15:39.647+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1dd52974
+2023-12-12T02:15:39.648+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2023-12-12T02:15:39.704+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:15:40.085+05:30 ERROR 7452 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+2023-12-12T02:15:40.245+05:30  WARN 7452 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+2023-12-12T02:15:40.266+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2023-12-12T02:15:40.299+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2023-12-12T02:15:40.301+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-12T02:15:40.335+05:30  INFO 7452 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2023-11-04T13:48:53.599+05:30 ERROR 13364 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+2023-12-12T02:15:40.350+05:30 ERROR 7452 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-***************************
-APPLICATION FAILED TO START
-***************************
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:931) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.1.jar:3.1.1]
+	at com.masai.BusTicketReservationSystemApplication.main(BusTicketReservationSystemApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.1.jar:3.1.1]
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.10.jar:6.0.10]
+	... 19 common frames omitted
+Caused by: org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard.instantiate(EntityInstantiatorPojoStandard.java:100) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.lambda$prepareMappingModel$18(AbstractEntityPersister.java:4841) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.util.LazyValue.getValue(LazyValue.java:30) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.engine.internal.UnsavedValueFactory.getUnsavedIdentifierValue(UnsavedValueFactory.java:45) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.BasicEntityIdentifierMappingImpl.<init>(BasicEntityIdentifierMappingImpl.java:119) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.generateIdentifierMapping(AbstractEntityPersister.java:5186) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.lambda$prepareMappingModel$19(AbstractEntityPersister.java:4846) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.processSubPart(MappingModelCreationProcess.java:164) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.prepareMappingModel(AbstractEntityPersister.java:4844) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.prepareMappingModel(AbstractEntityPersister.java:4684) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.execute(MappingModelCreationProcess.java:85) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.process(MappingModelCreationProcess.java:43) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.finishInitialization(MappingMetamodelImpl.java:201) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.initializeMappingModel(SessionFactoryImpl.java:320) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:270) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:431) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1455) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.10.jar:6.0.10]
+	... 23 common frames omitted
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:79) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484) ~[na:na]
+	at org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard.instantiate(EntityInstantiatorPojoStandard.java:97) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	... 42 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	localti cannot be resolved to a variable
 
-Description:
+	at com.masai.model.Reservation.<init>(Reservation.java:43) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67) ~[na:na]
+	... 45 common frames omitted
 
-Web server failed to start. Port 8088 was already in use.
+2023-12-12T02:15:42.445+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20.0.1 with PID 7452 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
+2023-12-12T02:15:42.472+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-12-12T02:15:43.654+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-12T02:15:43.732+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 6 JPA repository interfaces.
+2023-12-12T02:15:44.065+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-12-12T02:15:44.068+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-12T02:15:44.069+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-12-12T02:15:44.096+05:30  INFO 7452 --- [restartedMain] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-12-12T02:15:44.097+05:30  INFO 7452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1601 ms
+2023-12-12T02:15:44.471+05:30  INFO 7452 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-12T02:15:44.733+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:15:44.737+05:30  INFO 7452 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-12T02:15:44.740+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2023-12-12T02:15:44.782+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@284b4c3d
+2023-12-12T02:15:44.783+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2023-12-12T02:15:44.960+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:15:45.243+05:30 ERROR 7452 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+2023-12-12T02:15:45.272+05:30  WARN 7452 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+2023-12-12T02:15:45.309+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2023-12-12T02:15:45.348+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2023-12-12T02:15:45.349+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-12T02:15:45.362+05:30  INFO 7452 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
 
-Action:
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-12-12T02:15:45.367+05:30 ERROR 7452 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-Identify and stop the process that's listening on port 8088 or configure this application to listen on another port.
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:931) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.1.jar:3.1.1]
+	at com.masai.BusTicketReservationSystemApplication.main(BusTicketReservationSystemApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.1.jar:3.1.1]
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.10.jar:6.0.10]
+	... 19 common frames omitted
+Caused by: org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard.instantiate(EntityInstantiatorPojoStandard.java:100) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.lambda$prepareMappingModel$18(AbstractEntityPersister.java:4841) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.util.LazyValue.getValue(LazyValue.java:30) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.engine.internal.UnsavedValueFactory.getUnsavedIdentifierValue(UnsavedValueFactory.java:45) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.BasicEntityIdentifierMappingImpl.<init>(BasicEntityIdentifierMappingImpl.java:119) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.generateIdentifierMapping(AbstractEntityPersister.java:5186) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.lambda$prepareMappingModel$19(AbstractEntityPersister.java:4846) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.processSubPart(MappingModelCreationProcess.java:164) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.prepareMappingModel(AbstractEntityPersister.java:4844) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.prepareMappingModel(AbstractEntityPersister.java:4684) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.execute(MappingModelCreationProcess.java:85) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.process(MappingModelCreationProcess.java:43) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.finishInitialization(MappingMetamodelImpl.java:201) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.initializeMappingModel(SessionFactoryImpl.java:320) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:270) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:431) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1455) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.10.jar:6.0.10]
+	... 23 common frames omitted
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:79) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484) ~[na:na]
+	at org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard.instantiate(EntityInstantiatorPojoStandard.java:97) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	... 42 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	LocalTimeocalTime cannot be resolved
 
+	at com.masai.model.Reservation.<init>(Reservation.java:43) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67) ~[na:na]
+	... 45 common frames omitted
+
+2023-12-12T02:15:49.085+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20.0.1 with PID 7452 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
+2023-12-12T02:15:49.087+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-12-12T02:15:50.030+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-12T02:15:50.066+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 6 JPA repository interfaces.
+2023-12-12T02:15:50.272+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-12-12T02:15:50.282+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-12T02:15:50.285+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-12-12T02:15:50.321+05:30  INFO 7452 --- [restartedMain] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-12-12T02:15:50.325+05:30  INFO 7452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1229 ms
+2023-12-12T02:15:50.437+05:30  INFO 7452 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-12T02:15:50.445+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:15:50.446+05:30  INFO 7452 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-12T02:15:50.448+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2023-12-12T02:15:50.462+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5e00964b
+2023-12-12T02:15:50.463+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2023-12-12T02:15:50.496+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:15:50.848+05:30  INFO 7452 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12T02:15:51.148+05:30  INFO 7452 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-12T02:15:51.684+05:30  WARN 7452 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-12T02:15:53.552+05:30  INFO 7452 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-12-12T02:15:53.560+05:30  INFO 7452 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-12-12T02:15:53.663+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2023-12-12T02:15:53.697+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Started BusTicketReservationSystemApplication in 4.66 seconds (process running for 2917.694)
+2023-12-12T02:15:53.729+05:30  INFO 7452 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-12-12T02:15:54.860+05:30  INFO 7452 --- [http-nio-8888-exec-2] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-12T02:15:54.861+05:30  INFO 7452 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-12T02:15:54.865+05:30  INFO 7452 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-12-12T02:15:54.980+05:30  WARN 7452 --- [http-nio-8888-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in public org.springframework.http.ResponseEntity<com.masai.model.Reservation> com.masai.controller.ReservationController.addNewReservationHandler(java.lang.Integer,com.masai.model.Reservation,java.lang.String) throws com.masai.exception.ReservationException,com.masai.exception.BusException,com.masai.exception.UserException: [Field error in object 'reservation' on field 'reservationDate': rejected value [2023-12-12]; codes [Future.reservation.reservationDate,Future.reservationDate,Future.java.time.LocalDate,Future]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [reservation.reservationDate,reservationDate]; arguments []; default message [reservationDate]]; default message [Date should not be in past *]] ]
+2023-12-12T02:17:03.515+05:30  INFO 7452 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-12-12T02:17:03.553+05:30  INFO 7452 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-12T02:17:03.554+05:30  INFO 7452 --- [Thread-7] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-12-12T02:17:03.573+05:30  INFO 7452 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-12T02:17:03.576+05:30  INFO 7452 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2023-12-12T02:17:03.598+05:30  INFO 7452 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2023-12-12T02:17:03.857+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20.0.1 with PID 7452 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
+2023-12-12T02:17:03.861+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-12-12T02:17:04.844+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-12T02:17:04.880+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 6 JPA repository interfaces.
+2023-12-12T02:17:05.278+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-12-12T02:17:05.279+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-12T02:17:05.279+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-12-12T02:17:05.387+05:30  INFO 7452 --- [restartedMain] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-12-12T02:17:05.387+05:30  INFO 7452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1516 ms
+2023-12-12T02:17:05.573+05:30  INFO 7452 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-12T02:17:05.614+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:17:05.627+05:30  INFO 7452 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-12T02:17:05.632+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2023-12-12T02:17:05.682+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@176cb9cf
+2023-12-12T02:17:05.683+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2023-12-12T02:17:05.731+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:17:05.861+05:30 ERROR 7452 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+2023-12-12T02:17:05.868+05:30  WARN 7452 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+2023-12-12T02:17:05.877+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2023-12-12T02:17:05.918+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2023-12-12T02:17:05.919+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-12T02:17:05.934+05:30  INFO 7452 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-12-12T02:17:05.939+05:30 ERROR 7452 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:931) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.1.jar:3.1.1]
+	at com.masai.BusTicketReservationSystemApplication.main(BusTicketReservationSystemApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.1.jar:3.1.1]
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.10.jar:6.0.10]
+	... 19 common frames omitted
+Caused by: org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard.instantiate(EntityInstantiatorPojoStandard.java:100) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.lambda$prepareMappingModel$18(AbstractEntityPersister.java:4841) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.util.LazyValue.getValue(LazyValue.java:30) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.engine.internal.UnsavedValueFactory.getUnsavedIdentifierValue(UnsavedValueFactory.java:45) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.BasicEntityIdentifierMappingImpl.<init>(BasicEntityIdentifierMappingImpl.java:119) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.generateIdentifierMapping(AbstractEntityPersister.java:5186) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.lambda$prepareMappingModel$19(AbstractEntityPersister.java:4846) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.processSubPart(MappingModelCreationProcess.java:164) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.prepareMappingModel(AbstractEntityPersister.java:4844) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.prepareMappingModel(AbstractEntityPersister.java:4684) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.execute(MappingModelCreationProcess.java:85) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.process(MappingModelCreationProcess.java:43) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.finishInitialization(MappingMetamodelImpl.java:201) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.initializeMappingModel(SessionFactoryImpl.java:320) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:270) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:431) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1455) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.10.jar:6.0.10]
+	... 23 common frames omitted
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:79) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484) ~[na:na]
+	at org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard.instantiate(EntityInstantiatorPojoStandard.java:97) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	... 42 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	The operator + is undefined for the argument type(s) LocalDate, int
+
+	at com.masai.model.Reservation.<init>(Reservation.java:39) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67) ~[na:na]
+	... 45 common frames omitted
+
+2023-12-12T02:17:09.669+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20.0.1 with PID 7452 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
+2023-12-12T02:17:09.670+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-12-12T02:17:11.463+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-12T02:17:11.692+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 190 ms. Found 6 JPA repository interfaces.
+2023-12-12T02:17:12.122+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-12-12T02:17:12.316+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-12T02:17:12.421+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-12-12T02:17:12.485+05:30  INFO 7452 --- [restartedMain] o.a.c.c.C.[Tomcat-5].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-12-12T02:17:12.496+05:30  INFO 7452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2823 ms
+2023-12-12T02:17:12.813+05:30  INFO 7452 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-12T02:17:12.838+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:17:12.849+05:30  INFO 7452 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-12T02:17:12.853+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2023-12-12T02:17:12.910+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection com.mysql.cj.jdbc.ConnectionImpl@ea08f7
+2023-12-12T02:17:12.913+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2023-12-12T02:17:12.964+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:17:13.661+05:30 ERROR 7452 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+2023-12-12T02:17:13.777+05:30  WARN 7452 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+2023-12-12T02:17:13.963+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2023-12-12T02:17:14.154+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2023-12-12T02:17:14.220+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-12T02:17:14.276+05:30  INFO 7452 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-12-12T02:17:14.296+05:30 ERROR 7452 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:931) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.1.jar:3.1.1]
+	at com.masai.BusTicketReservationSystemApplication.main(BusTicketReservationSystemApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.1.jar:3.1.1]
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.10.jar:6.0.10]
+	... 19 common frames omitted
+Caused by: org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard.instantiate(EntityInstantiatorPojoStandard.java:100) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.lambda$prepareMappingModel$18(AbstractEntityPersister.java:4841) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.util.LazyValue.getValue(LazyValue.java:30) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.engine.internal.UnsavedValueFactory.getUnsavedIdentifierValue(UnsavedValueFactory.java:45) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.BasicEntityIdentifierMappingImpl.<init>(BasicEntityIdentifierMappingImpl.java:119) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.generateIdentifierMapping(AbstractEntityPersister.java:5186) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.lambda$prepareMappingModel$19(AbstractEntityPersister.java:4846) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.processSubPart(MappingModelCreationProcess.java:164) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.prepareMappingModel(AbstractEntityPersister.java:4844) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.prepareMappingModel(AbstractEntityPersister.java:4684) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.execute(MappingModelCreationProcess.java:85) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.process(MappingModelCreationProcess.java:43) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.finishInitialization(MappingMetamodelImpl.java:201) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.initializeMappingModel(SessionFactoryImpl.java:320) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:270) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:431) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1455) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.10.jar:6.0.10]
+	... 23 common frames omitted
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:79) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484) ~[na:na]
+	at org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard.instantiate(EntityInstantiatorPojoStandard.java:97) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	... 42 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	Syntax error, insert "Identifier (" to complete ConstructorHeaderName
+	Syntax error, insert ")" to complete ConstructorDeclaration
+	Syntax error, insert ";" to complete ConstructorDeclaration
+	Syntax error, insert "Identifier (" to complete ConstructorHeaderName
+	Syntax error, insert ")" to complete ConstructorDeclaration
+	Syntax error, insert ";" to complete ConstructorDeclaration
+	Syntax error, insert "Identifier (" to complete ConstructorHeaderName
+	Syntax error, insert ")" to complete ConstructorDeclaration
+	Syntax error, insert ";" to complete ConstructorDeclaration
+	Syntax error on token ".", Identifier expected after this token
+
+	at com.masai.model.Reservation.<init>(Reservation.java:23) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67) ~[na:na]
+	... 45 common frames omitted
+
+2023-12-12T02:17:16.062+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20.0.1 with PID 7452 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
+2023-12-12T02:17:16.065+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-12-12T02:17:16.949+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-12T02:17:17.021+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 6 JPA repository interfaces.
+2023-12-12T02:17:17.328+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-12-12T02:17:17.330+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-12T02:17:17.332+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-12-12T02:17:17.383+05:30  INFO 7452 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-12-12T02:17:17.384+05:30  INFO 7452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1316 ms
+2023-12-12T02:17:17.636+05:30  INFO 7452 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-12T02:17:17.662+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:17:17.667+05:30  INFO 7452 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-12T02:17:17.669+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2023-12-12T02:17:17.694+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-9 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7cd4bfc9
+2023-12-12T02:17:17.700+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2023-12-12T02:17:17.751+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:17:18.019+05:30  INFO 7452 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12T02:17:18.385+05:30  INFO 7452 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-12T02:17:18.999+05:30  WARN 7452 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-12T02:17:20.600+05:30  INFO 7452 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-12-12T02:17:20.615+05:30  INFO 7452 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-12-12T02:17:20.682+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2023-12-12T02:17:20.698+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Started BusTicketReservationSystemApplication in 4.7 seconds (process running for 3004.696)
+2023-12-12T02:17:20.711+05:30  INFO 7452 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-12-12T02:17:22.026+05:30  INFO 7452 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-12-12T02:17:22.045+05:30  INFO 7452 --- [Thread-23] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-12T02:17:22.051+05:30  INFO 7452 --- [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-12T02:17:22.053+05:30  INFO 7452 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2023-12-12T02:17:22.064+05:30  INFO 7452 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2023-12-12T02:17:22.345+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20.0.1 with PID 7452 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
+2023-12-12T02:17:22.349+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-12-12T02:17:23.124+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-12T02:17:23.164+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 6 JPA repository interfaces.
+2023-12-12T02:17:23.331+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-12-12T02:17:23.332+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-12T02:17:23.333+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-12-12T02:17:23.362+05:30  INFO 7452 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-12-12T02:17:23.363+05:30  INFO 7452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1010 ms
+2023-12-12T02:17:23.481+05:30  INFO 7452 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-12T02:17:23.493+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:17:23.493+05:30  INFO 7452 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-12T02:17:23.497+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2023-12-12T02:17:23.518+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-10 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6d732d34
+2023-12-12T02:17:23.519+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2023-12-12T02:17:23.553+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:17:23.679+05:30  INFO 7452 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12T02:17:23.884+05:30  INFO 7452 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-12T02:17:24.231+05:30  WARN 7452 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-12T02:17:24.735+05:30  INFO 7452 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-12-12T02:17:24.744+05:30  INFO 7452 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-12-12T02:17:24.796+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2023-12-12T02:17:24.808+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Started BusTicketReservationSystemApplication in 2.526 seconds (process running for 3008.806)
+2023-12-12T02:17:24.812+05:30  INFO 7452 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-12-12T02:17:45.523+05:30  INFO 7452 --- [http-nio-8888-exec-2] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-12T02:17:45.524+05:30  INFO 7452 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-12T02:17:45.526+05:30  INFO 7452 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-12T02:17:48.886+05:30  INFO 7452 --- [http-nio-8888-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1051 ms
+2023-12-12T02:17:54.492+05:30  WARN 7452 --- [http-nio-8888-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [jakarta.servlet.ServletException: Handler dispatch failed: java.lang.Error: Unresolved compilation problem: <EOL>?The method setReservationTime(LocalTime) in the type Reservation is not applicable for the arguments (String)<EOL>]
+2023-12-12T02:20:15.041+05:30  INFO 7452 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-12-12T02:20:15.077+05:30  INFO 7452 --- [Thread-33] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-12T02:20:15.078+05:30  INFO 7452 --- [Thread-33] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-12-12T02:20:15.085+05:30  INFO 7452 --- [Thread-33] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-12T02:20:15.087+05:30  INFO 7452 --- [Thread-33] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2023-12-12T02:20:15.103+05:30  INFO 7452 --- [Thread-33] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+2023-12-12T02:20:15.431+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20.0.1 with PID 7452 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
+2023-12-12T02:20:15.433+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-12-12T02:20:16.340+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-12T02:20:16.450+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 6 JPA repository interfaces.
+2023-12-12T02:20:16.772+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-12-12T02:20:16.774+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-12T02:20:16.775+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-12-12T02:20:16.799+05:30  INFO 7452 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-12-12T02:20:16.816+05:30  INFO 7452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1379 ms
+2023-12-12T02:20:17.016+05:30  INFO 7452 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-12T02:20:17.040+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:20:17.043+05:30  INFO 7452 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-12T02:20:17.046+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2023-12-12T02:20:17.082+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-11 - Added connection com.mysql.cj.jdbc.ConnectionImpl@731b1eed
+2023-12-12T02:20:17.084+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2023-12-12T02:20:17.135+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:20:17.401+05:30 ERROR 7452 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+2023-12-12T02:20:17.433+05:30  WARN 7452 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+2023-12-12T02:20:17.436+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2023-12-12T02:20:17.467+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+2023-12-12T02:20:17.468+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-12T02:20:17.496+05:30  INFO 7452 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-12-12T02:20:17.502+05:30 ERROR 7452 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:931) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.1.jar:3.1.1]
+	at com.masai.BusTicketReservationSystemApplication.main(BusTicketReservationSystemApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.1.jar:3.1.1]
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.10.jar:6.0.10]
+	... 19 common frames omitted
+Caused by: org.hibernate.InstantiationException: Could not instantiate entity : com.masai.model.Reservation
+	at org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard.instantiate(EntityInstantiatorPojoStandard.java:100) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.lambda$prepareMappingModel$18(AbstractEntityPersister.java:4841) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.util.LazyValue.getValue(LazyValue.java:30) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.engine.internal.UnsavedValueFactory.getUnsavedIdentifierValue(UnsavedValueFactory.java:45) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.BasicEntityIdentifierMappingImpl.<init>(BasicEntityIdentifierMappingImpl.java:119) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.generateIdentifierMapping(AbstractEntityPersister.java:5186) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.lambda$prepareMappingModel$19(AbstractEntityPersister.java:4846) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.processSubPart(MappingModelCreationProcess.java:164) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.prepareMappingModel(AbstractEntityPersister.java:4844) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.prepareMappingModel(AbstractEntityPersister.java:4684) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.execute(MappingModelCreationProcess.java:85) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.process(MappingModelCreationProcess.java:43) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.finishInitialization(MappingMetamodelImpl.java:201) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.initializeMappingModel(SessionFactoryImpl.java:320) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:270) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:431) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1455) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.10.jar:6.0.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.10.jar:6.0.10]
+	... 23 common frames omitted
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:79) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484) ~[na:na]
+	at org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard.instantiate(EntityInstantiatorPojoStandard.java:97) ~[hibernate-core-6.2.5.Final.jar:6.2.5.Final]
+	... 42 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	tos cannot be resolved or is not a field
+
+	at com.masai.model.Reservation.<init>(Reservation.java:43) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67) ~[na:na]
+	... 45 common frames omitted
+
+2023-12-12T02:20:26.034+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20.0.1 with PID 7452 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
+2023-12-12T02:20:26.038+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-12-12T02:20:26.807+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-12T02:20:26.876+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 6 JPA repository interfaces.
+2023-12-12T02:20:27.072+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-12-12T02:20:27.077+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-12T02:20:27.080+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-12-12T02:20:27.116+05:30  INFO 7452 --- [restartedMain] o.a.c.c.C.[Tomcat-7].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-12-12T02:20:27.117+05:30  INFO 7452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1076 ms
+2023-12-12T02:20:27.245+05:30  INFO 7452 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-12T02:20:27.255+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:20:27.256+05:30  INFO 7452 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-12T02:20:27.258+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Starting...
+2023-12-12T02:20:27.276+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-12 - Added connection com.mysql.cj.jdbc.ConnectionImpl@234f1cb1
+2023-12-12T02:20:27.277+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Start completed.
+2023-12-12T02:20:27.314+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:20:27.494+05:30  INFO 7452 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12T02:20:27.861+05:30  INFO 7452 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-12T02:20:28.214+05:30  WARN 7452 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-12T02:20:29.716+05:30  INFO 7452 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-12-12T02:20:29.897+05:30  INFO 7452 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-12-12T02:20:30.001+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2023-12-12T02:20:30.015+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Started BusTicketReservationSystemApplication in 4.15 seconds (process running for 3194.013)
+2023-12-12T02:20:30.026+05:30  INFO 7452 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-12-12T02:20:32.837+05:30  INFO 7452 --- [http-nio-8888-exec-3] o.a.c.c.C.[Tomcat-7].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-12T02:20:32.838+05:30  INFO 7452 --- [http-nio-8888-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-12T02:20:32.841+05:30  INFO 7452 --- [http-nio-8888-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-12-12T02:20:32.895+05:30  WARN 7452 --- [http-nio-8888-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to add reservation]
+2023-12-12T02:21:30.655+05:30  WARN 7452 --- [http-nio-8888-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.masai.exception.UserException: Please provide a valid key to add reservation]
+2023-12-12T02:22:34.799+05:30  WARN 7452 --- [http-nio-8888-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1062, SQLState: 23000
+2023-12-12T02:22:34.800+05:30 ERROR 7452 --- [http-nio-8888-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry '7' for key 'reservation.UK_d9bxpew7nosnn0ob9a9jrwaoq'
+2023-12-12T02:22:34.829+05:30  WARN 7452 --- [http-nio-8888-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [Duplicate entry '7' for key 'reservation.UK_d9bxpew7nosnn0ob9a9jrwaoq'] [insert into reservation (bus_bus_id,destination,reservation_date,reservation_status,reservation_time,reservation_type,source,user_user_login_id) values (?,?,?,?,?,?,?,?)]; SQL [insert into reservation (bus_bus_id,destination,reservation_date,reservation_status,reservation_time,reservation_type,source,user_user_login_id) values (?,?,?,?,?,?,?,?)]; constraint [reservation.UK_d9bxpew7nosnn0ob9a9jrwaoq]]
+2023-12-12T02:25:14.663+05:30  INFO 7452 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-12-12T02:25:14.686+05:30  INFO 7452 --- [Thread-37] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-12T02:25:14.687+05:30  INFO 7452 --- [Thread-37] o.a.c.c.C.[Tomcat-7].[localhost].[/]     : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-12-12T02:25:14.694+05:30  INFO 7452 --- [Thread-37] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-12T02:25:14.697+05:30  INFO 7452 --- [Thread-37] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
+2023-12-12T02:25:14.707+05:30  INFO 7452 --- [Thread-37] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.
+2023-12-12T02:25:15.009+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20.0.1 with PID 7452 (C:\Ankit\Book-My-Bus\Book My Bus(Backend)\target\classes started by Dell in C:\Ankit\Book-My-Bus)
+2023-12-12T02:25:15.010+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-12-12T02:25:15.790+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-12T02:25:15.847+05:30  INFO 7452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 6 JPA repository interfaces.
+2023-12-12T02:25:16.017+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-12-12T02:25:16.019+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-12T02:25:16.020+05:30  INFO 7452 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-12-12T02:25:16.043+05:30  INFO 7452 --- [restartedMain] o.a.c.c.C.[Tomcat-7].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-12-12T02:25:16.043+05:30  INFO 7452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1027 ms
+2023-12-12T02:25:16.162+05:30  INFO 7452 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-12T02:25:16.174+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:25:16.175+05:30  INFO 7452 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-12T02:25:16.177+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Starting...
+2023-12-12T02:25:16.248+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-13 - Added connection com.mysql.cj.jdbc.ConnectionImpl@21b4890a
+2023-12-12T02:25:16.249+05:30  INFO 7452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Start completed.
+2023-12-12T02:25:16.277+05:30  INFO 7452 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-12T02:25:16.415+05:30  INFO 7452 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12T02:25:16.706+05:30  INFO 7452 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-12T02:25:17.097+05:30  WARN 7452 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-12T02:25:17.903+05:30  INFO 7452 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-12-12T02:25:17.909+05:30  INFO 7452 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-12-12T02:25:17.975+05:30  INFO 7452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2023-12-12T02:25:18.018+05:30  INFO 7452 --- [restartedMain] .m.BusTicketReservationSystemApplication : Started BusTicketReservationSystemApplication in 3.06 seconds (process running for 3482.017)
+2023-12-12T02:25:18.027+05:30  INFO 7452 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
