@@ -6,13 +6,14 @@ import java.time.LocalTime;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.validation.constraints.Future;
-//import com.masai.exception.CustomDateDeserializer;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.FutureOrPresent;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,32 +28,29 @@ public class Reservation {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "reservation_id")
 	private Integer reservationId;
 
 	private String reservationStatus;
 
 	private String reservationType;
 
-	@Future(message = "Date should not be in past *")
-//	@NotNull(message = "Reservation Date is mandatory *")
+	@FutureOrPresent(message = "Date should not be in past *")
 	@JsonFormat(pattern = "yyyy-MM-dd", shape = Shape.STRING)
-	private LocalDate reservationDate=LocalDate.now().plusDays(1);
-
-//	@NotNull(message = "Reservation Time is mandatory *")
-//	@JsonFormat(pattern = "hh-mm-ss", shape = Shape.STRING)
-	private String reservationTime=LocalTime.now().toString();
-
-//	@NotNull(message = "Reservation source is mandatory *")
+	private LocalDate reservationDate = LocalDate.now();
+	
+	private String reservationTime = LocalTime.now().toString();
+	
 	private String source;
 
-//	@NotBlank(message = "Reservation destination not be ramain empty *")
-//	@NotNull(message = "Reservation destination is mandatory *")
 	private String destination;
 
-	@OneToOne
+	@ManyToOne
+	@JoinColumn(name = "bus_id")
 	private Bus bus;
 
-	@OneToOne
+	@ManyToOne
+	@JoinColumn(name = "user_id")
 	private User user;
 
 }

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.masai.exception.BusException;
 import com.masai.exception.FeedbackException;
 import com.masai.exception.UserException;
+import com.masai.model.Bus;
 import com.masai.model.Feedback;
 import com.masai.service.IFeedbackServiceImpl;
 import com.masai.service.ReservationService;
@@ -36,9 +37,9 @@ public class FeedbackController {
 	
 	@PostMapping("/add")
     public ResponseEntity<String> addFeedbackHandler(@Valid @RequestBody Feedback feedback,@RequestParam String key) throws FeedbackException, UserException, BusException {
-		Integer busId = rService.getCurrentUserReservedBusId();
+		List<Bus> busId = rService.getCurrentUserReservedBusId();
 		
-		return new ResponseEntity<String>(fservice.addFeedback( busId, feedback,key), HttpStatus.CREATED);
+		return null;
 	}
 	
 	@PutMapping("/update")

@@ -70,5 +70,5 @@ public interface ReservationService {
 	 * @throws UserException
 	 */
 	public List<Reservation> getAllReservationByDate(LocalDate date,String key)throws ReservationException, UserException;
-	Integer getCurrentUserReservedBusId() throws UserException;
+	List<Bus> getCurrentUserReservedBusId() throws UserException;
 }

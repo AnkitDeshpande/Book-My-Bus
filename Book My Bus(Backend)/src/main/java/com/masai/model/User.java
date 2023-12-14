@@ -1,5 +1,7 @@
 package com.masai.model;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
@@ -7,6 +9,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -47,7 +51,8 @@ public class User {
 	private String email;
 
 	@JsonIgnore
-	@OneToOne
-	private Reservation reservation;
+	@OneToMany
+	@JoinColumn(name = "reservation_id")
+	private List<Reservation> reservation;
 
 }

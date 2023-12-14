@@ -63,8 +63,9 @@ public class ReservationServiceImpl implements ReservationService {
 		reservation.setReservationStatus("Booked");
 		reservation.setReservationTime(LocalTime.now().toString());
 		reservation.setBus(b);
+		reservation.setUser(u);
+		u.getReservation().add(reservation);
 
-		u.setReservation(reservation);
 
 		return rDao.save(reservation);
 
@@ -85,7 +86,7 @@ public class ReservationServiceImpl implements ReservationService {
 			User u = uRepo.findById(loggedInUser.getUserId()).orElseThrow(
 					() -> new UserException("User with User Id " + loggedInUser.getUserId() + " does not exist"));
 
-			Reservation curr = u.getReservation();
+			Reservation curr = opt.get();
 
 			if (reservation.getDestination() != null)
 				curr.setDestination(reservation.getDestination());
@@ -102,7 +103,7 @@ public class ReservationServiceImpl implements ReservationService {
 
 			Reservation updateReservation = rDao.save(curr);
 
-			u.setReservation(updateReservation);
+			u.getReservation().add(updateReservation);
 
 			return updateReservation;
 
@@ -131,9 +132,9 @@ public class ReservationServiceImpl implements ReservationService {
 
 			User currUser = u.get();
 
-			Bus b = bdao.findById(currUser.getReservation().getBus().getBusId())
+			Bus b = bdao.findById(existingReservation.getBus().getBusId())
 					.orElseThrow(() -> new ReservationException(
-							"Bus with Id " + currUser.getReservation().getBus().getBusId() + " not found"));
+							"Bus with Id " + existingReservation.getBus().getBusId() + " not found"));
 			b.setAvailableSeats(b.getAvailableSeats() + 1);
 
 			currUser.setReservation(null);
@@ -251,23 +252,29 @@ public class ReservationServiceImpl implements ReservationService {
 	}
 
 	@Override
-	public Integer getCurrentUserReservedBusId() throws UserException {
+	public List<Bus> getCurrentUserReservedBusId() throws UserException {
 		CurrentUserSession find = srepo.findAll().get(0);
 		if (find != null) {
 			Integer userId = find.getUserId();
-			User user = uRepo.findById(userId).orElseThrow(() -> new UserException("You are Not LogggedIn!!"));
-			Reservation reservation = user.getReservation();
-			if (reservation==null) {
+			User user = uRepo.findById(userId).orElseThrow(() -> new UserException("You are Not Logged In!!"));
+			List<Reservation> reservations = user.getReservation();
+			if (reservations == null || reservations.isEmpty()) {
 				throw new UserException("Please Book Some ticket First!!");
-			}else {
-				Bus bus = reservation.getBus();
-				Integer busId = bus.getBusId();
-				return busId;
+			} else {
+				List<Bus> buses = reservations.stream()
+						.map(Reservation::getBus).toList();
+					
+					
+				if (!buses.isEmpty()) {
+					return buses;
+				} else {
+					throw new UserException("Bus ID not found in your reservations!!");
+				}
 			}
 		} else {
 			throw new UserException("Please Login First!!");
 		}
-
 	}
+
 
 }
