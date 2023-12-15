@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,7 +66,6 @@ public class ReservationServiceImpl implements ReservationService {
 		reservation.setBus(b);
 		reservation.setUser(u);
 		u.getReservation().add(reservation);
-
 
 		return rDao.save(reservation);
 
@@ -132,12 +132,11 @@ public class ReservationServiceImpl implements ReservationService {
 
 			User currUser = u.get();
 
-			Bus b = bdao.findById(existingReservation.getBus().getBusId())
-					.orElseThrow(() -> new ReservationException(
-							"Bus with Id " + existingReservation.getBus().getBusId() + " not found"));
+			Bus b = bdao.findById(existingReservation.getBus().getBusId()).orElseThrow(() -> new ReservationException(
+					"Bus with Id " + existingReservation.getBus().getBusId() + " not found"));
 			b.setAvailableSeats(b.getAvailableSeats() + 1);
 
-			currUser.setReservation(null);
+			currUser.getReservation().remove(existingReservation);
 
 			rDao.delete(existingReservation);
 
@@ -257,14 +256,12 @@ public class ReservationServiceImpl implements ReservationService {
 		if (find != null) {
 			Integer userId = find.getUserId();
 			User user = uRepo.findById(userId).orElseThrow(() -> new UserException("You are Not Logged In!!"));
-			List<Reservation> reservations = user.getReservation();
+			Set<Reservation> reservations = user.getReservation();
 			if (reservations == null || reservations.isEmpty()) {
 				throw new UserException("Please Book Some ticket First!!");
 			} else {
-				List<Bus> buses = reservations.stream()
-						.map(Reservation::getBus).toList();
-					
-					
+				List<Bus> buses = reservations.stream().map(Reservation::getBus).toList();
+
 				if (!buses.isEmpty()) {
 					return buses;
 				} else {
@@ -275,6 +272,5 @@ public class ReservationServiceImpl implements ReservationService {
 			throw new UserException("Please Login First!!");
 		}
 	}
-
 
 }

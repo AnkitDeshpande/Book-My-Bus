@@ -70,7 +70,7 @@ public class BusServiceImpl implements BusService {
 	public Bus updateBus(Bus bus, String key) throws BusException, UserException {
 
 		CurrentUserSession loggedInUser = srepo.findByUuid(key);
-		
+
 //		If user not logged in throw User Exception
 		if (loggedInUser == null) {
 			throw new UserException("Please provide a valid key to update Bus");
@@ -133,7 +133,7 @@ public class BusServiceImpl implements BusService {
 	public Bus deleteBus(Integer busId, String key) throws BusException, UserException {
 
 		CurrentUserSession loggedInUser = srepo.findByUuid(key);
-		
+
 //		If user not logged in throw User Exception
 		if (loggedInUser == null) {
 			throw new UserException("Please provide a valid key to delete Bus");
@@ -162,7 +162,7 @@ public class BusServiceImpl implements BusService {
 	public Bus viewBus(Integer busId, String key) throws BusException, UserException {
 
 		CurrentUserSession loggedInUser = srepo.findByUuid(key);
-		
+
 //		If user not logged in throw User Exception
 		if (loggedInUser == null) {
 			throw new UserException("Please provide a valid key to view bus");

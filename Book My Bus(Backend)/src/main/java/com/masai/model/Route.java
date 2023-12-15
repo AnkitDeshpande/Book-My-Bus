@@ -1,6 +1,9 @@
 package com.masai.model;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -11,34 +14,40 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@NoArgsConstructor
 public class Route {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer routeId;
-	
+
 	private String routeFrom;
-	
+
 	private String routeTo;
-	
+
 	private Integer distance;
-	
+
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "route")
-	private List<Bus> buslist;
+	private Set<Bus> buslist = new HashSet<Bus>();
 
-	public Route(Integer routeId, String routeFrom, String routeTo, Integer distance, List<Bus> buslist) {
-		super();
-		this.routeId = routeId;
-		this.routeFrom = routeFrom;
-		this.routeTo = routeTo;
-		this.distance = distance;
-		this.buslist = buslist;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Route other = (Route) obj;
+		return Objects.equals(routeFrom, other.routeFrom) && Objects.equals(routeTo, other.routeTo);
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(routeFrom, routeTo);
+	}
+
 }

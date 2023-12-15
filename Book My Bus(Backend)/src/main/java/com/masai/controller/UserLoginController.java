@@ -1,6 +1,5 @@
 package com.masai.controller;
 
-
 import javax.security.auth.login.LoginException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,17 +24,15 @@ import jakarta.validation.Valid;
 public class UserLoginController {
 	@Autowired
 	private LoginService lService;
-	
+
 	@PostMapping("/login")
-	public ResponseEntity<CurrentUserSession> userLoginHandler(@Valid @RequestBody LoginDTO dto) throws LoginException{
-//		String msg=lService.logIntoAccount(dto);
-		return new ResponseEntity<CurrentUserSession>(lService.logIntoAccount(dto),HttpStatus.ACCEPTED);
+	public ResponseEntity<CurrentUserSession> userLoginHandler(@Valid @RequestBody LoginDTO dto) throws LoginException {
+		return new ResponseEntity<CurrentUserSession>(lService.logIntoAccount(dto), HttpStatus.ACCEPTED);
 	}
-	
+
 	@PostMapping("/logout")
-	public ResponseEntity<String> userLogoutHandler(@RequestParam String key) throws LoginException{
-		String msg=lService.logOutFromAccount(key);
-		return new ResponseEntity<String>(msg,HttpStatus.ACCEPTED);
+	public ResponseEntity<String> userLogoutHandler(@RequestParam String key) throws LoginException {
+		String msg = lService.logOutFromAccount(key);
+		return new ResponseEntity<String>(msg, HttpStatus.ACCEPTED);
 	}
 }
-

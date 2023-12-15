@@ -1,6 +1,5 @@
 package com.masai.controller;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,52 +25,56 @@ import com.masai.service.RouteServiceImpl;
 @CrossOrigin("*")
 @RequestMapping("/route")
 public class RouteController {
-	
+
 	@Autowired
 	private RouteServiceImpl rService;
-	
+
 	@PostMapping("/add")
-    public ResponseEntity<Route> addRouteHandler(@RequestBody Route route,@RequestParam String key) throws RouteException, UserException {
-		
-		Route rot = rService.addRoute(route,key);
-		
+	public ResponseEntity<Route> addRouteHandler(@RequestBody Route route, @RequestParam String key)
+			throws RouteException, UserException {
+
+		Route rot = rService.addRoute(route, key);
+
 		return new ResponseEntity<Route>(rot, HttpStatus.CREATED);
 	}
-	
-	@PutMapping("/update")
-	public ResponseEntity<Route> updateRouteHandler(@RequestBody Route route,@RequestParam String key) throws RouteException, UserException{
-		
-	 Route rot = rService.updateRoute(route,key);
-	 
-	 return new ResponseEntity<Route>(rot, HttpStatus.ACCEPTED);
-		
-	}
-	
-	@DeleteMapping("/delete/{routeId}")
-	public ResponseEntity<Route> deleteRouteHandler(@PathVariable("routeId") Integer routeId,@RequestParam String key) throws RouteException, UserException{
-		
-	Route rot =	rService.deleteRoute(routeId,key);
-	
-	return new ResponseEntity<Route>(rot,HttpStatus.OK);
-		
-	}
-	
-	@GetMapping("/view/{routeId}")
-	public ResponseEntity<Route> viewRouteHandler(@PathVariable("routeId") Integer routeId,@RequestParam String key) throws RouteException, UserException{
-		
-		Route rot = rService.viewRoute(routeId,key);
-		
-		return new ResponseEntity<Route>(rot,HttpStatus.FOUND);
-	}
-	
-	@GetMapping("/viewall")
-	public ResponseEntity<List<Route>> viewAllRouteHandler(@RequestParam String key) throws RouteException, UserException{
-		
-     List<Route> rot = rService.viewAllRoute(key);
-		
-		return new ResponseEntity<List<Route>>(rot,HttpStatus.FOUND);
-		
-	}
-	
-}
 
+	@PutMapping("/update")
+	public ResponseEntity<Route> updateRouteHandler(@RequestBody Route route, @RequestParam String key)
+			throws RouteException, UserException {
+
+		Route rot = rService.updateRoute(route, key);
+
+		return new ResponseEntity<Route>(rot, HttpStatus.ACCEPTED);
+
+	}
+
+	@DeleteMapping("/delete/{routeId}")
+	public ResponseEntity<Route> deleteRouteHandler(@PathVariable("routeId") Integer routeId, @RequestParam String key)
+			throws RouteException, UserException {
+
+		Route rot = rService.deleteRoute(routeId, key);
+
+		return new ResponseEntity<Route>(rot, HttpStatus.OK);
+
+	}
+
+	@GetMapping("/view/{routeId}")
+	public ResponseEntity<Route> viewRouteHandler(@PathVariable("routeId") Integer routeId, @RequestParam String key)
+			throws RouteException, UserException {
+
+		Route rot = rService.viewRoute(routeId, key);
+
+		return new ResponseEntity<Route>(rot, HttpStatus.FOUND);
+	}
+
+	@GetMapping("/viewall")
+	public ResponseEntity<List<Route>> viewAllRouteHandler(@RequestParam String key)
+			throws RouteException, UserException {
+
+		List<Route> rot = rService.viewAllRoute(key);
+
+		return new ResponseEntity<List<Route>>(rot, HttpStatus.FOUND);
+
+	}
+
+}

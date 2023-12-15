@@ -15,37 +15,37 @@ import com.masai.repository.SessionRepo;
 import net.bytebuddy.utility.RandomString;
 
 @Service
-public class AdminLoginServiceImpl implements AdminLoginService{
+public class AdminLoginServiceImpl implements AdminLoginService {
 
 	@Autowired
 	private SessionRepo sRepo;
-	
+
 	@Override
 	public CurrentUserSession logIntoAccount(AdminDto dto) throws LoginException {
 		// TODO Auto-generated method stub
-		Admin adm=new Admin();
-		if(!adm.username.equalsIgnoreCase(dto.getUsername())) {
+		Admin adm = new Admin();
+		if (!adm.username.equalsIgnoreCase(dto.getUsername())) {
 			throw new LoginException("Please Enter a valid Username");
 		}
-		Optional<CurrentUserSession> validUserSessionOpt =sRepo.findById(adm.id);
-		if(validUserSessionOpt.isPresent()) {
+		Optional<CurrentUserSession> validUserSessionOpt = sRepo.findById(adm.id);
+		if (validUserSessionOpt.isPresent()) {
 			throw new LoginException("Admin already Logged in with this Username");
 		}
-		if(adm.password.equals(dto.getPassword())) {
-			String key=RandomString.make(6);
-			CurrentUserSession currentUserSession=new CurrentUserSession(adm.id,"admin",key,LocalDateTime.now());
+		if (adm.password.equals(dto.getPassword())) {
+			String key = RandomString.make(6);
+			CurrentUserSession currentUserSession = new CurrentUserSession(adm.id, "admin", key, LocalDateTime.now());
 			sRepo.save(currentUserSession);
 			return currentUserSession;
-		}else {
+		} else {
 			throw new LoginException("Please Enter a valid Password");
 		}
 	}
 
 	@Override
 	public String logOutFromAccount(String key) throws LoginException {
-		CurrentUserSession validUserSession=sRepo.findByUuid(key);
-		
-		if(validUserSession==null) {
+		CurrentUserSession validUserSession = sRepo.findByUuid(key);
+
+		if (validUserSession == null) {
 			throw new LoginException("Admin not logged in with this Username.");
 		}
 		sRepo.delete(validUserSession);

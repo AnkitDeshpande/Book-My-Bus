@@ -20,7 +20,8 @@ public interface ReservationService {
 	 * @throws BusException
 	 * @throws UserException
 	 */
-	public Reservation addNewReservation(Integer busId,Reservation reservation, String key)throws ReservationException, BusException, UserException;
+	public Reservation addNewReservation(Integer busId, Reservation reservation, String key)
+			throws ReservationException, BusException, UserException;
 
 	/**
 	 *
@@ -30,7 +31,8 @@ public interface ReservationService {
 	 * @throws ReservationException
 	 * @throws UserException
 	 */
-	public Reservation updateReservation(Reservation reservation, String key)throws ReservationException, UserException;
+	public Reservation updateReservation(Reservation reservation, String key)
+			throws ReservationException, UserException;
 
 	/**
 	 *
@@ -50,7 +52,8 @@ public interface ReservationService {
 	 * @throws ReservationException
 	 * @throws UserException
 	 */
-	public Reservation viewReservationById(Integer reservationId, String key)throws ReservationException, UserException;
+	public Reservation viewReservationById(Integer reservationId, String key)
+			throws ReservationException, UserException;
 
 	/**
 	 *
@@ -59,7 +62,7 @@ public interface ReservationService {
 	 * @throws ReservationException
 	 * @throws UserException
 	 */
-	public List<Reservation> viewAllReservation( String key)throws ReservationException, UserException;
+	public List<Reservation> viewAllReservation(String key) throws ReservationException, UserException;
 
 	/**
 	 *
@@ -69,6 +72,8 @@ public interface ReservationService {
 	 * @throws ReservationException
 	 * @throws UserException
 	 */
-	public List<Reservation> getAllReservationByDate(LocalDate date,String key)throws ReservationException, UserException;
+	public List<Reservation> getAllReservationByDate(LocalDate date, String key)
+			throws ReservationException, UserException;
+
 	List<Bus> getCurrentUserReservedBusId() throws UserException;
 }

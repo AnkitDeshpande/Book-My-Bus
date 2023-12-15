@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.masai.model.Feedback;
 
 @Repository
-public interface FeedbackDao extends JpaRepository<Feedback, Integer>{
+public interface FeedbackDao extends JpaRepository<Feedback, Integer> {
 
 }

@@ -19,23 +19,23 @@ public class Bus {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer busId;
-	
+
 	private String busName;
-	
+
 	private String driverName;
-	
+
 	private String busType;
-	
+
 	private String routeFrom;
-	
+
 	private String routeTo;
-	
+
 	private LocalTime arrivalTime;
-	
+
 	private LocalTime departureTime;
-	
+
 	private Integer seats;
-	
+
 	private Integer availableSeats;
 
 	@ManyToOne
@@ -43,5 +43,4 @@ public class Bus {
 	@JoinColumn(name = "route_id")
 	private Route route;
 
-	
 }

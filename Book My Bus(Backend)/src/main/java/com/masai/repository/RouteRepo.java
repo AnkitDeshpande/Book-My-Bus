@@ -7,5 +7,5 @@ import com.masai.model.Route;
 public interface RouteRepo extends JpaRepository<Route, Integer> {
 
 	public Route findByRouteFromAndRouteTo(String from, String To);
-	
+
 }

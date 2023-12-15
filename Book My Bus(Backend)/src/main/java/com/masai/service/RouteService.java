@@ -15,7 +15,7 @@ public interface RouteService {
 	 * @throws RouteException
 	 * @throws UserException
 	 */
-	public Route addRoute(Route route,String key) throws RouteException, UserException;
+	public Route addRoute(Route route, String key) throws RouteException, UserException;
 
 	/**
 	 *
@@ -25,7 +25,7 @@ public interface RouteService {
 	 * @throws RouteException
 	 * @throws UserException
 	 */
-	public Route updateRoute(Route route,String key) throws RouteException, UserException;
+	public Route updateRoute(Route route, String key) throws RouteException, UserException;
 
 	/**
 	 *
@@ -35,7 +35,7 @@ public interface RouteService {
 	 * @throws RouteException
 	 * @throws UserException
 	 */
-	public Route deleteRoute(Integer routeId,String key) throws RouteException, UserException;
+	public Route deleteRoute(Integer routeId, String key) throws RouteException, UserException;
 
 	/**
 	 *
@@ -45,7 +45,7 @@ public interface RouteService {
 	 * @throws RouteException
 	 * @throws UserException
 	 */
-	public Route viewRoute(Integer routeId,String key) throws RouteException, UserException;
+	public Route viewRoute(Integer routeId, String key) throws RouteException, UserException;
 
 	/**
 	 *
@@ -55,8 +55,5 @@ public interface RouteService {
 	 * @throws UserException
 	 */
 	public List<Route> viewAllRoute(String key) throws RouteException, UserException;
-	
-	
-	
-	
+
 }

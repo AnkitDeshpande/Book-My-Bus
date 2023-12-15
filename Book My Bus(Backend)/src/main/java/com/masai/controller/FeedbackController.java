@@ -34,37 +34,41 @@ public class FeedbackController {
 	private IFeedbackServiceImpl fservice;
 	@Autowired
 	private ReservationService rService;
-	
+
 	@PostMapping("/add")
-    public ResponseEntity<String> addFeedbackHandler(@Valid @RequestBody Feedback feedback,@RequestParam String key) throws FeedbackException, UserException, BusException {
+	public ResponseEntity<String> addFeedbackHandler(@Valid @RequestBody Feedback feedback, @RequestParam String key)
+			throws FeedbackException, UserException, BusException {
 		List<Bus> busId = rService.getCurrentUserReservedBusId();
-		
+
 		return null;
 	}
-	
+
 	@PutMapping("/update")
-	public ResponseEntity<Feedback> updateFeedbackHandler( @Valid @RequestBody Feedback feedback,@RequestParam String key) throws FeedbackException,UserException{
-		
-		Feedback f = fservice.updateFeedback(feedback,key);
-		
+	public ResponseEntity<Feedback> updateFeedbackHandler(@Valid @RequestBody Feedback feedback,
+			@RequestParam String key) throws FeedbackException, UserException {
+
+		Feedback f = fservice.updateFeedback(feedback, key);
+
 		return new ResponseEntity<Feedback>(f, HttpStatus.ACCEPTED);
-		
+
 	}
-	
+
 	@GetMapping("/view/{feedbackId}")
-	public ResponseEntity<Feedback> viewFeedbackHandler(@PathVariable("feedbackId") Integer feedbackId,@RequestParam String key) throws FeedbackException,UserException{
-		
-		Feedback f = fservice.viewFeedback(feedbackId,key);
-		
+	public ResponseEntity<Feedback> viewFeedbackHandler(@PathVariable("feedbackId") Integer feedbackId,
+			@RequestParam String key) throws FeedbackException, UserException {
+
+		Feedback f = fservice.viewFeedback(feedbackId, key);
+
 		return new ResponseEntity<Feedback>(f, HttpStatus.FOUND);
 	}
-	
+
 	@GetMapping("/viewAll")
-	public ResponseEntity<List<Feedback>> viewAllFeedbackHandler(@RequestParam String key) throws FeedbackException,UserException{
-		
+	public ResponseEntity<List<Feedback>> viewAllFeedbackHandler(@RequestParam String key)
+			throws FeedbackException, UserException {
+
 		List<Feedback> f = fservice.viewAllFeedback(key);
-		
+
 		return new ResponseEntity<List<Feedback>>(f, HttpStatus.FOUND);
 	}
-	
+
 }

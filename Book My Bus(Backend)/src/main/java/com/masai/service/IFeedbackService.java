@@ -18,7 +18,8 @@ public interface IFeedbackService {
 	 * @throws UserException
 	 * @throws BusException
 	 */
-	public String addFeedback( Integer busId, Feedback feedback,String key) throws FeedbackException, UserException, BusException;
+	public String addFeedback(Integer busId, Feedback feedback, String key)
+			throws FeedbackException, UserException, BusException;
 
 	/**
 	 *
@@ -28,7 +29,7 @@ public interface IFeedbackService {
 	 * @throws FeedbackException
 	 * @throws UserException
 	 */
-	public Feedback updateFeedback(Feedback feedback,String key) throws FeedbackException,UserException;
+	public Feedback updateFeedback(Feedback feedback, String key) throws FeedbackException, UserException;
 
 	/**
 	 *
@@ -38,7 +39,7 @@ public interface IFeedbackService {
 	 * @throws FeedbackException
 	 * @throws UserException
 	 */
-	public Feedback viewFeedback(Integer feedbackId,String key) throws FeedbackException,UserException;
+	public Feedback viewFeedback(Integer feedbackId, String key) throws FeedbackException, UserException;
 
 	/**
 	 *
@@ -47,5 +48,5 @@ public interface IFeedbackService {
 	 * @throws FeedbackException
 	 * @throws UserException
 	 */
-	public List<Feedback> viewAllFeedback(String key) throws FeedbackException,UserException;
+	public List<Feedback> viewAllFeedback(String key) throws FeedbackException, UserException;
 }
