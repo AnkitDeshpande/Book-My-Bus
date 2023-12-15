@@ -96,7 +96,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         .catch((error) => {
                             console.error("Error posting data:", error);
                         });
-                    window.location.href = "../index.html"; // Replace "login.html" with the actual logout page URL
+                    window.location.href =
+                        "/Book%20My%20Bus(Frontend)/User-Side/login.html";
+                    // Replace "login.html" with the actual logout page URL
                 });
             }
         });

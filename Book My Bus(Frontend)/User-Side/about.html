@@ -20,32 +20,6 @@
             href="/Book My Bus(Frontend)/User-Side/styles/headerFooter.css" />
         <title>Home -Book My Bus</title>
         <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f4f4f4;
-                color: #333;
-            }
-            header {
-                background-color: #007bff;
-                color: white;
-                padding: 15px 0;
-                text-align: center;
-            }
-            .container {
-                width: 80%;
-                margin: 0 auto;
-                padding: 20px 0;
-            }
-            h1,
-            h2 {
-                text-align: center;
-            }
-            p {
-                text-align: justify;
-                line-height: 1.6;
-            }
             footer {
                 background-color: #333;
                 color: white;
@@ -57,6 +31,58 @@
             }
             footer > p {
                 text-align: center;
+            }
+            /* CSS for the container */
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            /* CSS for heading 2 */
+            h2 {
+                color: #333;
+                margin-top: 20px;
+                border-bottom: 2px solid #ccc;
+                padding-bottom: 5px;
+            }
+
+            /* CSS for paragraphs */
+            p {
+                line-height: 1.6;
+            }
+
+            /* CSS for unordered list */
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            /* CSS for list items */
+            li {
+                margin-bottom: 8px;
+            }
+
+            /* CSS for contact information */
+            p.Email,
+            p.Phone {
+                font-weight: bold;
+                margin-top: 10px;
+            }
+
+            /* CSS for links */
+            a {
+                color: #007bff;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            a:hover {
+                color: #0056b3;
             }
         </style>
     </head>
@@ -79,59 +105,36 @@
             </div>
             <div class="menu" id="menu">
                 <ul>
-                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="../../index.html">Home</a></li>
                     <li class="dropdown">
                         <a href="#">Services</a>
                         <ul class="dropdown-content dropdown-toggle">
                             <li>
-                                <a
-                                    href="./Book My Bus(Frontend)/User-Side/bookTicket.html"
-                                    >Book a Ticket</a
-                                >
+                                <a href="./bookTicket.html">Book a Ticket</a>
                             </li>
                             <li>
-                                <a
-                                    href="./Book My Bus(Frontend)/User-Side/bookTicket.html"
-                                    >Find Bus</a
-                                >
+                                <a href="./bookTicket.html">Find Bus</a>
                             </li>
                             <li>
-                                <a
-                                    href="./Book My Bus(Frontend)/User-Side/ticketStatus.html"
-                                    >Ticket Status</a
-                                >
+                                <a href="./ticketStatus.html">Ticket Status</a>
                             </li>
                             <li>
-                                <a
-                                    href="./Book My Bus(Frontend)/User-Side/cancelTicket.html"
-                                    >Cancel Ticket</a
-                                >
+                                <a href="./cancelTicket.html">Cancel Ticket</a>
                             </li>
                             <li>
-                                <a
-                                    href="./Book My Bus(Frontend)/User-Side/feedback.html"
-                                    >Add Feedback</a
-                                >
+                                <a href="./feedback.html">Add Feedback</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="./Book My Bus(Frontend)/User-Side/about.html"
-                            >About</a
-                        >
+                        <a href="./about.html">About</a>
                     </li>
                     <li><a href="./contact.html">Contact</a></li>
                     <li id="profileImg">
-                        <img
-                            src="./Book My Bus(Frontend)/User-Side/images/images.jpeg"
-                            alt="" />
+                        <img src="./images/images.jpeg" alt="" />
                     </li>
                     <li>
-                        <a
-                            href="./Book My Bus(Frontend)/User-Side/login.html"
-                            id="account"
-                            >Account</a
-                        >
+                        <a href="./login.html" id="account">Account</a>
                     </li>
                     <li id="logout">
                         <div
@@ -192,7 +195,7 @@
                 For any inquiries or assistance, feel free to reach out to us:
             </p>
             <p>Email: contact@bookmybus.com</p>
-            <p>Phone: 1-800-BOOKBUS</p>
+            <p>Phone: +91-800-88888</p>
         </div>
 
         <footer>

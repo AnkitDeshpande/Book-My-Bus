@@ -195,7 +195,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         .then((data) => {
                             console.log(data);
                             alert("Check");
-                            window.location.href = "login.html"; // Replace "login.html" with the actual logout page URL
+                            window.location.href =
+                                "/Book%20My%20Bus(Frontend)/User-Side/login.html"; // Replace "login.html" with the actual logout page URL
                         });
                 });
             }

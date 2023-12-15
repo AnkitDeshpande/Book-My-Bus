@@ -100,10 +100,9 @@ function createBusDiv(bus, departureDate) {
         const bookApi = `http://localhost:8888/reservation/add/${currBus}?key=${currUser}`;
 
         let bodyToSend = {
-            reservationDate: departureDate,
             source: bus.routeFrom,
             destination: bus.routeTo,
-            user: userId,
+            bus: { busId: currBus },
         };
 
         fetch(bookApi, {
