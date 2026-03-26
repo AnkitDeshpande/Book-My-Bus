@@ -1,156 +1,83 @@
 package com.masai.exception;
 
-import java.time.LocalDateTime;
-
-import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
+import com.masai.dto.ApiResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
-import jakarta.el.MethodNotFoundException;
-import lombok.extern.slf4j.Slf4j;
-
-@ControllerAdvice
+@RestControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {
 
-	@ExceptionHandler(RouteException.class)
-	public ResponseEntity<MyErrorDetails> myRouteException(RouteException re, WebRequest webReq) {
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<ApiResponse<Void>> handleResourceNotFound(ResourceNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(ApiResponse.error(ex.getMessage()));
+    }
 
-		MyErrorDetails red = new MyErrorDetails();
-		red.setTimestamp(LocalDateTime.now());
-		red.setMessage(re.getMessage());
-		red.setDetails(webReq.getDescription(false));
-		log.error("RouteException Occour!");
-		return new ResponseEntity<MyErrorDetails>(red, HttpStatus.BAD_REQUEST);
+    @ExceptionHandler(DuplicateResourceException.class)
+    public ResponseEntity<ApiResponse<Void>> handleDuplicateResource(DuplicateResourceException ex) {
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(ApiResponse.error(ex.getMessage()));
+    }
 
-	}
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<ApiResponse<Void>> handleBadRequest(BadRequestException ex) {
+        return ResponseEntity.badRequest()
+                .body(ApiResponse.error(ex.getMessage()));
+    }
 
-	@ExceptionHandler(UserException.class)
-	public ResponseEntity<MyErrorDetails> userExceptionHandler(UserException ue, WebRequest req) {
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseEntity<ApiResponse<Void>> handleUnauthorized(UnauthorizedException ex) {
+        return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                .body(ApiResponse.error(ex.getMessage()));
+    }
 
-		MyErrorDetails err = new MyErrorDetails();
-		err.setTimestamp(LocalDateTime.now());
-		err.setMessage(ue.getMessage());
-		err.setDetails(req.getDescription(false));
-		return new ResponseEntity<MyErrorDetails>(err, HttpStatus.BAD_REQUEST);
-	}
+    @ExceptionHandler(BusinessException.class)
+    public ResponseEntity<ApiResponse<Void>> handleBusiness(BusinessException ex) {
+        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_CONTENT)
+                .body(ApiResponse.error(ex.getMessage()));
+    }
 
-	@ExceptionHandler(LoginException.class)
-	public ResponseEntity<MyErrorDetails> loginExceptionHandler(LoginException le, WebRequest req) {
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<ApiResponse<Void>> handleBadCredentials(BadCredentialsException ex) {
+        log.debug("Bad credentials attempt: {}", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                .body(ApiResponse.error("Invalid credentials"));
+    }
 
-		le.printStackTrace();
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<ApiResponse<Void>> handleAccessDenied(AccessDeniedException ex) {
+        log.debug("Access denied: {}", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                .body(ApiResponse.error("Access denied"));
+    }
 
-		MyErrorDetails err = new MyErrorDetails();
-		err.setTimestamp(LocalDateTime.now());
-		err.setMessage(le.getMessage());
-		err.setDetails(req.getDescription(false));
-		return new ResponseEntity<MyErrorDetails>(err, HttpStatus.BAD_REQUEST);
-	}
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ApiResponse<Void>> handleValidation(MethodArgumentNotValidException ex) {
+        String message = ex.getBindingResult().getFieldErrors().stream()
+                .map(fe -> fe.getField() + ": " + fe.getDefaultMessage())
+                .findFirst()
+                .orElse("Validation failed");
+        return ResponseEntity.badRequest().body(ApiResponse.error(message));
+    }
 
-	@ExceptionHandler(Exception.class)
-	public ResponseEntity<MyErrorDetails> otherExceptionHandler(Exception se, WebRequest req) {
+    @ExceptionHandler(NoHandlerFoundException.class)
+    public ResponseEntity<ApiResponse<Void>> handleNoHandlerFound(NoHandlerFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(ApiResponse.error("No endpoint found for " + ex.getHttpMethod() + " " + ex.getRequestURL()));
+    }
 
-		MyErrorDetails err = new MyErrorDetails();
-		err.setTimestamp(LocalDateTime.now());
-		err.setMessage(se.getMessage());
-		err.setDetails(req.getDescription(false));
-
-		return new ResponseEntity<MyErrorDetails>(err, HttpStatus.INTERNAL_SERVER_ERROR);
-
-	}
-
-	@ExceptionHandler(MethodArgumentNotValidException.class)
-	public ResponseEntity<MyErrorDetails> myMNVEHandler(MethodArgumentNotValidException me) {
-//		me.printStackTrace();
-		MyErrorDetails err = new MyErrorDetails();
-		err.setTimestamp(LocalDateTime.now());
-		err.setMessage(me.getBindingResult().getFieldError().getDefaultMessage());
-		err.setDetails(me.getMessage());
-
-		return new ResponseEntity<MyErrorDetails>(err, HttpStatus.BAD_REQUEST);
-	}
-
-	@ExceptionHandler(FeedbackException.class)
-	public ResponseEntity<MyErrorDetails> myRouteException(FeedbackException re, WebRequest webReq) {
-
-		MyErrorDetails red = new MyErrorDetails();
-		red.setTimestamp(LocalDateTime.now());
-		red.setMessage(re.getMessage());
-		red.setDetails(webReq.getDescription(false));
-
-		return new ResponseEntity<MyErrorDetails>(red, HttpStatus.BAD_REQUEST);
-
-	}
-
-	@ExceptionHandler(BusException.class)
-	public ResponseEntity<MyErrorDetails> myBusException(BusException be, WebRequest webReq) {
-
-		MyErrorDetails red = new MyErrorDetails();
-		red.setTimestamp(LocalDateTime.now());
-		red.setMessage(be.getMessage());
-		red.setDetails(webReq.getDescription(false));
-
-		return new ResponseEntity<MyErrorDetails>(red, HttpStatus.BAD_REQUEST);
-	}
-
-	@ExceptionHandler(NotFoundException.class)
-	public ResponseEntity<MyErrorDetails> NotFoundExceptionHandler(NotFoundException ne, WebRequest req) {
-
-		MyErrorDetails err = new MyErrorDetails();
-		err.setTimestamp(LocalDateTime.now());
-		err.setMessage(ne.getMessage());
-		err.setDetails(req.getDescription(false));
-		return new ResponseEntity<MyErrorDetails>(err, HttpStatus.BAD_REQUEST);
-	}
-
-	@ExceptionHandler(MethodNotFoundException.class)
-	public ResponseEntity<MyErrorDetails> methodNotFoundExceptionHandler(MethodNotFoundException me, WebRequest req) {
-
-		MyErrorDetails err = new MyErrorDetails();
-		err.setTimestamp(LocalDateTime.now());
-		err.setMessage(me.getMessage());
-		err.setDetails(req.getDescription(false));
-		return new ResponseEntity<MyErrorDetails>(err, HttpStatus.BAD_REQUEST);
-	}
-
-	@ExceptionHandler(ReservationException.class)
-	public ResponseEntity<MyErrorDetails> reservationExceptionHandler(ReservationException se, WebRequest req) {
-
-		MyErrorDetails err = new MyErrorDetails();
-		err.setTimestamp(LocalDateTime.now());
-		err.setMessage(se.getMessage());
-		err.setDetails(req.getDescription(false));
-
-		return new ResponseEntity<MyErrorDetails>(err, HttpStatus.BAD_REQUEST);
-
-	}
-
-	@ExceptionHandler(DateTimeException.class)
-	public ResponseEntity<MyErrorDetails> DateTimeExceptionHandler(DateTimeException se, WebRequest req) {
-
-		MyErrorDetails err = new MyErrorDetails();
-		err.setTimestamp(LocalDateTime.now());
-		err.setMessage(se.getMessage());
-		err.setDetails(req.getDescription(false));
-
-		return new ResponseEntity<MyErrorDetails>(err, HttpStatus.BAD_REQUEST);
-
-	}
-
-	@ExceptionHandler(NoHandlerFoundException.class)
-	public ResponseEntity<MyErrorDetails> NoHandlerFoundExceptionHandler(NoHandlerFoundException se, WebRequest req) {
-
-		MyErrorDetails err = new MyErrorDetails();
-		err.setTimestamp(LocalDateTime.now());
-		err.setMessage(se.getMessage());
-		err.setDetails(req.getDescription(false));
-
-		return new ResponseEntity<MyErrorDetails>(err, HttpStatus.BAD_REQUEST);
-
-	}
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ApiResponse<Void>> handleGeneric(Exception ex) {
+        log.error("Unexpected error: {}", ex.getMessage(), ex);
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(ApiResponse.error("An unexpected error occurred"));
+    }
 }

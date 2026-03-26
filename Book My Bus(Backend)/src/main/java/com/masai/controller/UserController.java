@@ -1,65 +1,54 @@
 package com.masai.controller;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.masai.exception.UserException;
-import com.masai.model.User;
-import com.masai.service.IUserService;
-
+import com.masai.dto.ApiResponse;
+import com.masai.dto.PagedResponse;
+import com.masai.dto.request.UpdateProfileRequest;
+import com.masai.dto.response.UserResponse;
+import com.masai.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin("*")
-@RequestMapping("/user")
+@RequestMapping("/api/v1/users")
+@RequiredArgsConstructor
+@Tag(name = "Users", description = "User profile management")
+@SecurityRequirement(name = "bearerAuth")
 public class UserController {
 
-	@Autowired
-	private IUserService uService;
+    private final UserService userService;
 
-	@PostMapping("/add")
-	public ResponseEntity<User> addUserHandler(@Valid @RequestBody User user) throws UserException {
-		User u = uService.addUser(user);
-		return new ResponseEntity<User>(u, HttpStatus.CREATED);
-	}
+    @GetMapping("/me")
+    @Operation(summary = "Get current user profile")
+    public ResponseEntity<ApiResponse<UserResponse>> getMyProfile() {
+        return ResponseEntity.ok(ApiResponse.success("Profile fetched", userService.getMyProfile()));
+    }
 
-	@PutMapping("/update")
-	public ResponseEntity<User> updateUserHandler(@Valid @RequestBody User user, @RequestParam String key)
-			throws UserException {
-		User u = uService.updateUser(user, key);
-		return new ResponseEntity<User>(u, HttpStatus.ACCEPTED);
-	}
+    @PutMapping("/me")
+    @Operation(summary = "Update current user profile")
+    public ResponseEntity<ApiResponse<UserResponse>> updateMyProfile(@Valid @RequestBody UpdateProfileRequest request) {
+        return ResponseEntity.ok(ApiResponse.success("Profile updated", userService.updateMyProfile(request)));
+    }
 
-	@DeleteMapping("delete/{userId}")
-	public ResponseEntity<User> deleteUserHandler(@PathVariable("userId") Integer userId, @RequestParam String key)
-			throws UserException {
-		User u = uService.deleteUser(userId, key);
-		return new ResponseEntity<User>(u, HttpStatus.ACCEPTED);
-	}
+    @GetMapping
+    @PreAuthorize("hasRole('ADMIN')")
+    @Operation(summary = "Get all users (Admin only)")
+    public ResponseEntity<ApiResponse<PagedResponse<UserResponse>>> getAllUsers(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        return ResponseEntity.ok(ApiResponse.success("Users fetched", userService.getAllUsers(page, size)));
+    }
 
-	@GetMapping("/view/{userId}")
-	public ResponseEntity<User> viewUserHandler(@PathVariable("userId") Integer userId, @RequestParam String key)
-			throws UserException {
-		User u = uService.viewUser(userId, key);
-		return new ResponseEntity<User>(u, HttpStatus.FOUND);
-	}
-
-	@GetMapping("/viewall")
-	public ResponseEntity<List<User>> viewAllUsersHandler(@RequestParam String key) throws UserException {
-		List<User> users = uService.viewAllUsers(key);
-		return new ResponseEntity<List<User>>(users, HttpStatus.FOUND);
-	}
+    @DeleteMapping("/{userId}")
+    @PreAuthorize("hasRole('ADMIN')")
+    @Operation(summary = "Deactivate a user (Admin only)")
+    public ResponseEntity<ApiResponse<Void>> deleteUser(@PathVariable Long userId) {
+        userService.deleteUser(userId);
+        return ResponseEntity.ok(ApiResponse.success("User deactivated successfully", null));
+    }
 }

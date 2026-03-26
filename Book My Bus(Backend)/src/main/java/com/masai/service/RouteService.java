@@ -1,59 +1,18 @@
 package com.masai.service;
 
-import java.util.List;
-
-import com.masai.exception.RouteException;
-import com.masai.exception.UserException;
-import com.masai.model.Route;
+import com.masai.dto.PagedResponse;
+import com.masai.dto.request.RouteRequest;
+import com.masai.dto.response.RouteResponse;
 
 public interface RouteService {
-	/**
-	 *
-	 * @param route
-	 * @param key
-	 * @return
-	 * @throws RouteException
-	 * @throws UserException
-	 */
-	public Route addRoute(Route route, String key) throws RouteException, UserException;
 
-	/**
-	 *
-	 * @param route
-	 * @param key
-	 * @return
-	 * @throws RouteException
-	 * @throws UserException
-	 */
-	public Route updateRoute(Route route, String key) throws RouteException, UserException;
+    RouteResponse createRoute(RouteRequest request);
 
-	/**
-	 *
-	 * @param routeId
-	 * @param key
-	 * @return
-	 * @throws RouteException
-	 * @throws UserException
-	 */
-	public Route deleteRoute(Integer routeId, String key) throws RouteException, UserException;
+    RouteResponse updateRoute(Long routeId, RouteRequest request);
 
-	/**
-	 *
-	 * @param routeId
-	 * @param key
-	 * @return
-	 * @throws RouteException
-	 * @throws UserException
-	 */
-	public Route viewRoute(Integer routeId, String key) throws RouteException, UserException;
+    RouteResponse getRouteById(Long routeId);
 
-	/**
-	 *
-	 * @param key
-	 * @return
-	 * @throws RouteException
-	 * @throws UserException
-	 */
-	public List<Route> viewAllRoute(String key) throws RouteException, UserException;
+    PagedResponse<RouteResponse> getAllRoutes(int page, int size);
 
+    void deleteRoute(Long routeId);
 }

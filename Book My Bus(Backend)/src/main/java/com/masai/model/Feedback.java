@@ -1,56 +1,36 @@
 package com.masai.model;
 
-import java.time.LocalDate;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonFormat.Shape;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.PastOrPresent;
-import lombok.Data;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Data
-public class Feedback {
+@Table(name = "feedbacks", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "booking_id")
+})
+@Getter
+@Setter
+@NoArgsConstructor
+public class Feedback extends BaseEntity {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer feedbackId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Min(value = 1, message = "Rating should be between 1 to 10")
-	@Max(value = 10, message = "Rating should be between 1 to 10")
-	private Integer driverRating;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "booking_id", nullable = false, unique = true)
+    private Booking booking;
 
-	@Min(value = 1, message = "Rating should be between 1 to 10")
-	@Max(value = 10, message = "Rating should be between 1 to 10")
-	private Integer serviceRating;
+    @Column(name = "overall_rating", nullable = false)
+    private Integer overallRating;
 
-	@Min(value = 1, message = "Rating should be between 1 to 10")
-	@Max(value = 10, message = "Rating should be between 1 to 10")
-	private Integer overallRating;
+    @Column(name = "driver_rating", nullable = false)
+    private Integer driverRating;
 
-	private String comments;
+    @Column(name = "service_rating", nullable = false)
+    private Integer serviceRating;
 
-	@JsonFormat(pattern = "yyyy-MM-dd", shape = Shape.STRING)
-	@PastOrPresent(message = "Date should be current date or past date")
-	private LocalDate feedbackDate = LocalDate.now();
-
-	@JsonIgnore
-	@ManyToOne
-	@JoinColumn(name = "user_id")
-	private User user;
-
-	@JsonIgnore
-	@ManyToOne
-	@JoinColumn(name = "bus_id")
-	private Bus bus;
-
+    @Column(columnDefinition = "TEXT")
+    private String comment;
 }

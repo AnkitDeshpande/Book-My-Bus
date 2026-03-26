@@ -1,46 +1,56 @@
 package com.masai.model;
 
+import com.masai.enums.BusType;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.time.LocalTime;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import lombok.Data;
-
 @Entity
-@Data
-public class Bus {
+@Table(name = "buses")
+@Getter
+@Setter
+@NoArgsConstructor
+public class Bus extends BaseEntity {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer busId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	private String busName;
+    @Column(name = "bus_number", nullable = false, unique = true)
+    private String busNumber;
 
-	private String driverName;
+    @Column(name = "bus_name", nullable = false)
+    private String busName;
 
-	private String busType;
+    @Column(name = "driver_name", nullable = false)
+    private String driverName;
 
-	private String routeFrom;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "bus_type", nullable = false)
+    private BusType busType;
 
-	private String routeTo;
+    @Column(name = "total_seats", nullable = false)
+    private Integer totalSeats;
 
-	private LocalTime arrivalTime;
+    @Column(name = "available_seats", nullable = false)
+    private Integer availableSeats;
 
-	private LocalTime departureTime;
+    @Column(name = "departure_time", nullable = false)
+    private LocalTime departureTime;
 
-	private Integer seats;
+    @Column(name = "arrival_time", nullable = false)
+    private LocalTime arrivalTime;
 
-	private Integer availableSeats;
+    @Column(nullable = false)
+    private boolean active = true;
 
-	@ManyToOne
-	@JsonIgnore
-	@JoinColumn(name = "route_id")
-	private Route route;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "route_id", nullable = false)
+    private Route route;
 
+    @Version
+    private Long version;
 }

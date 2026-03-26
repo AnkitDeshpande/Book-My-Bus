@@ -1,0 +1,445 @@
+{
+  "info": {
+    "name": "Book My Bus API",
+    "description": "Complete API collection for Book My Bus - Bus Ticket Reservation System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [{ "key": "token", "value": "{{token}}", "type": "string" }]
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8888", "type": "string" },
+    { "key": "token", "value": "", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"johndoe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"Password@123\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"phone\": \"9876543210\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/auth/register",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var res = pm.response.json();",
+                  "if (res.data && res.data.token) {",
+                  "    pm.collectionVariables.set('token', res.data.token);",
+                  "    console.log('Token saved successfully');",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"emailOrUsername\": \"admin@bookmybus.com\",\n  \"password\": \"Admin@1234\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "auth", "login"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get My Profile",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/users/me",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "users", "me"]
+            }
+          }
+        },
+        {
+          "name": "Update My Profile",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"phone\": \"9876543210\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/users/me",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "users", "me"]
+            }
+          }
+        },
+        {
+          "name": "Get All Users (Admin)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/users?page=0&size=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "users"],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "10" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Deactivate User (Admin)",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/users/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "users", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Routes",
+      "item": [
+        {
+          "name": "Create Route (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"source\": \"Mumbai\",\n  \"destination\": \"Pune\",\n  \"distanceKm\": 150,\n  \"baseFare\": 250.00\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/routes",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "routes"]
+            }
+          }
+        },
+        {
+          "name": "Update Route (Admin)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"source\": \"Mumbai\",\n  \"destination\": \"Pune\",\n  \"distanceKm\": 155,\n  \"baseFare\": 275.00\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/routes/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "routes", "1"]
+            }
+          }
+        },
+        {
+          "name": "Deactivate Route (Admin)",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/routes/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "routes", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get Route by ID",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/routes/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "routes", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get All Routes",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/routes?page=0&size=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "routes"],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "10" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Buses",
+      "item": [
+        {
+          "name": "Create Bus (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"busNumber\": \"MH-01-AB-1234\",\n  \"busName\": \"Shivneri Express\",\n  \"driverName\": \"Ramesh Kumar\",\n  \"busType\": \"AC\",\n  \"totalSeats\": 40,\n  \"departureTime\": \"06:00:00\",\n  \"arrivalTime\": \"09:30:00\",\n  \"routeId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/buses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "buses"]
+            }
+          }
+        },
+        {
+          "name": "Update Bus (Admin)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"busNumber\": \"MH-01-AB-1234\",\n  \"busName\": \"Shivneri Express\",\n  \"driverName\": \"Suresh Patil\",\n  \"busType\": \"AC\",\n  \"totalSeats\": 40,\n  \"departureTime\": \"06:30:00\",\n  \"arrivalTime\": \"10:00:00\",\n  \"routeId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/buses/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "buses", "1"]
+            }
+          }
+        },
+        {
+          "name": "Deactivate Bus (Admin)",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/buses/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "buses", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get Bus by ID",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/buses/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "buses", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get All Buses",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/buses?page=0&size=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "buses"],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "10" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search Buses",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/buses/search?source=Mumbai&destination=Pune&seatCount=2",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "buses", "search"],
+              "query": [
+                { "key": "source", "value": "Mumbai" },
+                { "key": "destination", "value": "Pune" },
+                { "key": "seatCount", "value": "2" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "Create Booking",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"busId\": 1,\n  \"journeyDate\": \"2026-04-15\",\n  \"seatCount\": 2,\n  \"passengerName\": \"John Doe\",\n  \"passengerPhone\": \"9876543210\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings"]
+            }
+          }
+        },
+        {
+          "name": "Get My Bookings",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/my?page=0&size=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "my"],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "10" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Booking by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get All Bookings (Admin)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings?page=0&size=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings"],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "10" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Cancel Booking",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/1/cancel",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "1", "cancel"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Feedback",
+      "item": [
+        {
+          "name": "Submit Feedback",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bookingId\": 1,\n  \"overallRating\": 5,\n  \"driverRating\": 4,\n  \"serviceRating\": 5,\n  \"comment\": \"Great journey, very comfortable!\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/feedback",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "feedback"]
+            }
+          }
+        },
+        {
+          "name": "Get My Feedbacks",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/feedback/my",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "feedback", "my"]
+            }
+          }
+        },
+        {
+          "name": "Get Feedbacks by Bus",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/feedback/bus/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "feedback", "bus", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Dashboard Stats",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/admin/dashboard",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "admin", "dashboard"]
+            }
+          }
+        },
+        {
+          "name": "Revenue Report",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/admin/revenue?from=2026-01-01T00:00:00&to=2026-03-31T23:59:59",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "admin", "revenue"],
+              "query": [
+                { "key": "from", "value": "2026-01-01T00:00:00" },
+                { "key": "to", "value": "2026-03-31T23:59:59" }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

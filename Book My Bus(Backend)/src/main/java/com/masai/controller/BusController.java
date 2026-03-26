@@ -1,90 +1,77 @@
 package com.masai.controller;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.masai.dto.ApiResponse;
+import com.masai.dto.PagedResponse;
+import com.masai.dto.request.BusRequest;
+import com.masai.dto.response.BusResponse;
+import com.masai.service.BusService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
-import com.masai.exception.BusException;
-import com.masai.exception.UserException;
-import com.masai.model.Bus;
-import com.masai.service.BusServiceImpl;
+import java.util.List;
 
-//this class is generating APIs for different  method.
 @RestController
-@CrossOrigin("*")
-@RequestMapping("Bus")
+@RequestMapping("/api/v1/buses")
+@RequiredArgsConstructor
+@Tag(name = "Buses", description = "Bus management and search")
 public class BusController {
 
-	@Autowired
-	private BusServiceImpl busService;
+    private final BusService busService;
 
-	@PostMapping("/add")
-	public ResponseEntity<Bus> addBusHandler(@RequestBody Bus bus, @RequestParam String key)
-			throws BusException, UserException {
+    @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
+    @SecurityRequirement(name = "bearerAuth")
+    @Operation(summary = "Add a new bus (Admin only)")
+    public ResponseEntity<ApiResponse<BusResponse>> createBus(@Valid @RequestBody BusRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(ApiResponse.success("Bus created successfully", busService.createBus(request)));
+    }
 
-		Bus savedBus = busService.addBus(bus, key);
+    @PutMapping("/{busId}")
+    @PreAuthorize("hasRole('ADMIN')")
+    @SecurityRequirement(name = "bearerAuth")
+    @Operation(summary = "Update a bus (Admin only)")
+    public ResponseEntity<ApiResponse<BusResponse>> updateBus(@PathVariable Long busId,
+                                                               @Valid @RequestBody BusRequest request) {
+        return ResponseEntity.ok(ApiResponse.success("Bus updated successfully", busService.updateBus(busId, request)));
+    }
 
-		return new ResponseEntity<Bus>(savedBus, HttpStatus.CREATED);
+    @DeleteMapping("/{busId}")
+    @PreAuthorize("hasRole('ADMIN')")
+    @SecurityRequirement(name = "bearerAuth")
+    @Operation(summary = "Deactivate a bus (Admin only)")
+    public ResponseEntity<ApiResponse<Void>> deleteBus(@PathVariable Long busId) {
+        busService.deleteBus(busId);
+        return ResponseEntity.ok(ApiResponse.success("Bus deactivated successfully", null));
+    }
 
-	}
+    @GetMapping("/{busId}")
+    @Operation(summary = "Get bus by ID")
+    public ResponseEntity<ApiResponse<BusResponse>> getBusById(@PathVariable Long busId) {
+        return ResponseEntity.ok(ApiResponse.success("Bus fetched", busService.getBusById(busId)));
+    }
 
-	@PutMapping("/update")
-	public ResponseEntity<Bus> updateBusHandler(@RequestBody Bus bus, @RequestParam String key)
-			throws BusException, UserException {
+    @GetMapping
+    @Operation(summary = "Get all buses (paginated)")
+    public ResponseEntity<ApiResponse<PagedResponse<BusResponse>>> getAllBuses(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        return ResponseEntity.ok(ApiResponse.success("Buses fetched", busService.getAllBuses(page, size)));
+    }
 
-		Bus updatedBus = busService.updateBus(bus, key);
-
-		return new ResponseEntity<Bus>(updatedBus, HttpStatus.ACCEPTED);
-
-	}
-
-	@DeleteMapping("/delete/{busId}")
-	public ResponseEntity<Bus> deleteBusHandler(@PathVariable("busId") Integer busId, @RequestParam String key)
-			throws BusException, UserException {
-
-		Bus deletedBus = busService.deleteBus(busId, key);
-
-		return new ResponseEntity<Bus>(deletedBus, HttpStatus.OK);
-	}
-
-	@GetMapping("/view/{busId}")
-	public ResponseEntity<Bus> viewBusHandler(@PathVariable("busId") Integer busId, @RequestParam String key)
-			throws BusException, UserException {
-
-		Bus busById = busService.viewBus(busId, key);
-
-		return new ResponseEntity<Bus>(busById, HttpStatus.FOUND);
-
-	}
-
-	@GetMapping("/viewBusByType/{busType}")
-	public ResponseEntity<List<Bus>> viewBusByTypeHandler(@PathVariable("busType") String busType,
-			@RequestParam String key) throws BusException, UserException {
-
-		List<Bus> busByType = busService.viewBusByType(busType, key);
-
-		return new ResponseEntity<List<Bus>>(busByType, HttpStatus.FOUND);
-
-	}
-
-	@GetMapping("/viewAllBus")
-	public ResponseEntity<List<Bus>> viewAllBusHandler(@RequestParam String key) throws BusException, UserException {
-
-		List<Bus> viewAllBus = busService.viewAllBus(key);
-
-		return new ResponseEntity<List<Bus>>(viewAllBus, HttpStatus.OK);
-
-	}
+    @GetMapping("/search")
+    @Operation(summary = "Search available buses by source, destination and seat count")
+    public ResponseEntity<ApiResponse<List<BusResponse>>> searchBuses(
+            @RequestParam String source,
+            @RequestParam String destination,
+            @RequestParam(defaultValue = "1") int seatCount) {
+        return ResponseEntity.ok(ApiResponse.success("Buses found", busService.searchBuses(source, destination, seatCount)));
+    }
 }

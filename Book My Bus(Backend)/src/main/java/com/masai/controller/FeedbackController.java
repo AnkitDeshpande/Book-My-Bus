@@ -1,74 +1,45 @@
 package com.masai.controller;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.masai.dto.ApiResponse;
+import com.masai.dto.request.FeedbackRequest;
+import com.masai.dto.response.FeedbackResponse;
+import com.masai.service.FeedbackService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.masai.exception.BusException;
-import com.masai.exception.FeedbackException;
-import com.masai.exception.UserException;
-import com.masai.model.Bus;
-import com.masai.model.Feedback;
-import com.masai.service.IFeedbackServiceImpl;
-import com.masai.service.ReservationService;
-
-import jakarta.validation.Valid;
+import java.util.List;
 
 @RestController
-@CrossOrigin("*")
-@RequestMapping("/feedback")
+@RequestMapping("/api/v1/feedback")
+@RequiredArgsConstructor
+@Tag(name = "Feedback", description = "Post-journey feedback management")
+@SecurityRequirement(name = "bearerAuth")
 public class FeedbackController {
 
-	@Autowired
-	private IFeedbackServiceImpl fservice;
-	@Autowired
-	private ReservationService rService;
+    private final FeedbackService feedbackService;
 
-	@PostMapping("/add")
-	public ResponseEntity<String> addFeedbackHandler(@Valid @RequestBody Feedback feedback, @RequestParam String key)
-			throws FeedbackException, UserException, BusException {
-		List<Bus> busId = rService.getCurrentUserReservedBusId();
+    @PostMapping
+    @Operation(summary = "Submit feedback for a completed booking")
+    public ResponseEntity<ApiResponse<FeedbackResponse>> submitFeedback(@Valid @RequestBody FeedbackRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(ApiResponse.success("Feedback submitted successfully", feedbackService.submitFeedback(request)));
+    }
 
-		return null;
-	}
+    @GetMapping("/my")
+    @Operation(summary = "Get current user's feedbacks")
+    public ResponseEntity<ApiResponse<List<FeedbackResponse>>> getMyFeedbacks() {
+        return ResponseEntity.ok(ApiResponse.success("Feedbacks fetched", feedbackService.getMyFeedbacks()));
+    }
 
-	@PutMapping("/update")
-	public ResponseEntity<Feedback> updateFeedbackHandler(@Valid @RequestBody Feedback feedback,
-			@RequestParam String key) throws FeedbackException, UserException {
-
-		Feedback f = fservice.updateFeedback(feedback, key);
-
-		return new ResponseEntity<Feedback>(f, HttpStatus.ACCEPTED);
-
-	}
-
-	@GetMapping("/view/{feedbackId}")
-	public ResponseEntity<Feedback> viewFeedbackHandler(@PathVariable("feedbackId") Integer feedbackId,
-			@RequestParam String key) throws FeedbackException, UserException {
-
-		Feedback f = fservice.viewFeedback(feedbackId, key);
-
-		return new ResponseEntity<Feedback>(f, HttpStatus.FOUND);
-	}
-
-	@GetMapping("/viewAll")
-	public ResponseEntity<List<Feedback>> viewAllFeedbackHandler(@RequestParam String key)
-			throws FeedbackException, UserException {
-
-		List<Feedback> f = fservice.viewAllFeedback(key);
-
-		return new ResponseEntity<List<Feedback>>(f, HttpStatus.FOUND);
-	}
-
+    @GetMapping("/bus/{busId}")
+    @Operation(summary = "Get all feedbacks for a bus")
+    public ResponseEntity<ApiResponse<List<FeedbackResponse>>> getFeedbacksByBus(@PathVariable Long busId) {
+        return ResponseEntity.ok(ApiResponse.success("Feedbacks fetched", feedbackService.getFeedbacksByBus(busId)));
+    }
 }

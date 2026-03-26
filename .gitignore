@@ -1,1 +1,8 @@
 /.metadata/
+*.log
+*.log.*.gz
+.idea/
+.vscode/
+target/
+bin/
+node_modules/

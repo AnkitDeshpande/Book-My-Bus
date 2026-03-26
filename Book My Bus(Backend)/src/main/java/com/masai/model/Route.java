@@ -1,53 +1,42 @@
 package com.masai.model;
 
-import java.util.HashSet;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import java.util.Set;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import lombok.Data;
 
 @Entity
-@Data
-public class Route {
+@Table(name = "routes", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"source", "destination"})
+})
+@Getter
+@Setter
+@NoArgsConstructor
+public class Route extends BaseEntity {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer routeId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	private String routeFrom;
+    @Column(nullable = false)
+    private String source;
 
-	private String routeTo;
+    @Column(nullable = false)
+    private String destination;
 
-	private Integer distance;
+    @Column(name = "distance_km", nullable = false)
+    private Integer distanceKm;
 
-	@JsonIgnore
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "route")
-	private Set<Bus> buslist = new HashSet<Bus>();
+    @Column(name = "base_fare", nullable = false, precision = 10, scale = 2)
+    private BigDecimal baseFare;
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Route other = (Route) obj;
-		return Objects.equals(routeFrom, other.routeFrom) && Objects.equals(routeTo, other.routeTo);
-	}
+    @Column(nullable = false)
+    private boolean active = true;
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(routeFrom, routeTo);
-	}
-
+    @OneToMany(mappedBy = "route", fetch = FetchType.LAZY)
+    private List<Bus> buses = new ArrayList<>();
 }

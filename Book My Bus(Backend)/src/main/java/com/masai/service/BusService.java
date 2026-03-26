@@ -1,72 +1,22 @@
 package com.masai.service;
 
-import java.util.List;
+import com.masai.dto.PagedResponse;
+import com.masai.dto.request.BusRequest;
+import com.masai.dto.response.BusResponse;
 
-import com.masai.exception.BusException;
-import com.masai.exception.UserException;
-import com.masai.model.Bus;
+import java.util.List;
 
 public interface BusService {
 
-//methods you can find inside bus module
+    BusResponse createBus(BusRequest request);
 
-	/**
-	 *
-	 * @param bus
-	 * @param key
-	 * @return
-	 * @throws BusException
-	 * @throws UserException
-	 */
-	public Bus addBus(Bus bus, String key) throws BusException, UserException;
+    BusResponse updateBus(Long busId, BusRequest request);
 
-	/**
-	 *
-	 * @param bus
-	 * @param key
-	 * @return
-	 * @throws BusException
-	 * @throws UserException
-	 */
-	public Bus updateBus(Bus bus, String key) throws BusException, UserException;
+    BusResponse getBusById(Long busId);
 
-	/**
-	 *
-	 * @param busId
-	 * @param key
-	 * @return
-	 * @throws BusException
-	 * @throws UserException
-	 */
-	public Bus deleteBus(Integer busId, String key) throws BusException, UserException;
+    PagedResponse<BusResponse> getAllBuses(int page, int size);
 
-	/**
-	 *
-	 * @param busId
-	 * @param key
-	 * @return
-	 * @throws BusException
-	 * @throws UserException
-	 */
-	public Bus viewBus(Integer busId, String key) throws BusException, UserException;
+    List<BusResponse> searchBuses(String source, String destination, int seatCount);
 
-	/**
-	 *
-	 * @param busType
-	 * @param key
-	 * @return
-	 * @throws BusException
-	 * @throws UserException
-	 */
-	public List<Bus> viewBusByType(String busType, String key) throws BusException, UserException;
-
-	/**
-	 *
-	 * @param key
-	 * @return
-	 * @throws BusException
-	 * @throws UserException
-	 */
-	public List<Bus> viewAllBus(String key) throws BusException, UserException;
-
+    void deleteBus(Long busId);
 }

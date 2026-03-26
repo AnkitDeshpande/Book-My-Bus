@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)\" -type f \\\\\\( -name \"*.java\" -o -name \"*.properties\" -o -name \"*.xml\" -o -name \"*.yml\" \\\\\\))",
+      "Bash(find \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Frontend\\)\" -type f)",
+      "Bash(ls -la \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src/test/\")",
+      "Bash(ls \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src/test/java/com/masai/\")",
+      "Bash(ls -la \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/\")",
+      "Bash(ls \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/\")",
+      "Bash(ls \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/.idea/\")",
+      "Bash(find \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src\" -type f -name \"*.java\")",
+      "Bash(find '/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src/main/resources' -type f)",
+      "Bash(find \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src/main/java/com/masai\" -type f -name \"*.java\")",
+      "Bash(find '/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src/main/java/com/masai' -name *.java -type f)",
+      "Bash(mvn dependency:tree)",
+      "WebSearch"
+    ],
+    "additionalDirectories": [
+      "/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus(Backend)/.idea"
+    ]
+  }
+}
