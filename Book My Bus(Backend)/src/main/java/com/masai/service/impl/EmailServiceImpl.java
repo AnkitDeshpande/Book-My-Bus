@@ -20,12 +20,15 @@ public class EmailServiceImpl implements EmailService {
     @Value("${app.base-url}")
     private String baseUrl;
 
+    @Value("${app.frontend-url}")
+    private String frontendUrl;
+
     @Value("${spring.mail.username}")
     private String fromEmail;
 
     @Override
     public void sendActivationEmail(String to, String firstName, String activationToken) {
-        String link = baseUrl + "/api/v1/auth/activate?token=" + activationToken;
+        String link = frontendUrl + "/auth/activate?token=" + activationToken;
         String html = "<div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>"
                 + "<h2 style='color:#1a73e8'>Welcome to Book My Bus, " + firstName + "!</h2>"
                 + "<p>Thank you for registering. Please click the button below to activate your account.</p>"
@@ -43,7 +46,7 @@ public class EmailServiceImpl implements EmailService {
 
     @Override
     public void sendPasswordResetEmail(String to, String firstName, String resetToken) {
-        String link = baseUrl + "/api/v1/auth/reset-password?token=" + resetToken;
+        String link = frontendUrl + "/auth/reset-password?token=" + resetToken;
         String html = "<div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>"
                 + "<h2 style='color:#1a73e8'>Password Reset Request</h2>"
                 + "<p>Hi " + firstName + ", we received a request to reset your password.</p>"
