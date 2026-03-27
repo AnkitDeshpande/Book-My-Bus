@@ -3,6 +3,7 @@ package com.masai.service;
 import com.masai.dto.PagedResponse;
 import com.masai.dto.request.BusRequest;
 import com.masai.dto.response.BusResponse;
+import com.masai.enums.BusType;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ public interface BusService {
 
     PagedResponse<BusResponse> getAllBuses(int page, int size);
 
-    List<BusResponse> searchBuses(String source, String destination, int seatCount);
+    List<BusResponse> searchBuses(String source, String destination, int seatCount, BusType busType);
 
     void deleteBus(Long busId);
 }

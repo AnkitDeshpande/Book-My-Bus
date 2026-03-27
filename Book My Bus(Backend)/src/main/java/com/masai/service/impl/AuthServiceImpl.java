@@ -7,15 +7,23 @@ import com.masai.dto.response.UserResponse;
 import com.masai.exception.BadRequestException;
 import com.masai.exception.DuplicateResourceException;
 import com.masai.exception.ResourceNotFoundException;
+import com.masai.model.PasswordResetToken;
 import com.masai.model.User;
+import com.masai.model.VerificationToken;
+import com.masai.repository.PasswordResetTokenRepository;
 import com.masai.repository.UserRepository;
+import com.masai.repository.VerificationTokenRepository;
 import com.masai.security.JwtUtil;
 import com.masai.service.AuthService;
+import com.masai.service.EmailService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -23,8 +31,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class AuthServiceImpl implements AuthService {
 
     private final UserRepository userRepository;
+    private final VerificationTokenRepository verificationTokenRepository;
+    private final PasswordResetTokenRepository passwordResetTokenRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
+    private final EmailService emailService;
 
     @Override
     @Transactional
@@ -45,7 +56,17 @@ public class AuthServiceImpl implements AuthService {
         user.setPhone(request.getPhone());
 
         User saved = userRepository.save(user);
-        log.info("New user registered: {}", saved.getEmail());
+
+        String tokenValue = UUID.randomUUID().toString();
+        VerificationToken verificationToken = new VerificationToken();
+        verificationToken.setToken(tokenValue);
+        verificationToken.setUser(saved);
+        verificationToken.setExpiresAt(LocalDateTime.now().plusHours(24));
+        verificationTokenRepository.save(verificationToken);
+
+        emailService.sendActivationEmail(saved.getEmail(), saved.getFirstName(), tokenValue);
+
+        log.info("New user registered (pending activation): {}", saved.getEmail());
         return mapToUserResponse(saved);
     }
 
@@ -56,7 +77,7 @@ public class AuthServiceImpl implements AuthService {
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with email/username: " + request.getEmailOrUsername()));
 
         if (!user.isActive()) {
-            throw new BadRequestException("Account is deactivated. Please contact support.");
+            throw new BadRequestException("Account is not active. Please check your email to activate your account.");
         }
 
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
@@ -66,6 +87,92 @@ public class AuthServiceImpl implements AuthService {
         String token = jwtUtil.generateToken(user.getId(), user.getRole());
         log.info("User logged in: {}", user.getEmail());
         return new LoginResponse(token, user.getId(), user.getUsername(), user.getEmail(), user.getRole());
+    }
+
+    @Override
+    @Transactional
+    public void activateAccount(String token) {
+        VerificationToken verificationToken = verificationTokenRepository.findByToken(token)
+                .orElseThrow(() -> new BadRequestException("Invalid activation token"));
+
+        if (verificationToken.isExpired()) {
+            verificationTokenRepository.delete(verificationToken);
+            throw new BadRequestException("Activation token has expired. Please request a new activation email.");
+        }
+
+        User user = verificationToken.getUser();
+        user.setActive(true);
+        userRepository.save(user);
+        verificationTokenRepository.delete(verificationToken);
+
+        log.info("User account activated: {}", user.getEmail());
+    }
+
+    @Override
+    @Transactional
+    public void resendActivation(String email) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("No account found with email: " + email));
+
+        if (user.isActive()) {
+            throw new BadRequestException("Account is already active");
+        }
+
+        // Delete existing token if any
+        verificationTokenRepository.deleteByUser(user);
+
+        String tokenValue = UUID.randomUUID().toString();
+        VerificationToken verificationToken = new VerificationToken();
+        verificationToken.setToken(tokenValue);
+        verificationToken.setUser(user);
+        verificationToken.setExpiresAt(LocalDateTime.now().plusHours(24));
+        verificationTokenRepository.save(verificationToken);
+
+        emailService.sendActivationEmail(user.getEmail(), user.getFirstName(), tokenValue);
+        log.info("Activation email resent to: {}", email);
+    }
+
+    @Override
+    @Transactional
+    public void forgotPassword(String email) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("No account found with email: " + email));
+
+        if (!user.isActive()) {
+            throw new BadRequestException("Account is not active. Please activate your account first.");
+        }
+
+        // Delete any existing reset token
+        passwordResetTokenRepository.deleteByUser(user);
+
+        String tokenValue = UUID.randomUUID().toString();
+        PasswordResetToken resetToken = new PasswordResetToken();
+        resetToken.setToken(tokenValue);
+        resetToken.setUser(user);
+        resetToken.setExpiresAt(LocalDateTime.now().plusHours(1));
+        passwordResetTokenRepository.save(resetToken);
+
+        emailService.sendPasswordResetEmail(user.getEmail(), user.getFirstName(), tokenValue);
+        log.info("Password reset email sent to: {}", email);
+    }
+
+    @Override
+    @Transactional
+    public void resetPassword(String token, String newPassword) {
+        PasswordResetToken resetToken = passwordResetTokenRepository.findByToken(token)
+                .orElseThrow(() -> new BadRequestException("Invalid or expired password reset token"));
+
+        if (resetToken.isExpired()) {
+            passwordResetTokenRepository.delete(resetToken);
+            throw new BadRequestException("Password reset token has expired. Please request a new one.");
+        }
+
+        User user = resetToken.getUser();
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+        passwordResetTokenRepository.delete(resetToken);
+
+        log.info("Password reset successfully for: {}", user.getEmail());
     }
 
     private UserResponse mapToUserResponse(User user) {

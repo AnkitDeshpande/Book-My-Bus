@@ -3,6 +3,7 @@ package com.masai.service.impl;
 import com.masai.dto.PagedResponse;
 import com.masai.dto.request.BusRequest;
 import com.masai.dto.response.BusResponse;
+import com.masai.enums.BusType;
 import com.masai.exception.DuplicateResourceException;
 import com.masai.exception.ResourceNotFoundException;
 import com.masai.model.Bus;
@@ -73,6 +74,7 @@ public class BusServiceImpl implements BusService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public BusResponse getBusById(Long busId) {
         Bus bus = busRepository.findById(busId)
                 .orElseThrow(() -> new ResourceNotFoundException("Bus", "id", busId));
@@ -80,6 +82,7 @@ public class BusServiceImpl implements BusService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public PagedResponse<BusResponse> getAllBuses(int page, int size) {
         Page<Bus> busPage = busRepository.findAll(PageRequest.of(page, size, Sort.by("busName")));
         return new PagedResponse<>(
@@ -93,9 +96,12 @@ public class BusServiceImpl implements BusService {
     }
 
     @Override
-    public List<BusResponse> searchBuses(String source, String destination, int seatCount) {
-        return busRepository.findAvailableBuses(source, destination, seatCount)
-                .stream().map(this::mapToResponse).toList();
+    @Transactional(readOnly = true)
+    public List<BusResponse> searchBuses(String source, String destination, int seatCount, BusType busType) {
+        List<Bus> buses = busType != null
+                ? busRepository.findAvailableBusesByType(source, destination, seatCount, busType)
+                : busRepository.findAvailableBuses(source, destination, seatCount);
+        return buses.stream().map(this::mapToResponse).toList();
     }
 
     @Override

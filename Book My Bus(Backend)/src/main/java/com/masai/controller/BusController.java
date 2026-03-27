@@ -4,6 +4,7 @@ import com.masai.dto.ApiResponse;
 import com.masai.dto.PagedResponse;
 import com.masai.dto.request.BusRequest;
 import com.masai.dto.response.BusResponse;
+import com.masai.enums.BusType;
 import com.masai.service.BusService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -67,11 +68,12 @@ public class BusController {
     }
 
     @GetMapping("/search")
-    @Operation(summary = "Search available buses by source, destination and seat count")
+    @Operation(summary = "Search available buses by source, destination, seat count and optional bus type")
     public ResponseEntity<ApiResponse<List<BusResponse>>> searchBuses(
             @RequestParam String source,
             @RequestParam String destination,
-            @RequestParam(defaultValue = "1") int seatCount) {
-        return ResponseEntity.ok(ApiResponse.success("Buses found", busService.searchBuses(source, destination, seatCount)));
+            @RequestParam(defaultValue = "1") int seatCount,
+            @RequestParam(required = false) BusType busType) {
+        return ResponseEntity.ok(ApiResponse.success("Buses found", busService.searchBuses(source, destination, seatCount, busType)));
     }
 }

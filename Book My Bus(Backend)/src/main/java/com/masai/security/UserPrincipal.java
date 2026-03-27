@@ -3,6 +3,7 @@ package com.masai.security;
 import com.masai.enums.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.jspecify.annotations.NullMarked;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,7 +19,7 @@ public class UserPrincipal implements UserDetails {
     private UserRole role;
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
+    public @NullMarked Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
     }
 
@@ -28,7 +29,7 @@ public class UserPrincipal implements UserDetails {
     }
 
     @Override
-    public String getUsername() {
+    public @NullMarked String getUsername() {
         return userId.toString();
     }
 

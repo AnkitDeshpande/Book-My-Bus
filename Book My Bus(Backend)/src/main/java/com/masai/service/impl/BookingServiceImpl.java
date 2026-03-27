@@ -17,6 +17,7 @@ import com.masai.repository.BusRepository;
 import com.masai.repository.UserRepository;
 import com.masai.security.SecurityUtils;
 import com.masai.service.BookingService;
+import com.masai.service.EmailService;
 import com.masai.util.BookingUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,6 +28,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Service
 @RequiredArgsConstructor
@@ -36,6 +38,7 @@ public class BookingServiceImpl implements BookingService {
     private final BookingRepository bookingRepository;
     private final BusRepository busRepository;
     private final UserRepository userRepository;
+    private final EmailService emailService;
 
     @Override
     @Transactional
@@ -72,6 +75,23 @@ public class BookingServiceImpl implements BookingService {
 
         Booking saved = bookingRepository.save(booking);
         log.info("Booking created: {} for user: {}", saved.getBookingNumber(), userId);
+
+        try {
+            emailService.sendBookingConfirmationEmail(
+                    user.getEmail(),
+                    user.getFirstName(),
+                    saved.getBookingNumber(),
+                    bus.getBusName(),
+                    bus.getRoute().getSource(),
+                    bus.getRoute().getDestination(),
+                    saved.getJourneyDate().toString(),
+                    saved.getSeatCount(),
+                    saved.getTotalFare().toPlainString()
+            );
+        } catch (Exception e) {
+            log.warn("Booking confirmation email failed for {}: {}", saved.getBookingNumber(), e.getMessage());
+        }
+
         return mapToResponse(saved);
     }
 
@@ -115,6 +135,9 @@ public class BookingServiceImpl implements BookingService {
         if (booking.getBookingStatus() == BookingStatus.CANCELLED) {
             throw new BadRequestException("Booking is already cancelled");
         }
+        if (booking.getJourneyDate().isBefore(LocalDate.now())) {
+            throw new BadRequestException("Cannot cancel a booking after the journey date has passed");
+        }
 
         booking.setBookingStatus(BookingStatus.CANCELLED);
         booking.setPaymentStatus(PaymentStatus.REFUNDED);
@@ -125,6 +148,21 @@ public class BookingServiceImpl implements BookingService {
 
         Booking updated = bookingRepository.save(booking);
         log.info("Booking cancelled: {}", updated.getBookingNumber());
+
+        try {
+            User user = booking.getUser();
+            emailService.sendBookingCancellationEmail(
+                    user.getEmail(),
+                    user.getFirstName(),
+                    updated.getBookingNumber(),
+                    bus.getBusName(),
+                    updated.getJourneyDate().toString(),
+                    updated.getTotalFare().toPlainString()
+            );
+        } catch (Exception e) {
+            log.warn("Booking cancellation email failed for {}: {}", updated.getBookingNumber(), e.getMessage());
+        }
+
         return mapToResponse(updated);
     }
 

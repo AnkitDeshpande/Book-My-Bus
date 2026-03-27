@@ -10,4 +10,12 @@ public interface AuthService {
     UserResponse register(RegisterRequest request);
 
     LoginResponse login(LoginRequest request);
+
+    void activateAccount(String token);
+
+    void resendActivation(String email);
+
+    void forgotPassword(String email);
+
+    void resetPassword(String token, String newPassword);
 }

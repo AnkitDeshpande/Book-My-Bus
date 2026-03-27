@@ -21,6 +21,17 @@ public interface BusRepository extends JpaRepository<Bus, Long> {
                                  @Param("destination") String destination,
                                  @Param("seatCount") int seatCount);
 
+    @Query("SELECT b FROM Bus b JOIN FETCH b.route r " +
+           "WHERE LOWER(r.source) = LOWER(:source) " +
+           "AND LOWER(r.destination) = LOWER(:destination) " +
+           "AND b.availableSeats >= :seatCount " +
+           "AND b.active = true " +
+           "AND b.busType = :busType")
+    List<Bus> findAvailableBusesByType(@Param("source") String source,
+                                       @Param("destination") String destination,
+                                       @Param("seatCount") int seatCount,
+                                       @Param("busType") BusType busType);
+
     List<Bus> findByBusType(BusType busType);
 
     boolean existsByBusNumber(String busNumber);

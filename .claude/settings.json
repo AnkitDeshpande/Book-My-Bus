@@ -13,7 +13,19 @@
       "Bash(find \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src/main/java/com/masai\" -type f -name \"*.java\")",
       "Bash(find '/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src/main/java/com/masai' -name *.java -type f)",
       "Bash(mvn dependency:tree)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(ls -la \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src/main/java/com/masai/model/\")",
+      "Bash(ls -la \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src/main/java/com/masai/config/\")",
+      "Bash(ls -la \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src/main/java/com/masai/security/\")",
+      "Bash(ls -la \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src/main/java/com/masai/controller/\")",
+      "Bash(ls -la \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src/main/java/com/masai/service/\")",
+      "Bash(ls -la \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src/main/java/com/masai/service/impl/\")",
+      "Bash(find \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Frontend\\)\" -type f -o -type d)",
+      "Bash(find /Users/ankit.deshpande/Downloads/projects/Book-My-Bus/ -not -path */.* -type f)",
+      "Bash(find \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src/main/java/com/masai/dto\" -type f -name \"*.java\")",
+      "Bash(find \"/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus\\(Backend\\)/src/main/java/com/masai/service/impl\" -name \"AdminServiceImpl.java\" -o -name \"*Admin*.java\")",
+      "Bash(find \"Book My Bus\\(Frontend\\)\" \"Book My Bus\\(Backend\\)\" -type f)",
+      "Bash(du -sh */)"
     ],
     "additionalDirectories": [
       "/Users/ankit.deshpande/Downloads/projects/Book-My-Bus/Book My Bus(Backend)/.idea"
