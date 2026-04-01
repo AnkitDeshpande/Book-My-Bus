@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/bus.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Book My Bus — Fast, easy, affordable bus ticket booking across India." />
+    <title>Book My Bus</title>
+    <!-- Restore path encoded by 404.html (GitHub Pages SPA routing fix) -->
+    <script>
+      ;(function () {
+        var q = window.location.search
+        if (q && q.indexOf('p=') > -1) {
+          var params = q.slice(1).split('&').reduce(function (acc, s) {
+            var kv = s.split('='); acc[kv[0]] = kv[1]; return acc
+          }, {})
+          var path = '/' + (params.p || '').replace(/~and~/g, '&')
+          var query = params.q ? '?' + params.q.replace(/~and~/g, '&') : ''
+          window.history.replaceState(null, null, path + query + window.location.hash)
+        }
+      })()
+    </script>
+    <script type="module" crossorigin src="/Book-My-Bus/assets/index-DumZ3Pyi.js"></script>
+    <link rel="stylesheet" crossorigin href="/Book-My-Bus/assets/index-C_HZic7Y.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
