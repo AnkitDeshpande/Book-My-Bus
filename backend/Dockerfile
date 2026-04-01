@@ -2,11 +2,12 @@
 FROM eclipse-temurin:21-jdk-alpine AS build
 WORKDIR /app
 
-# Copy maven wrapper and pom first (better layer caching)
-COPY mvnw .
-COPY .mvn .mvn
 COPY pom.xml .
-RUN chmod +x mvnw && ./mvnw dependency:go-offline -q
+COPY mvnw .
+RUN chmod +x mvnw
+
+# Download dependencies first (better layer caching)
+RUN ./mvnw dependency:go-offline -q
 
 # Copy source and build
 COPY src src
