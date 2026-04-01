@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { toast } from 'sonner'
 import { Bus } from 'lucide-react'
-import { useAppDispatch, useIsAuthenticated, useAuthLoading, useAuthError } from '@/store/hooks'
+import { useAppDispatch, useIsAuthenticated, useIsAdmin, useAuthLoading, useAuthError } from '@/store/hooks'
 import { loginThunk } from '@/store/thunks/authThunks'
 import { clearError } from '@/store/slices/authSlice'
 import Input from '@/components/ui/Input'
@@ -21,6 +21,7 @@ export default function Login() {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const isAuthenticated = useIsAuthenticated()
+  const isAdmin = useIsAdmin()
   const loading = useAuthLoading()
   const authError = useAuthError()
 
@@ -29,8 +30,8 @@ export default function Login() {
   })
 
   useEffect(() => {
-    if (isAuthenticated) navigate('/', { replace: true })
-  }, [isAuthenticated, navigate])
+    if (isAuthenticated) navigate(isAdmin ? '/admin' : '/', { replace: true })
+  }, [isAuthenticated, isAdmin, navigate])
 
   useEffect(() => {
     if (authError) {

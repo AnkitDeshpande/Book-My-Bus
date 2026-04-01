@@ -125,7 +125,7 @@ export default function SearchBuses() {
                   <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">{bus.routeSource} → {bus.routeDestination}</p>
                 </div>
                 <div className="flex sm:flex-col items-center sm:items-end gap-3">
-                  <p className="text-xl font-bold text-primary-600">{formatCurrency(bus.availableSeats)}</p>
+                  <p className="text-xl font-bold text-primary-600">{formatCurrency(bus.baseFare)}</p>
                   <Button onClick={() => handleBookClick(bus)}>Book Now</Button>
                 </div>
               </div>

@@ -24,5 +24,6 @@ public class BusResponse {
     private Long routeId;
     private String routeSource;
     private String routeDestination;
+    private java.math.BigDecimal baseFare;
     private LocalDateTime createdAt;
 }

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router'
 import { Search, ShieldCheck, Clock, CreditCard, Bus } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import Input from '@/components/ui/Input'
+import BusIllustration from '@/components/BusIllustration'
 import { useIsAuthenticated } from '@/store/hooks'
 
 interface SearchForm {
@@ -32,46 +33,58 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20 px-4">
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl font-bold sm:text-5xl">Book Your Bus Journey</h1>
-          <p className="mt-4 text-lg text-primary-100">
-            Search thousands of routes. Book instantly. Travel comfortably.
-          </p>
+      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-14 px-4 overflow-hidden">
+        <div className="mx-auto max-w-6xl">
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
 
-          {/* Search card */}
-          <div className="mt-10 rounded-2xl bg-white p-6 shadow-xl text-left dark:bg-gray-800">
-            <form onSubmit={handleSubmit(onSearch)} className="flex flex-col sm:flex-row gap-3 items-end">
-              <div className="flex-1">
-                <Input
-                  label="From"
-                  placeholder="e.g. Mumbai"
-                  error={errors.source?.message}
-                  {...register('source', { required: 'Source is required' })}
-                />
+            {/* Left — text + search */}
+            <div className="flex-1 min-w-0 w-full">
+              <h1 className="text-4xl font-bold sm:text-5xl text-center lg:text-left">Book Your Bus Journey</h1>
+              <p className="mt-4 text-lg text-primary-100 text-center lg:text-left">
+                Search thousands of routes. Book instantly. Travel comfortably.
+              </p>
+
+              {/* Search card */}
+              <div className="mt-10 rounded-2xl bg-white p-6 shadow-xl text-left dark:bg-gray-800">
+                <form onSubmit={handleSubmit(onSearch)} className="flex flex-col sm:flex-row gap-3 items-end">
+                  <div className="flex-1">
+                    <Input
+                      label="From"
+                      placeholder="e.g. Mumbai"
+                      error={errors.source?.message}
+                      {...register('source', { required: 'Source is required' })}
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <Input
+                      label="To"
+                      placeholder="e.g. Pune"
+                      error={errors.destination?.message}
+                      {...register('destination', { required: 'Destination is required' })}
+                    />
+                  </div>
+                  <div className="w-28">
+                    <Input
+                      label="Seats"
+                      type="number"
+                      min={1}
+                      max={10}
+                      error={errors.seatCount?.message}
+                      {...register('seatCount', { valueAsNumber: true, min: { value: 1, message: 'Min 1' } })}
+                    />
+                  </div>
+                  <Button type="submit" size="lg" className="gap-2 shrink-0">
+                    <Search className="size-4" /> Search
+                  </Button>
+                </form>
               </div>
-              <div className="flex-1">
-                <Input
-                  label="To"
-                  placeholder="e.g. Pune"
-                  error={errors.destination?.message}
-                  {...register('destination', { required: 'Destination is required' })}
-                />
-              </div>
-              <div className="w-28">
-                <Input
-                  label="Seats"
-                  type="number"
-                  min={1}
-                  max={10}
-                  error={errors.seatCount?.message}
-                  {...register('seatCount', { valueAsNumber: true, min: { value: 1, message: 'Min 1' } })}
-                />
-              </div>
-              <Button type="submit" size="lg" className="gap-2 shrink-0">
-                <Search className="size-4" /> Search
-              </Button>
-            </form>
+            </div>
+
+            {/* Right — animated bus */}
+            <div className="flex-1 min-w-0 w-full flex items-center justify-center lg:justify-end">
+              <BusIllustration />
+            </div>
+
           </div>
         </div>
       </section>

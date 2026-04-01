@@ -96,6 +96,7 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public BookingResponse getBookingById(Long bookingId) {
         Long userId = SecurityUtils.getCurrentUserId();
         Booking booking = bookingRepository.findById(bookingId)
@@ -108,6 +109,7 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public PagedResponse<BookingResponse> getMyBookings(int page, int size) {
         Long userId = SecurityUtils.getCurrentUserId();
         Page<Booking> bookingPage = bookingRepository.findByUser_Id(
@@ -116,6 +118,7 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public PagedResponse<BookingResponse> getAllBookings(int page, int size) {
         Page<Booking> bookingPage = bookingRepository.findAll(
                 PageRequest.of(page, size, Sort.by("createdAt").descending()));

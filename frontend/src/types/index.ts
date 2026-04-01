@@ -74,6 +74,7 @@ export interface BusResponse {
   routeId: number
   routeSource: string
   routeDestination: string
+  baseFare: number
   createdAt: string
 }
 

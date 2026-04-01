@@ -131,6 +131,7 @@ public class BusServiceImpl implements BusService {
             dto.setRouteId(bus.getRoute().getId());
             dto.setRouteSource(bus.getRoute().getSource());
             dto.setRouteDestination(bus.getRoute().getDestination());
+            dto.setBaseFare(bus.getRoute().getBaseFare());
         }
         return dto;
     }

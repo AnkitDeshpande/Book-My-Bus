@@ -21,48 +21,53 @@ import AdminBookings from '@/pages/admin/Bookings'
 import AdminRevenue from '@/pages/admin/Revenue'
 import NotFound from '@/pages/NotFound'
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <RootLayout />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: 'login', element: <Login /> },
-      { path: 'register', element: <Register /> },
-      { path: 'auth/activate', element: <Activate /> },
-      { path: 'auth/forgot-password', element: <ForgotPassword /> },
-      { path: 'auth/reset-password', element: <ResetPassword /> },
-      { path: 'buses/search', element: <SearchBuses /> },
-      {
-        element: <ProtectedRoute />,
-        children: [
-          { path: 'bookings', element: <MyBookings /> },
-          { path: 'bookings/:id', element: <BookingDetail /> },
-          { path: 'profile', element: <Profile /> },
-          { path: 'feedback', element: <Feedback /> },
-        ],
-      },
-      { path: '*', element: <NotFound /> },
-    ],
-  },
-  {
-    path: '/admin',
-    element: <ProtectedRoute requireAdmin />,
-    children: [
-      {
-        element: <AdminLayout />,
-        children: [
-          { index: true, element: <AdminDashboard /> },
-          { path: 'users', element: <AdminUsers /> },
-          { path: 'buses', element: <AdminBuses /> },
-          { path: 'routes', element: <AdminRoutes /> },
-          { path: 'bookings', element: <AdminBookings /> },
-          { path: 'revenue', element: <AdminRevenue /> },
-        ],
-      },
-    ],
-  },
-])
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <RootLayout />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: 'login', element: <Login /> },
+        { path: 'register', element: <Register /> },
+        { path: 'auth/activate', element: <Activate /> },
+        { path: 'auth/forgot-password', element: <ForgotPassword /> },
+        { path: 'auth/reset-password', element: <ResetPassword /> },
+        { path: 'buses/search', element: <SearchBuses /> },
+        {
+          element: <ProtectedRoute />,
+          children: [
+            { path: 'bookings', element: <MyBookings /> },
+            { path: 'bookings/:id', element: <BookingDetail /> },
+            { path: 'profile', element: <Profile /> },
+            { path: 'feedback', element: <Feedback /> },
+          ],
+        },
+        { path: '*', element: <NotFound /> },
+      ],
+    },
+    {
+      path: '/admin',
+      element: <ProtectedRoute requireAdmin />,
+      children: [
+        {
+          element: <AdminLayout />,
+          children: [
+            { index: true, element: <AdminDashboard /> },
+            { path: 'users', element: <AdminUsers /> },
+            { path: 'buses', element: <AdminBuses /> },
+            { path: 'routes', element: <AdminRoutes /> },
+            { path: 'bookings', element: <AdminBookings /> },
+            { path: 'revenue', element: <AdminRevenue /> },
+          ],
+        },
+      ],
+    },
+  ],
+  // import.meta.env.BASE_URL is set by Vite from the `base` config.
+  // Locally it's "/", on GitHub Pages it becomes "/Book-My-Bus/"
+  { basename: import.meta.env.BASE_URL },
+)
 
 export default function App() {
   return <RouterProvider router={router} />

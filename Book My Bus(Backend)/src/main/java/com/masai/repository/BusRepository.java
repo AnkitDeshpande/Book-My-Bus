@@ -13,8 +13,8 @@ import java.util.List;
 public interface BusRepository extends JpaRepository<Bus, Long> {
 
     @Query("SELECT b FROM Bus b JOIN FETCH b.route r " +
-           "WHERE LOWER(r.source) = LOWER(:source) " +
-           "AND LOWER(r.destination) = LOWER(:destination) " +
+           "WHERE LOWER(r.source) LIKE LOWER(CONCAT('%', :source, '%')) " +
+           "AND LOWER(r.destination) LIKE LOWER(CONCAT('%', :destination, '%')) " +
            "AND b.availableSeats >= :seatCount " +
            "AND b.active = true")
     List<Bus> findAvailableBuses(@Param("source") String source,
@@ -22,8 +22,8 @@ public interface BusRepository extends JpaRepository<Bus, Long> {
                                  @Param("seatCount") int seatCount);
 
     @Query("SELECT b FROM Bus b JOIN FETCH b.route r " +
-           "WHERE LOWER(r.source) = LOWER(:source) " +
-           "AND LOWER(r.destination) = LOWER(:destination) " +
+           "WHERE LOWER(r.source) LIKE LOWER(CONCAT('%', :source, '%')) " +
+           "AND LOWER(r.destination) LIKE LOWER(CONCAT('%', :destination, '%')) " +
            "AND b.availableSeats >= :seatCount " +
            "AND b.active = true " +
            "AND b.busType = :busType")

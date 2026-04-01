@@ -1,6 +1,6 @@
 import { NavLink, Outlet, useNavigate, Link } from 'react-router'
 import {
-  LayoutDashboard, Users, Bus, MapPin, Ticket, TrendingUp, LogOut, ChevronRight, ArrowLeft,
+  LayoutDashboard, Users, Bus, MapPin, Ticket, TrendingUp, LogOut, ChevronRight,
 } from 'lucide-react'
 import { useAppDispatch, useCurrentUser } from '@/store/hooks'
 import { logout } from '@/store/slices/authSlice'
@@ -33,7 +33,22 @@ export default function AdminLayout() {
       <aside className="flex w-64 flex-shrink-0 flex-col bg-gray-900 text-white">
         <div className="flex h-16 items-center gap-2 px-6 border-b border-gray-700">
           <Bus className="size-6 text-primary-400" />
-          <span className="font-bold text-white">Admin Panel</span>
+          <span className="font-bold text-white">Book My Bus</span>
+        </div>
+
+        {/* Panel switcher */}
+        <div className="px-3 py-3 border-b border-gray-700">
+          <div className="flex rounded-lg bg-gray-800 p-1 gap-1">
+            <span className="flex-1 text-center rounded-md bg-primary-600 px-2 py-1.5 text-xs font-semibold text-white cursor-default">
+              Admin Panel
+            </span>
+            <Link
+              to="/"
+              className="flex-1 text-center rounded-md px-2 py-1.5 text-xs font-medium text-gray-400 hover:text-white hover:bg-gray-700 transition-colors"
+            >
+              User View
+            </Link>
+          </div>
         </div>
 
         <nav className="flex-1 px-3 py-4 space-y-1">
@@ -56,15 +71,6 @@ export default function AdminLayout() {
             </NavLink>
           ))}
 
-          <div className="pt-2 border-t border-gray-700 mt-2">
-            <Link
-              to="/"
-              className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white transition-colors"
-            >
-              <ArrowLeft className="size-5" />
-              Back to Site
-            </Link>
-          </div>
         </nav>
 
         <div className="border-t border-gray-700 p-4">

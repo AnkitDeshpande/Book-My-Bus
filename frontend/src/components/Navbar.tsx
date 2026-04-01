@@ -40,10 +40,11 @@ export default function Navbar() {
             Search Buses
           </NavLink>
           {isAdmin && (
-            <NavLink to="/admin" className={({ isActive }) =>
-              `text-sm font-medium transition-colors ${isActive ? 'text-primary-600' : 'text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400'}`
-            }>
-              Admin
+            <NavLink to="/admin"
+              className="flex items-center gap-1.5 rounded-lg bg-primary-50 px-3 py-1.5 text-sm font-medium text-primary-700 hover:bg-primary-100 transition-colors dark:bg-primary-900/30 dark:text-primary-400 dark:hover:bg-primary-900/50"
+            >
+              <LayoutDashboard className="size-4" />
+              Admin Panel
             </NavLink>
           )}
         </nav>
