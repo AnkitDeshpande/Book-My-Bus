@@ -26,7 +26,7 @@ export default function Register() {
 
   const mutation = useMutation({
     mutationFn: (data: FormData) => authApi.register(data),
-    onSuccess: (_, variables) => {
+    onSuccess: () => {
       toast.success('Account created! Check your email to activate it.')
       navigate(`/login`)
     },
