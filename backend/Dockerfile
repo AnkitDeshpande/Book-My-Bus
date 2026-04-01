@@ -1,17 +1,14 @@
 # ── Stage 1: Build ──────────────────────────────────────────
-FROM eclipse-temurin:21-jdk-alpine AS build
+FROM maven:3.9-eclipse-temurin-21-alpine AS build
 WORKDIR /app
 
-COPY pom.xml .
-COPY mvnw .
-RUN chmod +x mvnw
-
 # Download dependencies first (better layer caching)
-RUN ./mvnw dependency:go-offline -q
+COPY pom.xml .
+RUN mvn dependency:go-offline -q
 
 # Copy source and build
 COPY src src
-RUN ./mvnw clean package -DskipTests -q
+RUN mvn clean package -DskipTests -q
 
 # ── Stage 2: Run ────────────────────────────────────────────
 FROM eclipse-temurin:21-jre-alpine
