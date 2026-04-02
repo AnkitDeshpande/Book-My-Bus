@@ -18,6 +18,7 @@ import org.springframework.context.annotation.Configuration;
                 contact = @Contact(name = "Book My Bus Team", email = "support@bookmybus.com")
         ),
         servers = {
+                @Server(url = "https://book-my-bus.onrender.com", description = "Production Server"),
                 @Server(url = "http://localhost:8888", description = "Local Development Server")
         }
 )
